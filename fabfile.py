@@ -22,6 +22,8 @@ def create_env():
 
 def _manage(command):
     def _command():
+        require('project_dir', provided_by='dev')
+
         with cd(env.project_dir):
             run('./manage.py ' + command)
     return _command

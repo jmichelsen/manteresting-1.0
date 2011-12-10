@@ -27,3 +27,7 @@ idios==0.2a1
 metron==0.1
 
 pinax-theme-bootstrap==0.1.2
+
+# not from pinax
+git+git://github.com/simplegeo/python-oauth2.git@1fcc1a6d4#egg=python-oauth2
+django-social-auth==0.6.0

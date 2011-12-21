@@ -1,0 +1,36 @@
+{% extends "site_base.html" %}
+{% load manticore %}
+
+{% load i18n %}
+{% load ifsetting_tag %}
+
+{% block head_title %}{% trans "Upload" %}{% endblock %}
+
+{% block body %}
+<form action="" method="POST" enctype="multipart/form-data">
+    <div class="clearfix{% if 'workbench' in form.errors %} error{% endif %}">
+        {{ form.workbench.label_tag }}
+        <div class="input">
+            {{ form.workbench }}
+            <span class="help-inline">{% if form.errors.workbench %}{{ form.errors.workbench.0 }}{% endif %}</span>
+        </div>
+    </div>
+    <div class="clearfix{% if 'original' in form.errors %} error{% endif %}">
+        {{ form.original.label_tag }}
+        <div class="input">
+            {{ form.original }}
+            <span class="help-inline">{% if form.errors.original %}{{ form.errors.original.0 }}{% endif %}</span>
+        </div>
+    </div>
+    <div class="clearfix{% if 'description' in form.errors %} error{% endif %}">
+        {{ form.description.label_tag }}
+        <div class="input">
+            {{ form.description }}
+            <span class="help-inline">{% if form.errors.description %}{{ form.errors.description.0 }}{% endif %}</span>
+        </div>
+    </div>
+    <div class="input"><input type="submit" value="Upload" class="btn primary"/></div>
+    {% csrf_token %}
+</form>
+{% endblock %}
+

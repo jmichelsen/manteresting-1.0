@@ -1,0 +1,30 @@
+{% extends "site_base.html" %}
+{% load manticore %}
+
+{% load i18n %}
+{% load ifsetting_tag %}
+
+{% block head_title %}{% trans "Add workbench" %}{% endblock %}
+
+{% block body %}
+<form action="" method="POST">
+    <div class="clearfix{% if form.errors.title %} error{% endif %}">
+        {{ form.title.label_tag }}
+        <div class="input">
+            {{ form.title }}
+            <span class="help-inline">{% if form.errors.title %}{{ form.errors.title.0 }}{% endif %}</span>
+        </div>
+    </div>
+    <div class="clearfix{% if form.errors.category %} error{% endif %}">
+        {{ form.category.label_tag }}
+        <div class="input">
+            {{ form.category }}
+            <span class="help-inline">{% if form.errors.category %}{{ form.errors.category.0 }}{% endif %}</span>
+        </div>
+    </div>
+    <div class="input"><input type="submit" value="{% if object %}Update{% else %}Create{% endif %}" class="btn primary"/></div>
+    {% csrf_token %}
+</form>
+{% endblock %}
+
+

@@ -1,0 +1,25 @@
+{% extends "site_base.html" %}
+{% load manticore %}
+
+{% block head_title %}{{ object.username }} — Manticore{% endblock %}
+
+{% block body %}
+    {% if object.workbenches.count %}
+        {% for workbench in object.workbenches.all %}
+            <div class="workbench">
+                <h1>{{ workbench.title }}</h1>
+                {% if workbench.nails.count %}
+                    <ul>
+                    {% for nail in workbench.nails.all %}
+                        <li><a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.thumb }}" width="{{ nail.thumb.width }}px" height="{{ nail.thumb.height }}px" /></a></li>
+                    {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No nails</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No workbenches</p>
+    {% endif %}
+{% endblock %}

@@ -1,6 +1,13 @@
 <ul class="secondary-nav">
     {% if user.is_authenticated %}
         <li>
+            <a href="#" class="menu">Add</a>
+            <ul class="menu-dropdown">
+                <li><a href="{% url nail-add %}">Nail</a></li>
+                <li><a href="{% url workbench-add %}">Workbench</a></li>
+            </ul>
+        </li>
+        <li>
             <a href="#" class="menu">{{ user }}</a>
             <ul class="menu-dropdown">
                 <li><a href="{% url acct_email %}">Account</a></li>

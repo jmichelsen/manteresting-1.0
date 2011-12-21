@@ -1,0 +1,12 @@
+{% extends "site_base.html" %}
+{% load manticore %}
+
+{% block head_title %}Nail{% endblock %}
+
+{% block body %}
+    <div class="nail">
+        <h1>Workbench: <a href="{{ object.workbench.get_absolute_url }}">{{ object.workbench }}</a></h1>
+        <img src="{{ object.normal.url }}" width="{{ object.normal.width }}px" height="{{ object.normal.height }}px"/>
+        <p>{{ object.description }}</p>
+    </div>
+{% endblock %}

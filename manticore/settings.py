@@ -74,6 +74,7 @@ STATIC_URL = '/site_media/static/'
 # Additional directories which hold static files
 STATICFILES_DIRS = [
     os.path.join(PROJECT_ROOT, 'static'),
+    MEDIA_ROOT,
 ]
 
 STATICFILES_FINDERS = [
@@ -148,12 +149,12 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.humanize',
-    
+
     'pinax.templatetags',
-    
+
     # theme
     'pinax_theme_bootstrap',
-    
+
     # external
     'notification', # must be first
     'staticfiles',
@@ -168,14 +169,17 @@ INSTALLED_APPS = [
     'idios',
     'metron',
     'social_auth',
-    
+    'imagekit',
+    'south',
+
     # Pinax
     'pinax.apps.account',
     'pinax.apps.signup_codes',
-    
+
     # project
     'manticore.apps.about',
     'manticore.apps.profiles',
+    'manticore.apps.core',
 ]
 
 FIXTURE_DIRS = [
@@ -225,3 +229,7 @@ try:
     from local_settings import *
 except ImportError:
     pass
+
+for name in ('INSTALLED_APPS',):
+    locals()[name] = locals().get('patch_' + name.lower(), lambda x: x)(locals().get(name))
+

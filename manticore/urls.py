@@ -1,11 +1,18 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
 from django.views.generic.simple import direct_to_template
+from django.views.generic import DetailView
 
 from django.contrib import admin
 admin.autodiscover()
 
 from pinax.apps.account.openid_consumer import PinaxConsumer
+
+from manticore.apps.core.models import Nail, Workbench, User
+from manticore.apps.core.views import (
+    CreateByView, UpdateByView,
+    UpdateWorkbenchView,
+)
 
 
 handler500 = "pinax.views.server_error"
@@ -23,11 +30,21 @@ urlpatterns = patterns("",
     url(r"^profiles/", include("idios.urls")),
     url(r"^notices/", include("notification.urls")),
     url(r"^announcements/", include("announcements.urls")),
+
+    url(r'^nail/add/$', CreateByView.as_view(model=Nail), name='nail-add'),
+    url(r'^nail/(?P<pk>\d+)/$', DetailView.as_view(model=Nail), name='nail'),
+    url(r'^nail/(?P<pk>\d+)/edit/$', UpdateByView.as_view(model=Nail), name='nail-edit'),
+
+    url(r'^workbench/add/$', CreateByView.as_view(model=Workbench), name='workbench-add'),
+    url(r'^workbench/(?P<pk>\d+)/$', DetailView.as_view(model=Workbench), name='workbench'),
+    url(r'^workbench/(?P<pk>\d+)/edit/$', UpdateWorkbenchView.as_view(model=Workbench), name='workbench-edit'),
+
+    url(r'^u/(?P<slug>\w+)/$', DetailView.as_view(model=User, slug_field='username'), name='user'),
     url(r'', include('social_auth.urls')),
 )
 
 
 if settings.SERVE_MEDIA:
-    urlpatterns += patterns("",
-        url(r"", include("staticfiles.urls")),
-    )
+    from staticfiles.urls import static
+    urlpatterns += static(settings.STATIC_URL, view='staticfiles.views.serve')
+    urlpatterns += static(settings.MEDIA_URL, view='staticfiles.views.serve')

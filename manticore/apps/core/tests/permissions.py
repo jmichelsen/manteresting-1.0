@@ -2,7 +2,7 @@ from django.test import TestCase, Client
 
 from ..utils import reverse
 from ..models import Category
-from .utils import create_user, assert_no_errors, FakeFile
+from .utils import create_user, assert_no_errors, assert_form_error, FakeFile
 
 class PermissionTest(TestCase):
     def setUp(self):
@@ -131,7 +131,35 @@ class PermissionTest(TestCase):
             )
         )
         # he should receive an 403 (access denied) error
-        self.assertEqual(403, result.status_code)
+        assert_form_error(result, 'workbench', 'Select a valid choice')
         # and workbench's title should remain the same
         self.assertEqual(1, workbench.nails.count())
+
+    def test_nail_upload_page_allows_to_choose_only_owned_workbenches(self):
+        art = create_user('art')
+        peter = create_user('peter')
+
+        # Art creates a workbench
+        self.login(art)
+        result = self.post(
+            'workbench-add',
+            dict(
+                title='ArtWorkbench',
+                category=1,
+            )
+        )
+        # Peter creates a workbench too
+        self.login(peter)
+        result = self.post(
+            'workbench-add',
+            dict(
+                title='PeterWorkbench',
+                category=1,
+            )
+        )
+
+        # now Peter opens nail upload page
+        response = self.get('nail-add')
+        self.assertContains(response, 'PeterWorkbench')
+        self.assertNotContains(response, 'ArtWorkbench')
 

@@ -66,3 +66,9 @@ class CreateNailView(ThrowResultMixin, CreateByView):
         if form.cleaned_data['workbench'].user != self.request.user:
             raise ImmediateHttpResponse(HttpResponseForbidden())
         return super(CreateNailView, self).form_valid(form)
+
+    def get_form_class(self):
+        form_class = super(CreateNailView, self).get_form_class()
+        form_class.base_fields['workbench'].queryset = self.request.user.workbenches.all()
+        return form_class
+

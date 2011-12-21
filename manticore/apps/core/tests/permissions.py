@@ -1,8 +1,8 @@
 from django.test import TestCase, Client
+
 from ..utils import reverse
 from ..models import Category
-
-from .utils import create_user, assert_no_errors
+from .utils import create_user, assert_no_errors, FakeFile
 
 class PermissionTest(TestCase):
     def setUp(self):
@@ -91,3 +91,47 @@ class PermissionTest(TestCase):
 
         # Peter even can't see the edit page
         self.assertEqual(403, self.get(edit_url).status_code)
+
+    def test_nail_can_be_uploaded_only_to_workbench_owned_by_user(self):
+        art = create_user('art')
+        peter = create_user('peter')
+
+        # Art creates a workbench
+        self.login(art)
+        result = self.post(
+            'workbench-add',
+            dict(
+                title='test workbench',
+                category=1,
+            )
+        )
+        workbench = art.workbenches.all()[0]
+
+        # and uploads a nail
+        result = self.post(
+            'nail-add',
+            dict(
+                workbench=workbench.pk,
+                description='test nail',
+                original=FakeFile(),
+            )
+        )
+        assert_no_errors(result)
+        self.assertEqual(1, workbench.nails.count())
+
+        # and now Peter tries to upload a nail into Art's workbench
+        self.login(peter)
+
+        result = self.post(
+            'nail-add',
+            dict(
+                workbench=workbench.pk,
+                description='test nail',
+                original=FakeFile(),
+            )
+        )
+        # he should receive an 403 (access denied) error
+        self.assertEqual(403, result.status_code)
+        # and workbench's title should remain the same
+        self.assertEqual(1, workbench.nails.count())
+

@@ -44,9 +44,12 @@ class RestrictToOwner(ThrowResultMixin):
 
     def get_object(self, *args, **kwargs):
         object = super(RestrictToOwner, self).get_object(*args, **kwargs)
-        if getattr(object, self.owner_field) != self.request.user:
+        if not self.is_owner(self.request.user, object):
             raise ImmediateHttpResponse(HttpResponseForbidden())
         return object
+
+    def is_owner(self, user, object):
+        return getattr(object, self.owner_field) == user
 
 
 class CreateByView(ByMixin, CreateView):
@@ -57,3 +60,9 @@ class UpdateByView(ByMixin, UpdateView):
 
 class UpdateWorkbenchView(RestrictToOwner, UpdateByView):
     pass
+
+class CreateNailView(ThrowResultMixin, CreateByView):
+    def form_valid(self, form):
+        if form.cleaned_data['workbench'].user != self.request.user:
+            raise ImmediateHttpResponse(HttpResponseForbidden())
+        return super(CreateNailView, self).form_valid(form)

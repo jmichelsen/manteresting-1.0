@@ -6,5 +6,5 @@
 django-debug-toolbar==0.8.5
 nose==1.1.2
 NoseDjango==0.8.1
-PyZen==0.3.2
 pdbpp==0.7.2
+git+git://github.com/svetlyak40wt/tdaemon.git@performance#egg=tdaemon

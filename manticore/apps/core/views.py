@@ -108,8 +108,11 @@ class UpdateNailView(RestrictToOwner, UpdateByView):
 
 
 class DeleteNailView(RestrictToOwner, DeleteByView):
-    success_url = '/'
-
     def is_owner(self, user, obj):
         return obj.workbench.user == user
+
+    def get_object(self):
+        obj = super(DeleteNailView, self).get_object()
+        self.success_url = obj.workbench.get_absolute_url()
+        return obj
 

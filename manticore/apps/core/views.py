@@ -1,12 +1,37 @@
 from django.views.generic import CreateView, UpdateView
-from django.http import HttpResponse, HttpResponseForbidden
+from django.http import HttpResponseForbidden
+
 
 class ImmediateHttpResponse(BaseException):
     def __init__(self, response):
         self.response = response
 
 
-class ByMixin(object):
+class ThrowResultMixin(object):
+    """Allows to throw result on any stage of the request processing chain.
+    """
+    def dispatch(self, request, *args, **kwargs):
+        try:
+            return super(ThrowResultMixin, self).dispatch(request, *args, **kwargs)
+        except ImmediateHttpResponse, e:
+            return e.response
+
+
+class RequireLogin(object):
+    """This mixin restricts access for anonymous users.
+    """
+    def get(self, request, *args, **kwargs):
+        if request.user.is_anonymous():
+            raise ImmediateHttpResponse(HttpResponseForbidden())
+        return super(RequireLogin, self).get(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        if request.user.is_anonymous():
+            raise ImmediateHttpResponse(HttpResponseForbidden())
+        return super(RequireLogin, self).post(request, *args, **kwargs)
+
+
+class ByMixin(ThrowResultMixin, RequireLogin):
     """This mixin sets given field to current logged user.
 
     Useful, when you want create object to be owned by those
@@ -25,15 +50,6 @@ class ByMixin(object):
                 data.setdefault(self.by_user_field, self.request.user.pk)
                 kwargs['data'] = data
         return kwargs
-
-class ThrowResultMixin(object):
-    """Allows to throw result on any stage of the request processing chain.
-    """
-    def dispatch(self, request, *args, **kwargs):
-        try:
-            return super(ThrowResultMixin, self).dispatch(request, *args, **kwargs)
-        except ImmediateHttpResponse, e:
-            return e.response
 
 
 class RestrictToOwner(ThrowResultMixin):
@@ -61,7 +77,7 @@ class UpdateByView(ByMixin, UpdateView):
 class UpdateWorkbenchView(RestrictToOwner, UpdateByView):
     pass
 
-class CreateNailView(ThrowResultMixin, CreateByView):
+class CreateNailView(CreateByView):
     def form_valid(self, form):
         if form.cleaned_data['workbench'].user != self.request.user:
             raise ImmediateHttpResponse(HttpResponseForbidden())

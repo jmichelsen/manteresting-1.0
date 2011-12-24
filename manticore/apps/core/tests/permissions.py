@@ -141,7 +141,7 @@ class PermissionTest(TestCase):
 
         # Art creates a workbench
         self.login(art)
-        result = self.post(
+        self.post(
             'workbench-add',
             dict(
                 title='ArtWorkbench',
@@ -150,7 +150,7 @@ class PermissionTest(TestCase):
         )
         # Peter creates a workbench too
         self.login(peter)
-        result = self.post(
+        self.post(
             'workbench-add',
             dict(
                 title='PeterWorkbench',
@@ -162,4 +162,8 @@ class PermissionTest(TestCase):
         response = self.get('nail-add')
         self.assertContains(response, 'PeterWorkbench')
         self.assertNotContains(response, 'ArtWorkbench')
+
+    def test_workbench_or_nail_can_not_be_created_by_anonymous(self):
+        self.assertEqual(403, self.get('workbench-add').status_code)
+        self.assertEqual(403, self.get('nail-add').status_code)
 

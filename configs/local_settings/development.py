@@ -5,4 +5,5 @@ FACEBOOK_API_SECRET          = '75fdcd8649db32303eb403887d7e85e4'
 
 def patch_installed_apps(apps):
     apps.append('pyzen')
+    apps.append('django_extensions')
     return apps

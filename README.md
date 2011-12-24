@@ -11,6 +11,10 @@ How to setup
 * Run `./manage.py runserver 0.0.0.0:8000`
 * Add `127.0.0.1  dev.manteresting.com` into the `/etc/hosts` on your desktop;
 * Open `dev.manteresting.com:8000` in the browser.
+* Login using Twitter.
+* Make this user a superuser. For example:
+
+    echo 'u=User.objects.get(username="svetlyak40wt");u.is_staff=True;u.is_superuser=True;u.save()' | ./manage.py shell_plus
 
 Testing
 -------

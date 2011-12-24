@@ -1,4 +1,4 @@
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.http import HttpResponseForbidden
 
 
@@ -21,14 +21,20 @@ class RequireLogin(object):
     """This mixin restricts access for anonymous users.
     """
     def get(self, request, *args, **kwargs):
-        if request.user.is_anonymous():
-            raise ImmediateHttpResponse(HttpResponseForbidden())
+        self._check(request)
         return super(RequireLogin, self).get(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
+        self._check(request)
+        return super(RequireLogin, self).post(request, *args, **kwargs)
+
+    def delete(self, request, *args, **kwargs):
+        self._check(request)
+        return super(RequireLogin, self).delete(request, *args, **kwargs)
+
+    def _check(self, request):
         if request.user.is_anonymous():
             raise ImmediateHttpResponse(HttpResponseForbidden())
-        return super(RequireLogin, self).post(request, *args, **kwargs)
 
 
 class ByMixin(ThrowResultMixin, RequireLogin):
@@ -59,23 +65,30 @@ class RestrictToOwner(ThrowResultMixin):
     owner_field = 'user'
 
     def get_object(self, *args, **kwargs):
-        object = super(RestrictToOwner, self).get_object(*args, **kwargs)
-        if not self.is_owner(self.request.user, object):
+        obj = super(RestrictToOwner, self).get_object(*args, **kwargs)
+        if not self.is_owner(self.request.user, obj):
             raise ImmediateHttpResponse(HttpResponseForbidden())
-        return object
+        return obj
 
-    def is_owner(self, user, object):
-        return getattr(object, self.owner_field) == user
+    def is_owner(self, user, obj):
+        return getattr(obj, self.owner_field) == user
 
 
 class CreateByView(ByMixin, CreateView):
     pass
 
+
 class UpdateByView(ByMixin, UpdateView):
     pass
 
+
+class DeleteByView(ByMixin, DeleteView):
+    pass
+
+
 class UpdateWorkbenchView(RestrictToOwner, UpdateByView):
     pass
+
 
 class CreateNailView(CreateByView):
     def form_valid(self, form):
@@ -87,4 +100,16 @@ class CreateNailView(CreateByView):
         form_class = super(CreateNailView, self).get_form_class()
         form_class.base_fields['workbench'].queryset = self.request.user.workbenches.all()
         return form_class
+
+
+class UpdateNailView(RestrictToOwner, UpdateByView):
+    def is_owner(self, user, obj):
+        return obj.workbench.user == user
+
+
+class DeleteNailView(RestrictToOwner, DeleteByView):
+    success_url = '/'
+
+    def is_owner(self, user, obj):
+        return obj.workbench.user == user
 

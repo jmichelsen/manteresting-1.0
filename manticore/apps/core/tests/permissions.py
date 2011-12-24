@@ -22,14 +22,14 @@ class PermissionTest(TestCase):
         url = reverse(view, *args, **kwargs)
         return self.cl.get(url)
 
-    def post(self, view, data):
+    def post(self, view, data=None):
         if isinstance(view, tuple):
             view, args, kwargs = view
         else:
             args, kwargs = (), {}
 
         url = reverse(view, *args, **kwargs)
-        return self.cl.post(url, data)
+        return self.cl.post(url, {} if data is None else data)
 
     def test_user_own_workbench_he_created(self):
         art = create_user('art')
@@ -167,3 +167,87 @@ class PermissionTest(TestCase):
         self.assertEqual(403, self.get('workbench-add').status_code)
         self.assertEqual(403, self.get('nail-add').status_code)
 
+    def test_delete_nail(self):
+        art = create_user('art')
+        peter = create_user('peter')
+
+        # Art creates a workbench
+        self.login(art)
+        result = self.post(
+            'workbench-add',
+            dict(
+                title='test workbench',
+                category=1,
+            )
+        )
+        assert_no_errors(result)
+
+        # and uploads a nail
+        workbench = art.workbenches.all()[0]
+        result = self.post(
+            'nail-add',
+            dict(
+                workbench=workbench.pk,
+                description='test nail',
+                original=FakeFile(),
+            )
+        )
+        assert_no_errors(result)
+        self.assertEqual(1, workbench.nails.count())
+
+        # Now Peter tries to delete Art's nail
+        self.login(peter)
+        result = self.post(
+            ('nail-delete', (), dict(pk=workbench.nails.all()[0].pk))
+        )
+        assert_no_errors(result)
+        # but he fails
+        self.assertEqual(1, workbench.nails.count())
+
+        # Now Art deletes his nail
+        self.login(art)
+        result = self.post(
+            ('nail-delete', (), dict(pk=workbench.nails.all()[0].pk))
+        )
+        assert_no_errors(result)
+        # but he success
+        self.assertEqual(0, workbench.nails.count())
+
+    def test_nail_can_be_updated_only_by_workbench_owner(self):
+        art = create_user('art')
+        peter = create_user('peter')
+
+        # Art creates a workbench
+        self.login(art)
+        result = self.post(
+            'workbench-add',
+            dict(
+                title='test workbench',
+                category=1,
+            )
+        )
+        assert_no_errors(result)
+
+        # and uploads a nail
+        workbench = art.workbenches.all()[0]
+        result = self.post(
+            'nail-add',
+            dict(
+                workbench=workbench.pk,
+                description='test nail',
+                original=FakeFile(),
+            )
+        )
+        assert_no_errors(result)
+        self.assertEqual(1, workbench.nails.count())
+
+        # Now Peter tries to change Art's nail
+        self.login(peter)
+        result = self.post(
+            ('nail-edit', (), dict(pk=workbench.nails.all()[0].pk)),
+            dict(description='hacked')
+        )
+        # he should receive an 403 (access denied) error
+        self.assertEqual(403, result.status_code)
+        # and nail's description should remain the same
+        self.assertEqual('test nail', workbench.nails.all()[0].description)

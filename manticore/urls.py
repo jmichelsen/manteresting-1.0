@@ -10,8 +10,8 @@ from pinax.apps.account.openid_consumer import PinaxConsumer
 
 from manticore.apps.core.models import Nail, Workbench, User
 from manticore.apps.core.views import (
-    CreateByView, UpdateByView,
-    UpdateWorkbenchView, CreateNailView,
+    CreateByView, UpdateWorkbenchView,
+    CreateNailView, UpdateNailView, DeleteNailView,
 )
 
 
@@ -32,8 +32,9 @@ urlpatterns = patterns("",
     url(r"^announcements/", include("announcements.urls")),
 
     url(r'^nail/add/$', CreateNailView.as_view(model=Nail), name='nail-add'),
+    url(r'^nail/(?P<pk>\d+)/delete/$', DeleteNailView.as_view(model=Nail), name='nail-delete'),
     url(r'^nail/(?P<pk>\d+)/$', DetailView.as_view(model=Nail), name='nail'),
-    url(r'^nail/(?P<pk>\d+)/edit/$', UpdateByView.as_view(model=Nail), name='nail-edit'),
+    url(r'^nail/(?P<pk>\d+)/edit/$', UpdateNailView.as_view(model=Nail), name='nail-edit'),
 
     url(r'^workbench/add/$', CreateByView.as_view(model=Workbench), name='workbench-add'),
     url(r'^workbench/(?P<pk>\d+)/$', DetailView.as_view(model=Workbench), name='workbench'),

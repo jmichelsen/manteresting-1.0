@@ -116,3 +116,9 @@ class DeleteNailView(RestrictToOwner, DeleteByView):
         self.success_url = obj.workbench.get_absolute_url()
         return obj
 
+
+class DeleteWorkbenchView(RestrictToOwner, DeleteByView):
+    def get_object(self):
+        obj = super(DeleteWorkbenchView, self).get_object()
+        self.success_url = obj.user.get_absolute_url()
+        return obj

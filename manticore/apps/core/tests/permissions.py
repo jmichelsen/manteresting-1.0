@@ -251,3 +251,38 @@ class PermissionTest(TestCase):
         self.assertEqual(403, result.status_code)
         # and nail's description should remain the same
         self.assertEqual('test nail', workbench.nails.all()[0].description)
+
+    def test_delete_workbench(self):
+        art = create_user('art')
+        peter = create_user('peter')
+
+        # Art creates a workbench
+        self.login(art)
+        result = self.post(
+            'workbench-add',
+            dict(
+                title='test workbench',
+                category=1,
+            )
+        )
+        assert_no_errors(result)
+        workbench = art.workbenches.all()[0]
+
+        # Now Peter tries to delete Art's workbench
+        self.login(peter)
+        result = self.post(
+            ('workbench-delete', (), dict(pk=workbench.pk))
+        )
+        # but he fails
+        self.assertEqual(403, result.status_code)
+        self.assertEqual(1, art.workbenches.count())
+
+        # Now Art deletes his nail
+        self.login(art)
+        result = self.post(
+            ('workbench-delete', (), dict(pk=workbench.pk))
+        )
+        assert_no_errors(result)
+        # but he success
+        self.assertEqual(0, art.workbenches.count())
+

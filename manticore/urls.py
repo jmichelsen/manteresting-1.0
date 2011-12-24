@@ -10,7 +10,8 @@ from pinax.apps.account.openid_consumer import PinaxConsumer
 
 from manticore.apps.core.models import Nail, Workbench, User
 from manticore.apps.core.views import (
-    CreateByView, UpdateWorkbenchView,
+    CreateByView,
+    UpdateWorkbenchView, DeleteWorkbenchView,
     CreateNailView, UpdateNailView, DeleteNailView,
 )
 
@@ -32,13 +33,14 @@ urlpatterns = patterns("",
     url(r"^announcements/", include("announcements.urls")),
 
     url(r'^nail/add/$', CreateNailView.as_view(model=Nail), name='nail-add'),
-    url(r'^nail/(?P<pk>\d+)/delete/$', DeleteNailView.as_view(model=Nail), name='nail-delete'),
     url(r'^nail/(?P<pk>\d+)/$', DetailView.as_view(model=Nail), name='nail'),
     url(r'^nail/(?P<pk>\d+)/edit/$', UpdateNailView.as_view(model=Nail), name='nail-edit'),
+    url(r'^nail/(?P<pk>\d+)/delete/$', DeleteNailView.as_view(model=Nail), name='nail-delete'),
 
     url(r'^workbench/add/$', CreateByView.as_view(model=Workbench), name='workbench-add'),
     url(r'^workbench/(?P<pk>\d+)/$', DetailView.as_view(model=Workbench), name='workbench'),
     url(r'^workbench/(?P<pk>\d+)/edit/$', UpdateWorkbenchView.as_view(model=Workbench), name='workbench-edit'),
+    url(r'^workbench/(?P<pk>\d+)/delete/$', DeleteWorkbenchView.as_view(model=Workbench), name='workbench-delete'),
 
     url(r'^u/(?P<slug>\w+)/$', DetailView.as_view(model=User, slug_field='username'), name='user'),
     url(r'', include('social_auth.urls')),

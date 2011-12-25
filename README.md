@@ -4,6 +4,13 @@ Manticore
 How to setup
 ------------
 
+Additional requirements:
+
+    mysql-python, PIL
+
+    python virtualenv.py env
+    . env/bin/activate
+
 * First, create a MySQL database:
     mysql> create database manteresting charset utf8;
     mysql> grant all on manteresting.* to `manteresting`@`localhost` identified by 'manteresting';

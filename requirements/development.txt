@@ -10,3 +10,5 @@ pdbpp==0.7.2
 django-extensions==0.7.1
 
 git+git://github.com/svetlyak40wt/tdaemon.git@performance#egg=tdaemon
+git+git://github.com/svetlyak40wt/nose-notify-tmux.git#egg=nose-notify-tmux
+#-e git+git@github.com:svetlyak40wt/nose-notify-tmux.git#egg=nose-notify-tmux

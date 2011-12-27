@@ -1,0 +1,7 @@
+.home .nail {
+    /* Temprorary solution to have nails placed in row.
+     * Exact description how does pinterest's script works is here:
+     * http://stackoverflow.com/questions/7109362/how-to-replicate-pinterest-coms-absolute-div-stacking-layout
+     */
+    display: inline-block;
+}

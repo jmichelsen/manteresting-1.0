@@ -35,6 +35,14 @@ class Nail(models.Model):
         format='JPEG',
         quality=80,
     )
+    small = ImageSpec(
+        [
+            resize.Fit(200, 400)
+        ],
+        image_field='original',
+        format='JPEG',
+        quality=80,
+    )
     thumb = ImageSpec(
         [
             Adjust(contrast=1.2, sharpness=1.1),

@@ -1,5 +1,7 @@
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView, TemplateView
 from django.http import HttpResponseForbidden
+
+from .models import Nail
 
 
 class ImmediateHttpResponse(BaseException):
@@ -122,3 +124,12 @@ class DeleteWorkbenchView(RestrictToOwner, DeleteByView):
         obj = super(DeleteWorkbenchView, self).get_object()
         self.success_url = obj.user.get_absolute_url()
         return obj
+
+class HomepageView(TemplateView):
+    template_name = 'homepage.html'
+
+    def get_context_data(self, **kwargs):
+        data = super(HomepageView, self).get_context_data(**kwargs)
+        data['nails'] = Nail.objects.all()[:20]
+        return data
+

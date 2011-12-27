@@ -3,6 +3,10 @@
 {% load metron_tags %}
 {% load i18n %}
 
+{% block extra_head %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/site.css">
+{% endblock %}
+
 {% block nav %}
     {% if user.is_authenticated %}
         <ul>{% spaceless %}

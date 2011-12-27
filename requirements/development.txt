@@ -8,6 +8,7 @@ nose==1.1.2
 NoseDjango==0.8.1
 pdbpp==0.7.2
 django-extensions==0.7.1
+MySQL-python==1.2.3
 
 git+git://github.com/svetlyak40wt/tdaemon.git@performance#egg=tdaemon
 git+git://github.com/svetlyak40wt/nose-notify-tmux.git#egg=nose-notify-tmux

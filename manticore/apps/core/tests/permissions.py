@@ -167,3 +167,18 @@ class PermissionTest(TestCase):
         # but he success
         self.assertEqual(0, art.workbenches.count())
 
+    def test_nail_edit_page_allows_to_choose_only_owned_workbenches(self):
+        art = create_user('art')
+        peter = create_user('peter')
+
+        # Art creates a workbench
+        arts_workbench = self.create_workbench(art, title='ArtWorkbench')
+
+        # Peter creates a workbench too
+        peters_workbench = self.create_workbench(peter, title='PeterWorkbench')
+        nail = self.create_nail(peters_workbench)
+
+        # now Peter opens nail upload page
+        response = self.get(('nail-edit', (), dict(pk=nail.pk)))
+        self.assertContains(response, peters_workbench.title)
+        self.assertNotContains(response, arts_workbench.title)

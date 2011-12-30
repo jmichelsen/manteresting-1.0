@@ -104,6 +104,11 @@ class UpdateNailView(RestrictToOwner, UpdateByView):
     def is_owner(self, user, obj):
         return obj.workbench.user == user
 
+    def get_form_class(self):
+        form_class = super(UpdateNailView, self).get_form_class()
+        form_class.base_fields['workbench'].queryset = self.request.user.workbenches.all()
+        return form_class
+
 
 class RepinNailView(UpdateByView):
     def get_form_class(self):

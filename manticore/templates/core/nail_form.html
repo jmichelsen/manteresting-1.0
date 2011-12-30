@@ -4,13 +4,17 @@
 {% load i18n %}
 {% load ifsetting_tag %}
 
-{% block head_title %}{% if cloned_from %}Repin{% else %}Upload{% endif %}{% endblock %}
+{% block head_title %}{% if cloned_from %}Repin{% else %}{% if object %}Edit{% else %}Upload{% endif %}{% endif %}{% endblock %}
 
 {% block body %}
     {% if cloned_from %}
         <h1>Repin</h1>
     {% else %}
+        {% if object %}
+        <h1>Edit</h1>
+        {% else %}
         <h1>Upload</h1>
+        {% endif %}
     {% endif %}
 
 <form action="" method="POST" enctype="multipart/form-data">
@@ -43,7 +47,7 @@
             <span class="help-inline">{% if form.errors.description %}{{ form.errors.description.0 }}{% endif %}</span>
         </div>
     </div>
-    <div class="input"><input type="submit" value="{% if cloned_from %}Repin{% else %}Upload{% endif %}" class="btn primary"/></div>
+    <div class="input"><input type="submit" value="{% if cloned_from %}Repin{% else %}{% if object %}Edit{% else %}Upload{% endif %}{% endif %}" class="btn primary"/></div>
     {% csrf_token %}
 </form>
 {% endblock %}

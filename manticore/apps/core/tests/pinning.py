@@ -36,7 +36,6 @@ class PinningTest(TestCase):
         self.assertNotContains(response, 'first workbench')
         self.assertNotContains(response, 'second workbench')
 
-
     def test_nail_repin(self):
         # Peter tries to repin a nail from Art's workbench
         self.login(self.peter)
@@ -90,4 +89,27 @@ class PinningTest(TestCase):
         # and nothing changed
         self.assertEqual(1, first_workbench.nails.count())
         self.assertEqual(0, second_workbench.nails.count())
+
+    def test_dont_delete_clone_when_original_deleted(self):
+        original_nail = self.art.workbenches.all()[0].nails.all()[0]
+
+        # Peter repins a nail from Art's workbench
+        self.login(self.peter)
+        self.post(
+            ('nail-repin', (), dict(pk=original_nail.pk)),
+            dict(
+                workbench=self.peter.workbenches.all()[0].pk,
+                description='some description',
+            )
+        )
+
+        clone = self.peter.workbenches.all()[0].nails.all()[0]
+        self.assertEqual(original_nail, clone.cloned_from)
+
+        # and now original nail got deleted
+        original_nail.delete()
+
+        self.assertEqual(1, self.peter.workbenches.all()[0].nails.count())
+        clone = self.peter.workbenches.all()[0].nails.all()[0]
+        self.assertEqual(None, clone.cloned_from)
 

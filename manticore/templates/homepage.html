@@ -9,13 +9,6 @@
 
 {% block body %}
     {% for nail in nails %}
-        <div class="nail">
-            <a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.small }}" width="{{ nail.small.width }}px" height="{{ nail.small.height }}px" /></a>
-            <p>{{ nail.description }}</p>
-            <ul>
-                <li><a href="{% url user slug=nail.workbench.user.username %}">{{ nail.workbench.user }}</a> onto <a href="{{ nail.workbench.get_absolute_url }}">{{ nail.workbench.title }}</a></li>
-            </ul>
-        </div>
+        {% include "_nail.html" %}
     {% endfor %}
-
 {% endblock %}

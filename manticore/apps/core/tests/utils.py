@@ -69,3 +69,35 @@ class TestCase(DjangoTestCase):
         url = reverse(view, *args, **kwargs)
         return self.cl.post(url, {} if data is None else data)
 
+    def create_nail(self, workbench, description='test nail', as_user=None):
+        if as_user is not None:
+            self.login(as_user)
+        else:
+            self.login(workbench.user)
+
+        response = self.post(
+            'nail-add',
+            dict(
+                workbench=workbench.pk,
+                description=description,
+                original=FakeFile(),
+            )
+        )
+        if as_user is None or as_user == workbench.user:
+            assert_no_errors(response)
+            return workbench.nails.all().order_by('-id')[0]
+
+        return response
+
+    def create_workbench(self, owner, title='test workbench'):
+        self.login(owner)
+        response = self.post(
+            'workbench-add',
+            dict(
+                title=title,
+                category=1,
+            )
+        )
+        assert_no_errors(response)
+        return owner.workbenches.all().order_by('-id')[0]
+

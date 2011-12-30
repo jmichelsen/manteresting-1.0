@@ -1,4 +1,3 @@
-from ..utils import reverse
 from ..models import Category
 from .utils import TestCase, create_user, assert_no_errors, assert_form_error, FakeFile
 
@@ -11,47 +10,13 @@ class PinningTest(TestCase):
         self.peter = create_user('peter')
 
         # Art has two workbenches
-        self.login(self.art)
-        response = self.post(
-            'workbench-add',
-            dict(
-                title='first workbench',
-                category=1,
-            )
-        )
-        assert_no_errors(response)
-        response = self.post(
-            'workbench-add',
-            dict(
-                title='second workbench',
-                category=1,
-            )
-        )
-        assert_no_errors(response)
-        workbench = self.art.workbenches.all()[0]
-
+        workbench = self.create_workbench(self.art, title='first workbench')
+        self.create_workbench(self.art, title='second workbench')
         # and uploads a nail
-        response = self.post(
-            'nail-add',
-            dict(
-                workbench=workbench.pk,
-                description='test nail',
-                original=FakeFile(),
-            )
-        )
-        assert_no_errors(response)
-        self.assertEqual(1, workbench.nails.count())
+        self.create_nail(workbench)
 
         # Peter creates workbench too
-        self.login(self.peter)
-        response = self.post(
-            'workbench-add',
-            dict(
-                title='another workbench',
-                category=1,
-            )
-        )
-
+        self.create_workbench(self.peter, title='another workbench')
 
     def test_nail_repin_page_contains_original_description_and_right_workbenches(self):
         # Peter tries to repin a nail from Art's workbench

@@ -3,9 +3,20 @@
 
 {% block head_title %}Nail{% endblock %}
 
+{% block body_class %}nail-detail{% endblock %}
+
 {% block body %}
     <div class="nail">
         <h1>Workbench: <a href="{{ object.workbench.get_absolute_url }}">{{ object.workbench }}</a></h1>
+        {% if user.is_authenticated %}
+        <ul class="actions well">
+            <li><a href="{% url nail-repin pk=object.pk %}" class="btn primary">Repin</a></li>
+            {% if object.workbench.user == user %}
+            <li><a href="{% url nail-edit pk=object.pk %}" class="btn success">Edit</a></li>
+            <li><a href="{% url nail-delete pk=object.pk %}" class="btn danger">Delete</a></li>
+            {% endif %}
+        </ul>
+        {% endif %}
         <img src="{{ object.normal.url }}" width="{{ object.normal.width }}px" height="{{ object.normal.height }}px"/>
         <p>{{ object.description }}</p>
     </div>

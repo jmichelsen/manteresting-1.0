@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.conf.urls.defaults import *
-from django.views.generic.simple import direct_to_template
 from django.views.generic import DetailView
 
 from django.contrib import admin
@@ -13,7 +12,7 @@ from manticore.apps.core.views import (
     CreateByView,
     UpdateWorkbenchView, DeleteWorkbenchView,
     CreateNailView, UpdateNailView, DeleteNailView,
-    HomepageView,
+    HomepageView, RepinNailView,
 )
 
 
@@ -36,6 +35,7 @@ urlpatterns = patterns("",
     url(r'^nail/(?P<pk>\d+)/$', DetailView.as_view(model=Nail), name='nail'),
     url(r'^nail/(?P<pk>\d+)/edit/$', UpdateNailView.as_view(model=Nail), name='nail-edit'),
     url(r'^nail/(?P<pk>\d+)/delete/$', DeleteNailView.as_view(model=Nail), name='nail-delete'),
+    url(r'^nail/(?P<pk>\d+)/repin/$', RepinNailView.as_view(model=Nail), name='nail-repin'),
 
     url(r'^workbench/add/$', CreateByView.as_view(model=Workbench), name='workbench-add'),
     url(r'^workbench/(?P<pk>\d+)/$', DetailView.as_view(model=Workbench), name='workbench'),

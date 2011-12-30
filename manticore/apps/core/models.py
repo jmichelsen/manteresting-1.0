@@ -53,6 +53,7 @@ class Nail(models.Model):
         quality=90,
     )
     description = models.TextField(max_length=500)
+    cloned_from = models.ForeignKey('Nail', blank=True, null=True, related_name='clones')
 
 
     @models.permalink

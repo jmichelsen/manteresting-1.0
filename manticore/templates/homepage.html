@@ -8,16 +8,6 @@
 {% block body_class %}home{% endblock %}
 
 {% block body %}
-    {% if user.is_authenticated %}
-    {% else %}
-        {% url acct_login as login_url %}
-        {% ifsetting ACCOUNT_OPEN_SIGNUP %}
-            <p>
-                Login with <a rel="nofollow" href="{% url socialauth_begin 'twitter' %}?next={% firstof post_login_url request.path %}" class="btn primary">Twitter</a> or <a rel="nofollow" href="{% url socialauth_begin 'facebook' %}?next={% firstof post_login_url request.path %}" class="btn primary">Facebook</a>!
-            </p>
-        {% endifsetting %}
-    {% endif %}
-
     {% for nail in nails %}
         <div class="nail">
             <a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.small }}" width="{{ nail.small.width }}px" height="{{ nail.small.height }}px" /></a>

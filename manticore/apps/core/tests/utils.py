@@ -1,6 +1,11 @@
 import os.path
+
 from django.contrib.auth.models import User
+from django.test import TestCase as DjangoTestCase, Client
 from nose.tools import eq_
+
+from ..utils import reverse
+
 
 def create_user(username):
     u = User.objects.create_user(username, username + '@dev.manticore.com', 'test')
@@ -36,4 +41,31 @@ def FakeFile():
         ),
         'rb'
     )
+
+
+class TestCase(DjangoTestCase):
+    def setUp(self):
+        super(TestCase, self).setUp()
+        self.cl = Client()
+
+    def login(self, user):
+        self.cl.login(username=user.username, password='test')
+
+    def get(self, view):
+        if isinstance(view, tuple):
+            view, args, kwargs = view
+        else:
+            args, kwargs = (), {}
+
+        url = reverse(view, *args, **kwargs)
+        return self.cl.get(url)
+
+    def post(self, view, data=None):
+        if isinstance(view, tuple):
+            view, args, kwargs = view
+        else:
+            args, kwargs = (), {}
+
+        url = reverse(view, *args, **kwargs)
+        return self.cl.post(url, {} if data is None else data)
 

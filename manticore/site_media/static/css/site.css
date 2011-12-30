@@ -5,3 +5,8 @@
      */
     display: inline-block;
 }
+
+.nail-detail .actions li {
+    list-style: none;
+    display: inline;
+}

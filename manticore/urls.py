@@ -31,6 +31,7 @@ urlpatterns = patterns("",
     url(r"^notices/", include("notification.urls")),
     url(r"^announcements/", include("announcements.urls")),
     url(r"^likes/", include("phileo.urls")),
+    url(r"^comments/", include("dialogos.urls")),
 
     url(r'^nail/add/$', CreateNailView.as_view(model=Nail), name='nail-add'),
     url(r'^nail/(?P<pk>\d+)/$', DetailView.as_view(model=Nail), name='nail'),

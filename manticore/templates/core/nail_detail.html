@@ -1,6 +1,7 @@
 {% extends "site_base.html" %}
 {% load manticore %}
 {% load phileo_tags %}
+{% load dialogos_tags %}
 
 {% block head_title %}Nail{% endblock %}
 
@@ -21,5 +22,20 @@
         {% endif %}
         <img src="{{ object.normal.url }}" width="{{ object.normal.width }}px" height="{{ object.normal.height }}px"/>
         <p>{{ object.description }}</p>
+
+        {% comments object as comments %}
+        {% if comments %}
+        <ul class="comments">
+            {% for comment in comments %}
+            <li>{{ comment.author }} — {{ comment.comment }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form class="comment" action="{% comment_target object %}" method="POST">
+            {% comment_form object as comment_form %}
+            {{ comment_form }}
+            {% csrf_token %}
+            <input class="btn" type="submit" value="Comment"/>
+        </form>
     </div>
 {% endblock %}

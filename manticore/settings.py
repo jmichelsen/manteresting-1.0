@@ -172,6 +172,7 @@ INSTALLED_APPS = [
     'imagekit',
     'south',
     'phileo',
+    'dialogos',
 
     # Pinax
     'pinax.apps.account',

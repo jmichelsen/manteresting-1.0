@@ -4,6 +4,8 @@
 import os.path
 import posixpath
 
+from manticore.apps.core.utils import reverse
+
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
@@ -193,7 +195,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 EMAIL_BACKEND = 'mailer.backend.DbBackend'
 
 ABSOLUTE_URL_OVERRIDES = {
-    'auth.user': lambda o: '/profiles/profile/%s/' % o.username,
+    'auth.user': lambda o: reverse('user', slug=o.username),
 }
 
 AUTH_PROFILE_MODULE = 'profiles.Profile'

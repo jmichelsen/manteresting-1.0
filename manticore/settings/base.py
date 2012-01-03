@@ -169,6 +169,8 @@ INSTALLED_APPS = [
     'social_auth',
     'imagekit',
     'south',
+    'phileo',
+    'dialogos',
 
     # Pinax
     'pinax.apps.account',
@@ -220,6 +222,11 @@ EMAIL_DEBUG = DEBUG
 DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
 }
+
+PHILEO_LIKABLE_MODELS = [
+    'core.Nail',
+]
+
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.

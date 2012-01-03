@@ -1,35 +1,11 @@
-from django.test import TestCase, Client
-
 from ..utils import reverse
 from ..models import Category
-from .utils import create_user, assert_no_errors, assert_form_error, FakeFile
+from .utils import create_user, assert_no_errors, assert_form_error, TestCase
 
 class PermissionTest(TestCase):
     def setUp(self):
         super(PermissionTest, self).setUp()
-        self.cl = Client()
         Category.objects.get_or_create(title='First')
-
-    def login(self, user):
-        self.cl.login(username=user.username, password='test')
-
-    def get(self, view):
-        if isinstance(view, tuple):
-            view, args, kwargs = view
-        else:
-            args, kwargs = (), {}
-
-        url = reverse(view, *args, **kwargs)
-        return self.cl.get(url)
-
-    def post(self, view, data=None):
-        if isinstance(view, tuple):
-            view, args, kwargs = view
-        else:
-            args, kwargs = (), {}
-
-        url = reverse(view, *args, **kwargs)
-        return self.cl.post(url, {} if data is None else data)
 
     def test_user_own_workbench_he_created(self):
         art = create_user('art')
@@ -52,15 +28,8 @@ class PermissionTest(TestCase):
         peter = create_user('peter')
 
         # Art creates a workbench
-        self.login(art)
-        result = self.post(
-            'workbench-add',
-            dict(
-                title='test workbench',
-                category=1,
-            )
-        )
-        edit_url = ('workbench-edit', (), {'pk': art.workbenches.all()[0].pk})
+        workbench = self.create_workbench(art)
+        edit_url = ('workbench-edit', (), {'pk': workbench.pk})
 
         # and updates it's title
         result = self.post(
@@ -97,41 +66,15 @@ class PermissionTest(TestCase):
         peter = create_user('peter')
 
         # Art creates a workbench
-        self.login(art)
-        result = self.post(
-            'workbench-add',
-            dict(
-                title='test workbench',
-                category=1,
-            )
-        )
-        workbench = art.workbenches.all()[0]
-
+        workbench = self.create_workbench(art)
         # and uploads a nail
-        result = self.post(
-            'nail-add',
-            dict(
-                workbench=workbench.pk,
-                description='test nail',
-                original=FakeFile(),
-            )
-        )
-        assert_no_errors(result)
+        self.create_nail(workbench)
         self.assertEqual(1, workbench.nails.count())
 
         # and now Peter tries to upload a nail into Art's workbench
-        self.login(peter)
-
-        result = self.post(
-            'nail-add',
-            dict(
-                workbench=workbench.pk,
-                description='test nail',
-                original=FakeFile(),
-            )
-        )
+        response = self.create_nail(workbench, as_user=peter)
         # he should receive an 403 (access denied) error
-        assert_form_error(result, 'workbench', 'Select a valid choice')
+        assert_form_error(response, 'workbench', 'Select a valid choice')
         # and workbench's title should remain the same
         self.assertEqual(1, workbench.nails.count())
 
@@ -140,25 +83,12 @@ class PermissionTest(TestCase):
         peter = create_user('peter')
 
         # Art creates a workbench
-        self.login(art)
-        self.post(
-            'workbench-add',
-            dict(
-                title='ArtWorkbench',
-                category=1,
-            )
-        )
+        self.create_workbench(art, title='ArtWorkbench')
         # Peter creates a workbench too
-        self.login(peter)
-        self.post(
-            'workbench-add',
-            dict(
-                title='PeterWorkbench',
-                category=1,
-            )
-        )
+        self.create_workbench(peter, title='PeterWorkbench')
 
         # now Peter opens nail upload page
+        self.login(peter)
         response = self.get('nail-add')
         self.assertContains(response, 'PeterWorkbench')
         self.assertNotContains(response, 'ArtWorkbench')
@@ -172,45 +102,24 @@ class PermissionTest(TestCase):
         peter = create_user('peter')
 
         # Art creates a workbench
-        self.login(art)
-        result = self.post(
-            'workbench-add',
-            dict(
-                title='test workbench',
-                category=1,
-            )
-        )
-        assert_no_errors(result)
-
+        workbench = self.create_workbench(art)
         # and uploads a nail
-        workbench = art.workbenches.all()[0]
-        result = self.post(
-            'nail-add',
-            dict(
-                workbench=workbench.pk,
-                description='test nail',
-                original=FakeFile(),
-            )
-        )
-        assert_no_errors(result)
-        self.assertEqual(1, workbench.nails.count())
+        nail = self.create_nail(workbench)
+
+        delete_url = ('nail-delete', (), dict(pk=nail.pk))
 
         # Now Peter tries to delete Art's nail
         self.login(peter)
-        result = self.post(
-            ('nail-delete', (), dict(pk=workbench.nails.all()[0].pk))
-        )
-        assert_no_errors(result)
+        response = self.post(delete_url)
+        self.assertEqual(403, response.status_code)
         # but he fails
         self.assertEqual(1, workbench.nails.count())
 
         # Now Art deletes his nail
         self.login(art)
-        result = self.post(
-            ('nail-delete', (), dict(pk=workbench.nails.all()[0].pk))
-        )
-        assert_no_errors(result)
-        # but he success
+        response = self.post(delete_url)
+        assert_no_errors(response)
+        # he success
         self.assertEqual(0, workbench.nails.count())
 
     def test_nail_can_be_updated_only_by_workbench_owner(self):
@@ -218,33 +127,14 @@ class PermissionTest(TestCase):
         peter = create_user('peter')
 
         # Art creates a workbench
-        self.login(art)
-        result = self.post(
-            'workbench-add',
-            dict(
-                title='test workbench',
-                category=1,
-            )
-        )
-        assert_no_errors(result)
-
+        workbench = self.create_workbench(art)
         # and uploads a nail
-        workbench = art.workbenches.all()[0]
-        result = self.post(
-            'nail-add',
-            dict(
-                workbench=workbench.pk,
-                description='test nail',
-                original=FakeFile(),
-            )
-        )
-        assert_no_errors(result)
-        self.assertEqual(1, workbench.nails.count())
+        nail = self.create_nail(workbench)
 
         # Now Peter tries to change Art's nail
         self.login(peter)
         result = self.post(
-            ('nail-edit', (), dict(pk=workbench.nails.all()[0].pk)),
+            ('nail-edit', (), dict(pk=nail.pk)),
             dict(description='hacked')
         )
         # he should receive an 403 (access denied) error
@@ -257,16 +147,7 @@ class PermissionTest(TestCase):
         peter = create_user('peter')
 
         # Art creates a workbench
-        self.login(art)
-        result = self.post(
-            'workbench-add',
-            dict(
-                title='test workbench',
-                category=1,
-            )
-        )
-        assert_no_errors(result)
-        workbench = art.workbenches.all()[0]
+        workbench = self.create_workbench(art)
 
         # Now Peter tries to delete Art's workbench
         self.login(peter)
@@ -286,3 +167,18 @@ class PermissionTest(TestCase):
         # but he success
         self.assertEqual(0, art.workbenches.count())
 
+    def test_nail_edit_page_allows_to_choose_only_owned_workbenches(self):
+        art = create_user('art')
+        peter = create_user('peter')
+
+        # Art creates a workbench
+        arts_workbench = self.create_workbench(art, title='ArtWorkbench')
+
+        # Peter creates a workbench too
+        peters_workbench = self.create_workbench(peter, title='PeterWorkbench')
+        nail = self.create_nail(peters_workbench)
+
+        # now Peter opens nail upload page
+        response = self.get(('nail-edit', (), dict(pk=nail.pk)))
+        self.assertContains(response, peters_workbench.title)
+        self.assertNotContains(response, arts_workbench.title)

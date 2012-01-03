@@ -3,13 +3,13 @@
 
 {% block head_title %}{{ object.title }}{% endblock %}
 
+{% block body_class %}workbench-detail{% endblock %}
+
 {% block body %}
     <h1>{{ object.title }}</h1>
-    <ul>
-        {% for nail in object.nails.all %}
-        <li><a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.thumb }}" width="{{ nail.thumb.width }}px" height="{{ nail.thumb.height }}px"/></li>
-        {% endfor %}
-    </ul>
+    {% for nail in object.nails.all %}
+        {% include "_nail.html" %}
+    {% endfor %}
 {% endblock %}
 
 

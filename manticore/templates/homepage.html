@@ -1,4 +1,4 @@
-{% extends "banner_base.html" %}
+{% extends "site_base.html" %}
 
 {% load i18n %}
 {% load ifsetting_tag %}
@@ -7,22 +7,8 @@
 
 {% block body_class %}home{% endblock %}
 
-{% block banner %}
-    <h1>{% trans "Welcome to Manticore" %}</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi auctor feugiat nibh, vitae aliquet elit suscipit eget. Aliquam erat volutpat. In enim orci, molestie sed mattis et, porttitor vel erat. Integer tincidunt tincidunt metus id egestas. Vivamus elementum viverra purus, at tristique neque pellentesque id. Pellentesque venenatis dapibus diam, id aliquet leo pulvinar non. Donec a est mi. Donec magna quam, euismod non tincidunt vel, ultrices vitae quam. Ut eleifend arcu sit amet arcu tincidunt id pretium sapien mollis. Nulla nisl libero, laoreet id sollicitudin at, malesuada id sapien. Aliquam at augue elit, at pellentesque tortor.</p>
-
-    <h2>About The Project</h2>
-    <p>Integer vel lobortis nisl. Vestibulum nec vehicula sem. Nullam sit amet posuere neque. Maecenas vel diam a turpis bibendum gravida. Vestibulum at dictum dui. Aliquam erat volutpat. Vestibulum quis ligula id metus aliquet aliquam. Suspendisse potenti. Sed a ultrices mauris. Aenean rhoncus venenatis neque id venenatis. Curabitur eget tellus urna. Praesent id nulla pharetra tortor viverra rutrum sit amet euismod ante. Sed et diam quam, vulputate faucibus massa. Maecenas scelerisque nunc vel diam consequat pulvinar. Proin in neque viverra enim cursus tincidunt.</p>
-
-    {% if user.is_authenticated %}
-        {% url what_next as what_next_url %}
-        <p class="what_next">{% blocktrans %}Wondering <a href="{{ what_next_url }}" class="btn primary large">What Next</a>?{% endblocktrans %}</p>
-    {% else %}
-        {% url acct_login as login_url %}
-        {% ifsetting ACCOUNT_OPEN_SIGNUP %}
-            <p>
-                Login with <a rel="nofollow" href="{% url socialauth_begin 'twitter' %}?next={% firstof post_login_url request.path %}" class="btn primary">Twitter</a> or <a rel="nofollow" href="{% url socialauth_begin 'facebook' %}?next={% firstof post_login_url request.path %}" class="btn primary">Facebook</a>!
-            </p>
-        {% endifsetting %}
-    {% endif %}
+{% block body %}
+    {% for nail in nails %}
+        {% include "_nail.html" %}
+    {% endfor %}
 {% endblock %}

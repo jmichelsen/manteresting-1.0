@@ -1,5 +1,8 @@
-from django.views.generic import CreateView, UpdateView, DeleteView
+from django.views.generic import CreateView, UpdateView, DeleteView, TemplateView
 from django.http import HttpResponseForbidden
+from django.forms.models import modelform_factory
+
+from .models import Nail
 
 
 class ImmediateHttpResponse(BaseException):
@@ -91,11 +94,6 @@ class UpdateWorkbenchView(RestrictToOwner, UpdateByView):
 
 
 class CreateNailView(CreateByView):
-    def form_valid(self, form):
-        if form.cleaned_data['workbench'].user != self.request.user:
-            raise ImmediateHttpResponse(HttpResponseForbidden())
-        return super(CreateNailView, self).form_valid(form)
-
     def get_form_class(self):
         form_class = super(CreateNailView, self).get_form_class()
         form_class.base_fields['workbench'].queryset = self.request.user.workbenches.all()
@@ -105,6 +103,41 @@ class CreateNailView(CreateByView):
 class UpdateNailView(RestrictToOwner, UpdateByView):
     def is_owner(self, user, obj):
         return obj.workbench.user == user
+
+    def get_form_class(self):
+        form_class = super(UpdateNailView, self).get_form_class()
+        form_class.base_fields['workbench'].queryset = self.request.user.workbenches.all()
+        return form_class
+
+
+class RepinNailView(UpdateByView):
+    def get_form_class(self):
+        RepinForm = modelform_factory(Nail, exclude=['original'])
+        RepinForm.base_fields['description'].initial = self.object.description
+        RepinForm.base_fields['workbench'].queryset = self.request.user.workbenches.all()
+        return RepinForm
+
+    def get_form_kwargs(self):
+        """Set instance to null, because we want to create new object and update the old one.
+        """
+        kwargs = super(RepinNailView, self).get_form_kwargs()
+        kwargs.pop('instance', None)
+        return kwargs
+
+    def form_valid(self, form):
+        cloned_from = self.object
+
+        self.object = form.save(commit=False)
+        self.object.original = cloned_from.original
+        self.object.cloned_from = cloned_from
+        self.object.save()
+        form.save_m2m()
+        return super(RepinNailView, self).form_valid(form)
+
+    def get_context_data(self, **kwargs):
+        data = super(RepinNailView, self).get_context_data(**kwargs)
+        data['cloned_from'] = self.object
+        return data
 
 
 class DeleteNailView(RestrictToOwner, DeleteByView):
@@ -122,3 +155,13 @@ class DeleteWorkbenchView(RestrictToOwner, DeleteByView):
         obj = super(DeleteWorkbenchView, self).get_object()
         self.success_url = obj.user.get_absolute_url()
         return obj
+
+
+class HomepageView(TemplateView):
+    template_name = 'homepage.html'
+
+    def get_context_data(self, **kwargs):
+        data = super(HomepageView, self).get_context_data(**kwargs)
+        data['nails'] = Nail.objects.all().order_by('-id')[:20]
+        return data
+

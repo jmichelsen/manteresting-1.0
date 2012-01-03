@@ -1,0 +1,24 @@
+{% load dialogos_tags i18n phileo_tags %}
+{% comments nail as comments %}
+{% with num_comments=comments|length num_repins=nail.clones.count num_likes=nail|likes_count %}
+<div class="nail">
+    <a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.small }}" width="{{ nail.small.width }}px" height="{{ nail.small.height }}px" /></a>
+    <p>{{ nail.description }}</p>
+    <ul>
+        {% if num_likes or num_comments or num_repins %}
+        <li class="stats">
+            {% if num_likes %}{% blocktrans count count=num_likes %}{{ count }} like{% plural %}{{ count }} likes{% endblocktrans %}{% endif %}
+            {% if num_comments %}{% blocktrans count count=num_comments %}{{ count }} comment{% plural %}{{ count }} comments{% endblocktrans %}{% endif %}
+            {% if num_repins %}{% blocktrans count count=num_repins %}{{ count }} repin{% plural %}{{ count }} repins{% endblocktrans %}{% endif %}
+        </li>
+        {% endif %}
+        <li class="creds"><a href="{% url user slug=nail.workbench.user.username %}">{{ nail.workbench.user }}</a> onto <a href="{{ nail.workbench.get_absolute_url }}">{{ nail.workbench.title }}</a></li>
+        {% if comments %}
+            {% comment %} show 5 latest comments {% endcomment %}
+            {% for comment in comments|slice:":5" %}
+                <li class="comment">{{ comment.author }} — {{ comment.comment }}</li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</div>
+{% endwith %}

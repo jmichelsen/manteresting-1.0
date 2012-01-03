@@ -6,3 +6,4 @@ manticore.egg-info
 manticore/site_media/media
 .noseids
 *.log
+.vim/ide.session

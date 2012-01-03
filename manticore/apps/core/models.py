@@ -35,6 +35,14 @@ class Nail(models.Model):
         format='JPEG',
         quality=80,
     )
+    small = ImageSpec(
+        [
+            resize.Fit(200, 400)
+        ],
+        image_field='original',
+        format='JPEG',
+        quality=80,
+    )
     thumb = ImageSpec(
         [
             Adjust(contrast=1.2, sharpness=1.1),
@@ -45,6 +53,7 @@ class Nail(models.Model):
         quality=90,
     )
     description = models.TextField(max_length=500)
+    cloned_from = models.ForeignKey('Nail', blank=True, null=True, related_name='clones', on_delete=models.SET_NULL)
 
 
     @models.permalink

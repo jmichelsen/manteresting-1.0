@@ -2,6 +2,13 @@
 
 {% load metron_tags %}
 {% load i18n %}
+{% load phileo_tags %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{{ STATIC_URL }}css/site.css">
+{% phileo_css %}
+{% phileo_js %}
+{% endblock %}
 
 {% block nav %}
     {% if user.is_authenticated %}

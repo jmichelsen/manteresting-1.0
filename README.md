@@ -4,16 +4,27 @@ Manticore
 How to setup
 ------------
 
-Additional requirements:
+* Install additional requirements: `mysql-python, PIL`
 
-    mysql-python, PIL
+  To install these packages on Fedora, run:
 
-    python virtualenv.py env
+    sudo yum install python26 python26-devel python26-imaging MySQL-devel
+
+  On Ubuntu:
+
+    sudo apt-get install python-mysqldb python-imaging
+
+* Then create a virtual environment:
+
+    python2.6 virtualenv.py env
     . env/bin/activate
+    pip install -r requirements/development.txt
 
-* First, create a MySQL database:
+* Now, create a MySQL database:
+
     mysql> create database manteresting charset utf8;
     mysql> grant all on manteresting.* to `manteresting`@`localhost` identified by 'manteresting';
+
 * Run `./manage.py syncdb --migrate`, answer 'no' when it'll ask if you want to create a superuser;
 * Run `./manage.py runserver 0.0.0.0:8000`
 * Add `127.0.0.1  dev.manteresting.com` into the `/etc/hosts` on your desktop;

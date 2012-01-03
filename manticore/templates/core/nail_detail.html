@@ -1,12 +1,41 @@
 {% extends "site_base.html" %}
 {% load manticore %}
+{% load phileo_tags %}
+{% load dialogos_tags %}
 
 {% block head_title %}Nail{% endblock %}
+
+{% block body_class %}nail-detail{% endblock %}
 
 {% block body %}
     <div class="nail">
         <h1>Workbench: <a href="{{ object.workbench.get_absolute_url }}">{{ object.workbench }}</a></h1>
+        {% if user.is_authenticated %}
+        <ul class="actions well">
+            {% phileo_widget user object %}
+            <li><a href="{% url nail-repin pk=object.pk %}" class="btn primary">Repin</a></li>
+            {% if object.workbench.user == user %}
+            <li><a href="{% url nail-edit pk=object.pk %}" class="btn success">Edit</a></li>
+            <li><a href="{% url nail-delete pk=object.pk %}" class="btn danger">Delete</a></li>
+            {% endif %}
+        </ul>
+        {% endif %}
         <img src="{{ object.normal.url }}" width="{{ object.normal.width }}px" height="{{ object.normal.height }}px"/>
         <p>{{ object.description }}</p>
+
+        {% comments object as comments %}
+        {% if comments %}
+        <ul class="comments">
+            {% for comment in comments %}
+            <li>{{ comment.author }} — {{ comment.comment }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <form class="comment" action="{% comment_target object %}" method="POST">
+            {% comment_form object as comment_form %}
+            {{ comment_form }}
+            {% csrf_token %}
+            <input class="btn" type="submit" value="Comment"/>
+        </form>
     </div>
 {% endblock %}

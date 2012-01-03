@@ -32,9 +32,17 @@ How to setup
 * Login using Twitter.
 * Make this user a superuser. For example:
 
-    echo 'u=User.objects.get(username="svetlyak40wt");u.is_staff=True;u.is_superuser=True;u.save()' | ./manage.py shell_plus
+    echo 'from django.contrib.auth.models import User;u=User.objects.get(username="svetlyak40wt");u.is_staff=True;u.is_superuser=True;u.save()'
 
 * sudo ln -s `pwd`/configs/nginx.testing.conf /etc/nginx/conf.d/manteresting.com.conf
+
+Updating code on the server
+---------------------------
+
+* git pull
+* env/bin/pip install -r requirements/testing.txt
+* ./manage.py syncdb --migrate
+* ./start-daemon.sh
 
 Testing
 -------

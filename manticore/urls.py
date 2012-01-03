@@ -18,7 +18,7 @@ from manticore.apps.core.views import (
 
 handler500 = "pinax.views.server_error"
 
-from idios.views import ProfileDetailView
+from idios.views import ProfileCreateView, ProfileDetailView, ProfileUpdateView
 
 urlpatterns = patterns("",
     url(r'^$', HomepageView.as_view(), name='home'),

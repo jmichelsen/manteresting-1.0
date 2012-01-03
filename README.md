@@ -23,6 +23,8 @@ Additional requirements:
 
     echo 'u=User.objects.get(username="svetlyak40wt");u.is_staff=True;u.is_superuser=True;u.save()' | ./manage.py shell_plus
 
+* sudo ln -s `pwd`/configs/nginx.testing.conf /etc/nginx/conf.d/manteresting.com.conf
+
 Testing
 -------
 

@@ -4,7 +4,7 @@
 import os.path
 import posixpath
 
-PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
+PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -111,7 +111,6 @@ MIDDLEWARE_CLASSES = [
     'pinax.apps.account.middleware.LocaleMiddleware',
     'pagination.middleware.PaginationMiddleware',
     'pinax.middleware.security.HideSensistiveFieldsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'manticore.urls'
@@ -159,7 +158,6 @@ INSTALLED_APPS = [
     'notification', # must be first
     'staticfiles',
     'compressor',
-    'debug_toolbar',
     'mailer',
     'django_openid',
     'timezones',

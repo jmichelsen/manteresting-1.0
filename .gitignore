@@ -5,3 +5,4 @@ dev.db
 manticore.egg-info
 manticore/site_media/media
 .noseids
+*.log

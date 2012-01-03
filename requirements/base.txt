@@ -7,7 +7,7 @@
 --extra-index-url=http://dist.pinaxproject.com/alpha/
 --extra-index-url=http://dist.pinaxproject.com/fresh-start/
 
--e .
+#-e `pwd`
 
 Django==1.3.1
 Pinax==0.9a2
@@ -32,7 +32,7 @@ pinax-theme-bootstrap==0.1.2
 django-imagekit==1.0.3
 
 # not from pinax
-git+git://github.com/simplegeo/python-oauth2.git@1fcc1a6d49a7be2a9394125acf5b1c2227fcde79#egg=python-oauth2
+-e git+git@github.com:simplegeo/python-oauth2.git@1fcc1a6d49a7be2a9394125acf5b1c2227fcde79#egg=python-oauth2
 # Source and documentation at https://github.com/omab/django-social-auth
 django-social-auth==0.6.0
 # Database migrations

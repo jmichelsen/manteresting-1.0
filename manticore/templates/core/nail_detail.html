@@ -27,7 +27,7 @@
         {% if comments %}
         <ul class="comments">
             {% for comment in comments %}
-            <li>{{ comment.author }} — {{ comment.comment }}</li>
+            <li><a href="#">{{ comment.author }}</a> — {{ comment.comment }}</li>
             {% endfor %}
         </ul>
         {% endif %}

@@ -16,7 +16,7 @@
         {% if comments %}
             {% comment %} show 5 latest comments {% endcomment %}
             {% for comment in comments|slice:":5" %}
-                <li class="comment">{{ comment.author }} — {{ comment.comment }}</li>
+                <li class="comment"><a href="#">{{ comment.author }}</a> — {{ comment.comment }}</li>
             {% endfor %}
         {% endif %}
     </ul>

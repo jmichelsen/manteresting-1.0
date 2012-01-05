@@ -21,7 +21,7 @@ INTERNAL_IPS = [
 ]
 
 ADMINS = [
-    # ('Your Name', 'your_email@domain.com'),
+    # ('Admin', 'admin@manteresting.com'),
 ]
 
 MANAGERS = ADMINS

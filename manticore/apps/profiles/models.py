@@ -41,25 +41,34 @@ class Profile(ProfileBase):
         """Fetches avatar from Twitter.
         """
         for auth in self.user.social_auth.all():
+            avatar_url = None
+            username = None
+
             if auth.provider == 'twitter':
-                try:
-                    profile_url = 'http://api.twitter.com/1/users/lookup.json?user_id={id}&include_entities=true'.format(
-                        **auth.extra_data
-                    )
-                    response = requests.get(profile_url, timeout=3)
-                    data = simplejson.loads(response.content)
-                    username = data[0]['screen_name']
-                    avatar_url = 'http://api.twitter.com/1/users/profile_image?screen_name={username}&size=original'.format(
-                        username=username
-                    )
-                    response = requests.get(avatar_url, timeout=3)
-                    fake_file = StringIO(response.content)
-                    fake_file.size = len(response.content)
-                    self.avatar = File(
-                        fake_file,
-                        name=username,
-                    )
-                    self.save()
-                    break
-                except Exception:
-                    raise
+                profile_url = 'http://api.twitter.com/1/users/lookup.json?user_id={id}&include_entities=true'.format(
+                    **auth.extra_data
+                )
+                response = requests.get(profile_url, timeout=3)
+                data = simplejson.loads(response.content)
+                username = data[0]['screen_name']
+                avatar_url = 'http://api.twitter.com/1/users/profile_image?screen_name={username}&size=original'.format(
+                    username=username
+                )
+            elif auth.provider == 'facebook':
+                username = auth.extra_data['id']
+                avatar_url = 'https://graph.facebook.com/{id}/picture?type=large'.format(
+                    **auth.extra_data
+                )
+
+            if username and avatar_url:
+                response = requests.get(avatar_url, timeout=3)
+                fake_file = StringIO(response.content)
+                fake_file.size = len(response.content)
+                self.avatar = File(
+                    fake_file,
+                    name=username,
+                )
+                self.save()
+                break
+
+

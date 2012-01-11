@@ -3,7 +3,7 @@
      * Exact description how does pinterest's script works is here:
      * http://stackoverflow.com/questions/7109362/how-to-replicate-pinterest-coms-absolute-div-stacking-layout
      */
-	background: none repeat scroll 0 0 white;
+	background: none repeat scroll 0 0 #757575;
     box-shadow: 1px 1px 3px;
     display: inline-block;
     margin-bottom: 10px;
@@ -16,4 +16,8 @@
 .nail-detail .actions li {
     list-style: none;
     display: inline;
+}
+
+.test change {
+
 }

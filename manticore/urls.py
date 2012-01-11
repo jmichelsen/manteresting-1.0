@@ -18,6 +18,7 @@ from manticore.apps.core.views import (
 
 handler500 = "pinax.views.server_error"
 
+from idios.views import ProfileCreateView, ProfileDetailView, ProfileUpdateView
 
 urlpatterns = patterns("",
     url(r'^$', HomepageView.as_view(), name='home'),
@@ -27,7 +28,6 @@ urlpatterns = patterns("",
     url(r"^about/", include("manticore.apps.about.urls")),
     url(r"^account/", include("pinax.apps.account.urls")),
     url(r"^openid/", include(PinaxConsumer().urls)),
-    url(r"^profiles/", include("idios.urls")),
     url(r"^notices/", include("notification.urls")),
     url(r"^announcements/", include("announcements.urls")),
     url(r"^likes/", include("phileo.urls")),
@@ -44,7 +44,11 @@ urlpatterns = patterns("",
     url(r'^workbench/(?P<pk>\d+)/edit/$', UpdateWorkbenchView.as_view(model=Workbench), name='workbench-edit'),
     url(r'^workbench/(?P<pk>\d+)/delete/$', DeleteWorkbenchView.as_view(model=Workbench), name='workbench-delete'),
 
-    url(r'^u/(?P<slug>\w+)/$', DetailView.as_view(model=User, slug_field='username'), name='user'),
+    url(r'^u/(?P<slug>[\w\._-]+)/$', DetailView.as_view(model=User, slug_field='username'), name='user'),
+    url(r"^u/(?P<username>[\w\._-]+)/profile/$", ProfileDetailView.as_view(), name="profile_detail"),
+    url(r"^edit/$", ProfileUpdateView.as_view(), name="profile_edit"),
+    url(r"^create/$", ProfileCreateView.as_view(), name="profile_create"),
+
     url(r'', include('social_auth.urls')),
 )
 

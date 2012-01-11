@@ -55,10 +55,13 @@ class Profile(ProfileBase):
                 )
                 response = requests.get(profile_url, timeout=3)
                 data = simplejson.loads(response.content)
-                username = data[0]['screen_name']
-                avatar_url = 'http://api.twitter.com/1/users/profile_image?screen_name={username}&size=original'.format(
-                    username=username
-                )
+                if not data[0]['default_profile']:
+                    # Download only customized profile images
+                    username = data[0]['screen_name']
+                    avatar_url = 'http://api.twitter.com/1/users/profile_image?screen_name={username}&size=original'.format(
+                        username=username
+                    )
+
             elif auth.provider == 'facebook':
                 username = auth.extra_data['id']
                 avatar_url = 'https://graph.facebook.com/{id}/picture?type=large'.format(
@@ -67,13 +70,14 @@ class Profile(ProfileBase):
 
             if username and avatar_url:
                 response = requests.get(avatar_url, timeout=3)
-                fake_file = StringIO(response.content)
-                fake_file.size = len(response.content)
-                self.avatar = File(
-                    fake_file,
-                    name=username,
-                )
-                self.save()
-                break
 
+                if response.status_code == 200:
+                    fake_file = StringIO(response.content)
+                    fake_file.size = len(response.content)
+                    self.avatar = File(
+                        fake_file,
+                        name=username,
+                    )
+                    self.save()
+                    break
 

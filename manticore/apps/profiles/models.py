@@ -37,6 +37,11 @@ class Profile(ProfileBase):
         quality=80,
     )
 
+    def save(self, *args, **kwargs):
+        if not self.avatar:
+            self.fetch_avatar()
+        return super(Profile, self).save(*args, **kwargs)
+
     def fetch_avatar(self):
         """Fetches avatar from Twitter.
         """

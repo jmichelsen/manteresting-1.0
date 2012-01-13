@@ -19,7 +19,7 @@
             {% comment %} show 5 latest comments {% endcomment %}
             {% for comment in comments|slice:":5" %}
                 {% with profile=comment.author.get_profile %}
-                <li class="comment"><a href="{% url user slug=nail.workbench.user.username %}">{% if profile.avatar %}<img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/>{% endif %}{{ comment.author }}</a> — {{ comment.comment }}</li>
+                <li class="comment"><a href="{% url user slug=comment.author.username %}">{% if profile.avatar %}<img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/>{% endif %}{{ comment.author }}</a> — {{ comment.comment }}</li>
                 {% endwith %}
             {% endfor %}
         {% endif %}

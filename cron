@@ -1,4 +1,8 @@
 MAILTO=svetlyak.40wt@gmail.com
 
+# To make cron works well with this config,
+# first make "sudo chown root:root cron"
+# second "sudo ln -s `pwd`/cron /etc/cron.d/manteresting"
+
 * * * * * /home/themen/Manticore/scripts/send-mail.sh 2>&1 | tee /home/themen/Manticore/cron.log
 0,20,40 * * * * /home/themen/Manticore/scripts/retry-deferred.sh 2>&1 | tee /home/themen/Manticore/cron.log

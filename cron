@@ -1,4 +1,4 @@
 MAILTO=svetlyak.40wt@gmail.com
 
-* * * * * /home/themen/Manticore/scripts/send-mail.sh 2>&1 | tee /home/themen/Manticore/cron.log
-0,20,40 * * * * /home/themen/Manticore/scripts/retry-deferred.sh 2>&1 | tee /home/themen/Manticore/cron.log
+* * * * * themen /home/themen/Manticore/scripts/send-mail.sh 2>&1 | tee -a /home/themen/Manticore/cron.log
+0,20,40 * * * * themen /home/themen/Manticore/scripts/retry-deferred.sh 2>&1 | tee -a /home/themen/Manticore/cron.log

@@ -1,6 +1,12 @@
+import os
+import urllib2
+import urlparse
+
 from django.views.generic import CreateView, UpdateView, DeleteView, TemplateView
 from django.http import HttpResponseForbidden
 from django.forms.models import modelform_factory
+from django import forms
+from django.core.files.base import ContentFile
 
 from .models import Nail
 
@@ -95,9 +101,48 @@ class UpdateWorkbenchView(RestrictToOwner, UpdateByView):
 
 class CreateNailView(CreateByView):
     def get_form_class(self):
-        form_class = super(CreateNailView, self).get_form_class()
-        form_class.base_fields['workbench'].queryset = self.request.user.workbenches.all()
-        return form_class
+        BaseForm = super(CreateNailView, self).get_form_class()
+        request = self.request
+
+        class Form(BaseForm):
+            if 'media' in request.GET:
+                media = forms.URLField(widget=forms.HiddenInput, initial=request.GET['media'])
+
+            def __init__(self, *args, **kwargs):
+                super(Form, self).__init__(*args, **kwargs)
+
+                if 'media' in request.GET:
+                    del self.fields['original']
+
+                self.fields['workbench'].queryset = request.user.workbenches.all()
+
+            def save(self, *args, **kwargs):
+                kwargs['commit'] = False
+                instance = super(Form, self).save(*args, **kwargs)
+
+                if 'media' in self.cleaned_data:
+                    url = self.cleaned_data['media']
+                    path = urlparse.urlparse(url).path.rstrip('/')
+                    filename = os.path.basename(path)
+                    response = urllib2.urlopen(
+                        url,
+                        timeout=15,
+                    )
+                    code = response.getcode()
+
+                    if code < 200 or code >= 300:
+                        raise RuntimeError(u'Can\'t download file from "%s"' % url)
+
+                    instance.original.save(
+                        filename,
+                        ContentFile(response.read()),
+                    )
+
+                instance.save()
+                self.save_m2m()
+                return instance
+
+        return Form
 
 
 class UpdateNailView(RestrictToOwner, UpdateByView):

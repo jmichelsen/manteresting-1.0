@@ -33,6 +33,7 @@
             <span class="help-inline">{% if form.errors.workbench %}{{ form.errors.workbench.0 }}{% endif %}</span>
         </div>
     </div>
+    {% if form.original %}
     <div class="clearfix{% if 'original' in form.errors %} error{% endif %}">
         {{ form.original.label_tag }}
         <div class="input">
@@ -40,6 +41,15 @@
             <span class="help-inline">{% if form.errors.original %}{{ form.errors.original.0 }}{% endif %}</span>
         </div>
     </div>
+    {% else %}
+    <div class="clearfix{% if 'media' in form.errors %} error{% endif %}">
+        {{ form.original.label_tag }}
+        <div class="input">
+            <img src="{{ form.media.field.initial }}"/>
+            {{ form.media }}
+        </div>
+    </div>
+    {% endif %}
     <div class="clearfix{% if 'description' in form.errors %} error{% endif %}">
         {{ form.description.label_tag }}
         <div class="input">

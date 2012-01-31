@@ -3,7 +3,8 @@
      * Exact description how does pinterest's script works is here:
      * http://stackoverflow.com/questions/7109362/how-to-replicate-pinterest-coms-absolute-div-stacking-layout
      */
-	
+     }
+
 body {
     background-color: #f5f5f5;
     padding-top: 80px;

@@ -1,6 +1,8 @@
 {% load dialogos_tags i18n phileo_tags %}
 {% comments nail as comments %}
 {% with num_comments=comments|length num_repins=nail.clones.count num_likes=nail|likes_count %}
+
+
 <div class="nail">
     <a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.small }}" width="{{ nail.small.width }}px" height="{{ nail.small.height }}px" /></a>
     <p>{{ nail.description }}</p>

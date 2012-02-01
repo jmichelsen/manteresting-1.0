@@ -45,8 +45,10 @@
     <div class="clearfix{% if 'media' in form.errors %} error{% endif %}">
         {{ form.original.label_tag }}
         <div class="input">
-            <img src="{{ form.media.field.initial }}"/>
+            <img src="{{ form.media.value }}"/>
             {{ form.media }}
+            {{ form.source_url }}
+            {{ form.source_title }}
         </div>
     </div>
     {% endif %}

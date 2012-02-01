@@ -106,15 +106,26 @@ class CreateNailView(CreateByView):
 
         class Form(BaseForm):
             if 'media' in request.GET:
-                media = forms.URLField(widget=forms.HiddenInput, initial=request.GET['media'])
+                media = forms.URLField(widget=forms.HiddenInput)
 
             def __init__(self, *args, **kwargs):
+                kwargs.setdefault('initial', {})
+                kwargs['initial'].update(
+                    dict(
+                        media=request.GET.get('media'),
+                        source_url=request.GET.get('source_url'),
+                        source_title=request.GET.get('source_title'),
+                    )
+                )
+
                 super(Form, self).__init__(*args, **kwargs)
 
                 if 'media' in request.GET:
                     del self.fields['original']
 
                 self.fields['workbench'].queryset = request.user.workbenches.all()
+                self.fields['source_url'].widget = forms.HiddenInput()
+                self.fields['source_title'].widget = forms.HiddenInput()
 
             def save(self, *args, **kwargs):
                 kwargs['commit'] = False
@@ -137,6 +148,14 @@ class CreateNailView(CreateByView):
                         filename,
                         ContentFile(response.read()),
                     )
+
+                    if not instance.source_url:
+                        instance.source_url = url
+
+                    if instance.source_url and not instance.source_title:
+                        instance.source_title = urlparse.urlparse(instance.source_url).netloc
+                else:
+                    instance.source_title = u'Uploaded by user'
 
                 instance.save()
                 self.save_m2m()

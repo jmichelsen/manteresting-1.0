@@ -54,6 +54,8 @@ class Nail(models.Model):
     )
     description = models.TextField(max_length=500)
     cloned_from = models.ForeignKey('Nail', blank=True, null=True, related_name='clones', on_delete=models.SET_NULL)
+    source_url = models.URLField(blank=True, null=True)
+    source_title = models.CharField(max_length=128, blank=True, null=True)
 
 
     @models.permalink

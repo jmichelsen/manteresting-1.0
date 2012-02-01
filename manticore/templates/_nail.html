@@ -4,7 +4,9 @@
 
 
 <div class="nail">
-    <a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.small }}" width="{{ nail.small.width }}px" height="{{ nail.small.height }}px" /></a>
+    {% if nail.small %}
+        <a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.small }}" width="{{ nail.small.width }}px" height="{{ nail.small.height }}px" /></a>
+    {% endif %}
     <p>{{ nail.description }}</p>
     <ul>
         {% if num_likes or num_comments or num_repins %}

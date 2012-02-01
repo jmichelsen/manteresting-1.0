@@ -1,48 +1,96 @@
-body {
-    background-color: #F5F5F5;
-    margin-top: 125px;
-    padding-top: 0px;
-    position: relative;
+div.nail ul.comments {
+     margin-left: 0px;
 }
 
+form.comment label {
+     color: #404040;
+     float: left;
+     font-size: 13px;
+     line-height: 18px;
+     padding-top: 6px;
+     text-align: right;
+     width: 61px;
+}
+
+.well {
+     background-color: #EEEEEE;
+     border-radius: 4px 4px 4px 4px;
+     border: 1px solid rgba(0, 0, 0, 0.05);
+     box-shadow: 0pt 2px 3px rgba(0, 0, 0, 0.05) inset;
+     margin-left: 0px;
+     margin-top: 0pt;
+     min-height: 20px;
+     padding: 19px;
+     width: 192px;
+}
+
+ul {
+     list-style: none outside none;
+}
+
+div.nail ul li.comment a img {
+     margin-left: -26px;
+     padding-right: 3px;
+}
+
+div.nail ul li.creds a img {
+     margin-left: -26px;
+     padding-right: 3px;
+}
+
+div.topbar div.fill div.container ul.secondary-nav li img {
+     padding-top: 5px;
+}
+
+body.home div.container div.nail p {
+     font-style: italic;
+     text-align: center;
+}
+
+body {
+     background-color: #F5F5F5;
+     margin-top: 125px;
+     padding-top: 0px;
+     position: relative;
+}
 
 .home .nail, .workbench-detail .nail {
-    background: none repeat scroll 0 0 #FFFFFF;
-    box-shadow: 1px 1px 3px;
-    display: inline-block;
-    padding: 10px 10px 0;
-    width: 200px;
-    border: 1px solid gray;
+     background: none repeat scroll 0pt 0pt #FFFFFF;
+     border: 1px solid gray;
+     box-shadow: 1px 1px 3px;
+     display: inline-block;
+     padding: 10px 10px 0pt;
+     width: 200px;
 }
 
 .nail-detail .actions li {
-    list-style: none;
-    display: inline;
+     display: inline;
+     list-style: none outside none;
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 940px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 940px;
 }
 
-p {    
-    font-weight: normal;
-    line-height: 18px;
-    margin-bottom: 9px;
-    word-wrap: break-word;
+p {
+     font-weight: normal;
+     line-height: 18px;
+     margin-bottom: 9px;
+     word-wrap: break-word;
 }
 
 li {
-    color: #808080;
-    line-height: 18px;
-    padding-bottom: 3px;
-    word-wrap: break-word;
+     color: #808080;
+     line-height: 18px;
+     padding-bottom: 3px;
+     word-wrap: break-word;
 }
 
 a {
-    color: #00746b;
-    font-weight: inherit;
-    line-height: inherit;
-    text-decoration: none;
+     color: #00746B;
+     font-weight: inherit;
+     line-height: inherit;
+     text-decoration: none;
 }

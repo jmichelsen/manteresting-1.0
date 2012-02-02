@@ -7,23 +7,23 @@
     <a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.small }}" width="{{ nail.small.width }}px" height="{{ nail.small.height }}px" /></a>
     <p>{{ nail.description }}</p>
     <ul>
+        {% with profile=nail.workbench.user.get_profile %}
+        <li class="creds"><a href="{% url user slug=nail.workbench.user.username %}">{% if profile.avatar %}<img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/>{% endif %}{{ nail.workbench.user }}</a> onto <a href="{{ nail.workbench.get_absolute_url }}">{{ nail.workbench.title }}</a></li>
+        {% endwith %}
+        {% if comments %}
+            {% comment %} show 5 latest comments {% endcomment %}
+            {% for comment in comments|slice:":1" %}
+                {% with profile=comment.author.get_profile %}
+                <li class="comment"><a href="{% url user slug=comment.author.username %}">{% if profile.avatar %}<img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/>{% endif %}{{ comment.author }}</a> — {{ comment.comment }}</li>
+                {% endwith %}
+            {% endfor %}
+        {% endif %}
         {% if num_likes or num_comments or num_repins %}
         <li class="stats">
             {% if num_likes %}{% blocktrans count count=num_likes %}{{ count }} like{% plural %}{{ count }} likes{% endblocktrans %}{% endif %}
             {% if num_comments %}{% blocktrans count count=num_comments %}{{ count }} comment{% plural %}{{ count }} comments{% endblocktrans %}{% endif %}
             {% if num_repins %}{% blocktrans count count=num_repins %}{{ count }} repin{% plural %}{{ count }} repins{% endblocktrans %}{% endif %}
         </li>
-        {% endif %}
-        {% with profile=nail.workbench.user.get_profile %}
-        <li class="creds"><a href="{% url user slug=nail.workbench.user.username %}">{% if profile.avatar %}<img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/>{% endif %}{{ nail.workbench.user }}</a> onto <a href="{{ nail.workbench.get_absolute_url }}">{{ nail.workbench.title }}</a></li>
-        {% endwith %}
-        {% if comments %}
-            {% comment %} show 5 latest comments {% endcomment %}
-            {% for comment in comments|slice:":5" %}
-                {% with profile=comment.author.get_profile %}
-                <li class="comment"><a href="{% url user slug=comment.author.username %}">{% if profile.avatar %}<img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/>{% endif %}{{ comment.author }}</a> — {{ comment.comment }}</li>
-                {% endwith %}
-            {% endfor %}
         {% endif %}
     </ul>
 </div>

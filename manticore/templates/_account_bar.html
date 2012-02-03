@@ -7,6 +7,12 @@
                 <li><a href="{% url workbench-add %}">Workbench</a></li>
             </ul>
         </li>
+        <li>
+            <a href="#" class="menu">About</a>
+            <ul class="menu-dropdown">
+                <li><a href="{% url goodies %}">Goodies</a></li>
+            </ul>
+        </li>
         {% with profile=user.get_profile %}{% if profile.avatar %}<li><img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/></li>{% endif %}{% endwith %}
         <li>
             <a href="#" class="menu">{{ user }}</a>

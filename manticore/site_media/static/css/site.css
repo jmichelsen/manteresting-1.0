@@ -43,24 +43,25 @@ div.topbar div.fill div.container ul.secondary-nav li img {
 }
 
 body.home div.container div.nail p {
-     font-style: italic;
-     text-align: center;
+    color: #7B7878;
+    font-size: 12px;
+    text-align: center;
 }
 
 body {
-     background-color: #F5F5F5;
-     margin-top: 125px;
-     padding-top: 0px;
-     position: relative;
+    background-color: #E9E9E9;
+    margin-top: 125px;
+    padding-top: 0;
+    position: relative;
 }
 
 .home .nail, .workbench-detail .nail {
-     background: none repeat scroll 0pt 0pt #FFFFFF;
-     border: 1px solid gray;
-     box-shadow: 1px 1px 3px;
-     display: inline-block;
-     padding: 10px 10px 0pt;
-     width: 200px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    box-shadow: 1px 1px 2px rgba(34, 25, 25, 0.4);
+    display: inline-block;
+    padding: 10px 10px 0;
+    width: 200px;
 }
 
 .nail-detail .actions li {

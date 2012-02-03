@@ -76,11 +76,12 @@ div.container div.nail ul li.comment a img, div.container div.nail ul li.creds a
 div.topbar div.fill div.container ul.secondary-nav li img {
     padding-top: 5px;
 }
-div.nail p {
+body.home div.container div.nail p, body.workbench-detail div.container div.nail p {
     color: #7B7878;
     font-size: 12px;
     margin-top: 3px;
     text-align: center;
+    padding: 0 10px;
 }
 body {
     background-color: #E9E9E9;

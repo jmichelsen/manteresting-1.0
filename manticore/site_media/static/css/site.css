@@ -1,97 +1,119 @@
-div.nail ul.comments {
-     margin-left: 0px;
+body.nail-detail div.container div.nail p {
+    text-align: left;
 }
-
+body.nail-detail div.container div.nail ul.comments li {
+    background: none repeat scroll 0 0 #E9E9E9;
+}
+div.container div.nail ul li.creds:last-child {
+    border-bottom-width: 0;
+}
+div.container div.nail ul li.comment {
+    border-top: 1px solid #FFFFFF;
+}
+div.nail ul li.stats {
+    background-color: #F5F5F5;
+    border-top: 1px solid white;
+    font-size: 10px;
+    padding-right: 10px;
+    text-align: right;
+}
+div.container div.nail ul {
+    background-color: #F5F5F5;
+}
+body.home div.container div.nail ul, body.workbench-detail div.container div.nail ul {
+    margin: 0;
+}
+li.creds {
+    font-size: 11px;
+}
+li.creds a, li.comment a {
+    color: #585757;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+div.nail ul li.creds, li.comment {
+    border-bottom: 1px solid #D8D8D8;
+    border-top: 1px solid #E8E8E8;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+}
+div.nail a img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px 10px 0;
+}
 form.comment label {
-     color: #404040;
-     float: left;
-     font-size: 13px;
-     line-height: 18px;
-     padding-top: 6px;
-     text-align: right;
-     width: 61px;
+    color: #404040;
+    float: left;
+    font-size: 13px;
+    line-height: 18px;
+    padding-top: 6px;
+    text-align: right;
+    width: 61px;
 }
-
 .well {
-     background-color: #EEEEEE;
-     border-radius: 4px 4px 4px 4px;
-     border: 1px solid rgba(0, 0, 0, 0.05);
-     box-shadow: 0pt 2px 3px rgba(0, 0, 0, 0.05) inset;
-     margin-left: 0px;
-     margin-top: 0pt;
-     min-height: 20px;
-     padding: 19px;
-     width: 192px;
+    background-color: #EEEEEE;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05) inset;
+    margin-left: 0;
+    margin-top: 0;
+    min-height: 20px;
+    padding: 19px;
+    width: 192px;
 }
-
 ul {
-     list-style: none outside none;
+    list-style: none outside none;
 }
-
-div.nail ul li.comment a img {
-     margin-left: -26px;
-     padding-right: 3px;
+div.container div.nail ul li.comment a img, div.container div.nail ul li.creds a img {
+    display: inline;
+    margin-right: 3px;
+    padding: 0;
 }
-
-div.nail ul li.creds a img {
-     margin-left: -26px;
-     padding-right: 3px;
-}
-
 div.topbar div.fill div.container ul.secondary-nav li img {
-     padding-top: 5px;
+    padding-top: 5px;
 }
-
-body.home div.container div.nail p {
+div.nail p {
     color: #7B7878;
     font-size: 12px;
+    margin-top: 3px;
     text-align: center;
 }
-
 body {
     background-color: #E9E9E9;
     margin-top: 125px;
     padding-top: 0;
     position: relative;
 }
-
 .home .nail, .workbench-detail .nail {
     background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #CCCCCC;
     box-shadow: 1px 1px 2px rgba(34, 25, 25, 0.4);
     display: inline-block;
-    padding: 10px 10px 0;
-    width: 200px;
+    width: 220px;
 }
-
 .nail-detail .actions li {
-     display: inline;
-     list-style: none outside none;
+    display: inline;
+    list-style: none outside none;
 }
-
 .container {
-     margin-left: auto;
-     margin-right: auto;
-     width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 940px;
 }
-
 p {
-     font-weight: normal;
-     line-height: 18px;
-     margin-bottom: 9px;
-     word-wrap: break-word;
+    font-weight: normal;
+    line-height: 18px;
+    margin-bottom: 9px;
+    word-wrap: break-word;
 }
-
 li {
-     color: #808080;
-     line-height: 18px;
-     padding-bottom: 3px;
-     word-wrap: break-word;
-}
-
-a {
-     color: #00746B;
-     font-weight: inherit;
-     line-height: inherit;
-     text-decoration: none;
+    color: #808080;
+    font-size: 13px;
+    line-height: 18px;
+    padding-bottom: 3px;
+    word-wrap: break-word;
 }

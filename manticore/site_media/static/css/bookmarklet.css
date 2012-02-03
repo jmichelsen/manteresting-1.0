@@ -1,0 +1,64 @@
+.man-overlay {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #FFF0F0;
+    opacity: .95;
+}
+.man-controls {
+    position: fixed;
+    z-index: 1002;
+    left: 0;
+    right: 0;
+    top: 0;
+    background: black;
+    color: #DDD;
+    font-size: 40px;
+    height: 50px;
+    text-align: center;
+}
+.man-controls h1{
+    position: absolute;
+    left: 10px;
+
+}
+.man-controls a {
+    text-decoration: none;
+    color: #DDD;
+}
+.man-controls a:visited {
+    color: #DDD;
+}
+.man-previews {
+    position: absolute;
+    z-index: 1001;
+    font-family: 'helvetica neue', arial, sans-serif;
+    margin-top: 50px;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    opacity: 1;
+}
+.man-preview {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    float: left;
+    background-color: white;
+    border: solid #E7E7E7;
+    width: 220px;
+    height: 230px;
+    opacity: 1;
+    text-align: center;
+    border-width: 0 1px 1px 0;
+}
+.man-preview img {
+    margin-top: 10px;
+}
+.man-preview span {
+    position: absolute;
+    top: 210px;
+}

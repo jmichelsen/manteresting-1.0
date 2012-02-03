@@ -32,3 +32,21 @@ shell = _manage('shell')
 dbshell = _manage('dbshell')
 runserver = _manage('runserver 0.0.0.0:8000')
 syncdb = _manage('syncdb')
+
+
+def testing():
+    env.hosts = ['manteresting.com']
+    env.user = 'themen'
+    env.type = 'testing'
+    env.project_dir = '/home/themen/Manticore'
+    #use_ssh_config(env)
+
+
+def deploy():
+    local('git push')
+    with cd(env.project_dir):
+        run('git pull')
+        run('env/bin/pip install -r requirements/testing.txt')
+        run('env/bin/python manage.py migrate')
+        run('./start-daemon.sh')
+

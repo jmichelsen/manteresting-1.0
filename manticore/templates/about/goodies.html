@@ -1,0 +1,30 @@
+{% extends "site_base.html" %}
+
+{% load i18n manticore %}
+
+{% block head_title %}{% trans "Goodies" %}{% endblock %}
+
+{% block body %}
+    <h1>{% trans "Goodies" %}</h1>
+    <p>
+        Drag this link to your bookmarks:
+        {% bookmarklet "Nail It!" %}
+            javascript:
+            (function(){
+              if (typeof __man_show != 'undefined') {
+                __man_show();
+              }
+              else {
+                window.__man_base='http://{{ request.get_host }}/';
+                var d=document;
+                s=d.createElement('script');
+                s.setAttribute('src',__man_base+'site_media/static/js/bookmarklet.js');
+                s.setAttribute('type','text/javascript');
+                d.body.appendChild(s);
+              }
+            }
+            )()
+        {% endbookmarklet %}
+    </p>
+{% endblock %}
+

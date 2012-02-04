@@ -43,7 +43,7 @@ html body.nail-detail div.container div.nail h1 {
 html body.nail-detail div.container div.nail {
      background: none repeat scroll 0pt 0pt white;
      border: 1px solid #CCCCCC;
-     box-shadow: 0pt 0pt 6px;
+     box-shadow: 0px 0px 10px rgba(34, 25, 25, 0.4);
      display: block;
      margin-left: auto;
      margin-right: auto;
@@ -76,7 +76,7 @@ div.nail ul li.stats {
 }
 
 div.container div.nail ul {
-     background-color: #F5F5F5;
+     background-color: #EEEEEE;
 }
 
 body.home div.container div.nail ul, body.workbench-detail div.container div.nail ul {
@@ -155,8 +155,8 @@ body.home div.container div.nail p, body.workbench-detail div.container div.nail
 }
 
 body {
-     background-color: #E9E9E9;
-     margin-top: 125px;
+     background: url("http://manteresting.com/site_media/media/cache/nails/gray_background_normal.jpe") repeat scroll 50% 0pt #F5F5F5;
+     margin-top: 70px;
      padding-top: 0pt;
      position: relative;
 }
@@ -164,7 +164,7 @@ body {
 .home .nail, .workbench-detail .nail {
      background: none repeat scroll 0pt 0pt #FFFFFF;
      border: 1px solid #CCCCCC;
-     box-shadow: 1px 1px 2px rgba(34, 25, 25, 0.4);
+     box-shadow: 1px 1px 2px rgba(34, 25, 25, 0.6);
      display: inline-block;
      width: 220px;
 }

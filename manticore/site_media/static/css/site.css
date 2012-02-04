@@ -1,8 +1,59 @@
+body.workbench-detail div.container h1 {
+    font-size: 30px;
+    line-height: 36px;
+    margin-top: -21px;
+    text-align: center;
+}
+html body.nail-detail div.container div.nail form.comment textarea#id_comment {
+    height: 30px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 440px;
+}
+html body.nail-detail div.container div.nail form.comment {
+    background: none repeat scroll 0 0 #F5F5F5;
+    margin-bottom: 0;
+    padding: 10px;
+}
+html body.nail-detail div.container div.nail ul.comments li a {
+    color: #555555;
+    font-weight: bold;
+}
+html body.nail-detail div.container div.nail ul.actions {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 192px;
+}
+html body.nail-detail div.container div.nail img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+html body.nail-detail div.container div.nail h1 a {
+    color: darkcyan;
+    text-decoration: underline;
+}
+html body.nail-detail div.container div.nail h1 {
+    background: none repeat scroll 0 0 #F5F5F5;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 10px 0 5px 20px;
+}
+html body.nail-detail div.container div.nail {
+    background: none repeat scroll 0 0 white;
+    border: 2px solid #B2B2B2;
+    box-shadow: 0 0 10px rgba(34, 25, 25, 0.4);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 650px;
+}
 body.nail-detail div.container div.nail p {
-    text-align: left;
+    text-align: center;
 }
 body.nail-detail div.container div.nail ul.comments li {
-    background: none repeat scroll 0 0 #E9E9E9;
+    background: none repeat scroll 0 0 white;
+    padding-left: 20px;
 }
 div.container div.nail ul li.creds:last-child {
     border-bottom-width: 0;
@@ -11,14 +62,14 @@ div.container div.nail ul li.comment {
     border-top: 1px solid #FFFFFF;
 }
 div.nail ul li.stats {
-    background-color: #F5F5F5;
+    background-color: #EDEFF4;
     border-top: 1px solid white;
     font-size: 10px;
     padding-right: 10px;
     text-align: right;
 }
 div.container div.nail ul {
-    background-color: #F5F5F5;
+    background-color: #EDEFF4;
 }
 body.home div.container div.nail ul, body.workbench-detail div.container div.nail ul {
     margin: 0;
@@ -34,7 +85,8 @@ li.creds a, li.comment a {
 }
 div.nail ul li.creds, li.comment {
     border-bottom: 1px solid #D8D8D8;
-    border-top: 1px solid #E8E8E8;
+    border-top: 1px solid #DDDDDD;
+    font-size: 11px;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 5px;
@@ -43,7 +95,7 @@ div.nail a img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    padding: 10px 10px 0;
+    padding: 15px 15px 0;
 }
 form.comment label {
     color: #404040;
@@ -69,7 +121,7 @@ ul {
     list-style: none outside none;
 }
 div.container div.nail ul li.comment a img, div.container div.nail ul li.creds a img {
-    display: inline;
+    display: none;
     margin-right: 3px;
     padding: 0;
 }
@@ -78,23 +130,30 @@ div.topbar div.fill div.container ul.secondary-nav li img {
 }
 body.home div.container div.nail p, body.workbench-detail div.container div.nail p {
     color: #7B7878;
-    font-size: 12px;
+    font-size: 11px;
     margin-top: 3px;
-    text-align: center;
     padding: 0 10px;
+    text-align: center;
 }
 body {
-    background-color: #E9E9E9;
-    margin-top: 125px;
+    background: url("http://manteresting.com/site_media/media/cache/nails/gray_background_normal.jpe") repeat scroll 50% 0 #F5F5F5;
+    margin-top: 70px;
     padding-top: 0;
     position: relative;
 }
-.home .nail, .workbench-detail .nail {
+.home .nail {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #A6A6A6;
+    display: inline-block;
+    margin-top: 0;
+    width: 230px;
+}
+.workbench-detail .nail {
     background: none repeat scroll 0 0 #FFFFFF;
     border: 1px solid #CCCCCC;
-    box-shadow: 1px 1px 2px rgba(34, 25, 25, 0.4);
     display: inline-block;
-    width: 220px;
+    margin-top: 20px;
+    width: 230px;
 }
 .nail-detail .actions li {
     display: inline;

@@ -1,9 +1,7 @@
 .topbar div > ul.secondary-nav .menu-dropdown, .nav.secondary-nav .menu-dropdown, .topbar div > ul.secondary-nav .dropdown-menu, .nav.secondary-nav .dropdown-menu {
-    border: 0 none;
-right:auto;
-    
+     border: 0pt none;
+     right: auto;
 }
-
 
 body.nail-detail div.container div.nail ul.comments li:last-child {
      border-bottom-width: 0pt;
@@ -11,7 +9,7 @@ body.nail-detail div.container div.nail ul.comments li:last-child {
 
 html body.nail-detail div.container div.nail ul.comments {
      background-color: #EDEFF4;
-     border: 1px solid #CCCCCC;
+     border: 1px solid #DDDDDD;
      display: block;
      margin-left: auto;
      margin-right: auto;
@@ -90,7 +88,7 @@ body.nail-detail div.container div.nail ul.comments li {
      border-bottom: 1px solid #DDDDDD;
      border-top: 1px solid white;
      color: #555555;
-     padding: 5px 20px 5px 10px;
+     padding: 8px 20px 8px 10px;
 }
 
 div.container div.nail ul li.creds:last-child {
@@ -132,9 +130,7 @@ div.nail ul li.creds, li.comment {
      border-bottom: 1px solid #D8D8D8;
      border-top: 1px solid #DDDDDD;
      font-size: 11px;
-     padding-left: 10px;
-     padding-right: 10px;
-     padding-top: 5px;
+     padding: 6px 10px;
 }
 
 div.nail a img {
@@ -171,7 +167,7 @@ ul {
 }
 
 div.container div.nail ul li.comment a img, div.container div.nail ul li.creds a img {
-     display: none;
+     display: inline-block;
      margin-right: 3px;
      padding: 0pt;
 }
@@ -185,7 +181,7 @@ body.home div.container div.nail p, body.workbench-detail div.container div.nail
      font-size: 11px;
      margin-top: 3px;
      padding: 0pt 10px;
-     text-align: center;
+     text-align: left;
 }
 
 body {

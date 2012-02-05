@@ -1,3 +1,10 @@
+.topbar div > ul.secondary-nav .menu-dropdown, .nav.secondary-nav .menu-dropdown, .topbar div > ul.secondary-nav .dropdown-menu, .nav.secondary-nav .dropdown-menu {
+    border: 0 none;
+right:auto;
+    
+}
+
+
 body.nail-detail div.container div.nail ul.comments li:last-child {
      border-bottom-width: 0pt;
 }

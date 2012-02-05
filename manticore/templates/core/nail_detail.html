@@ -24,7 +24,7 @@
         <p>{{ object.description }}</p>
         <p>
             {% if object.source_url %}Nailed from <a href="{{ object.source_url }}">{{ object.source_title }}</a>
-            {% else %}{{ object.source_title %}{% endif %}
+            {% else %}{{ object.source_title }}{% endif %}
         </p>
 
         {% comments object as comments %}

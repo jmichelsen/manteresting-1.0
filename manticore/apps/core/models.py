@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from imagekit.models import ImageSpec
 from imagekit.processors import resize, Adjust
+from follow import utils
 
 
 class Category(models.Model):
@@ -25,6 +26,7 @@ class Workbench(models.Model):
 
 
 class Nail(models.Model):
+    user = models.ForeignKey(User, related_name='nails')
     workbench = models.ForeignKey(Workbench, related_name='nails')
     original = models.ImageField(upload_to='nails')
     normal = ImageSpec(
@@ -61,4 +63,8 @@ class Nail(models.Model):
     @models.permalink
     def get_absolute_url(self):
         return ('nail', [], dict(pk=self.id))
+
+
+utils.register(User)
+utils.register(Workbench)
 

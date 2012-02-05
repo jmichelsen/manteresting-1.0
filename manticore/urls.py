@@ -49,7 +49,8 @@ urlpatterns = patterns("",
     url(r"^edit/$", ProfileUpdateView.as_view(), name="profile_edit"),
     url(r"^create/$", ProfileCreateView.as_view(), name="profile_create"),
 
-    url(r'', include('social_auth.urls')),
+    url(r'^', include('social_auth.urls')),
+    url(r'^', include('follow.urls')),
 )
 
 

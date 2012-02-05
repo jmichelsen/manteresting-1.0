@@ -1,9 +1,14 @@
 {% extends "site_base.html" %}
-{% load manticore %}
+{% load manticore follow_tags %}
 
 {% block head_title %}{{ object.username }} — Manticore{% endblock %}
 
 {% block body %}
+    <div class="user-profile">
+        <p class="username">{{ object.username }}</p>
+        <p class="stats">Workbenches: {{ object.workbenches.count }}, Nails: {{ object.nails.count }}</p>
+        {% follow_form object %}
+    </div>
     {% if object.workbenches.count %}
         {% for workbench in object.workbenches.all %}
             <div class="workbench">

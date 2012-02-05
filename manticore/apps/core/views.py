@@ -165,9 +165,6 @@ class CreateNailView(CreateByView):
 
 
 class UpdateNailView(RestrictToOwner, UpdateByView):
-    def is_owner(self, user, obj):
-        return obj.workbench.user == user
-
     def get_form_class(self):
         form_class = super(UpdateNailView, self).get_form_class()
         form_class.base_fields['workbench'].queryset = self.request.user.workbenches.all()
@@ -205,9 +202,6 @@ class RepinNailView(UpdateByView):
 
 
 class DeleteNailView(RestrictToOwner, DeleteByView):
-    def is_owner(self, user, obj):
-        return obj.workbench.user == user
-
     def get_object(self):
         obj = super(DeleteNailView, self).get_object()
         self.success_url = obj.workbench.get_absolute_url()

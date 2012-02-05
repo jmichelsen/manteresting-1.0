@@ -173,6 +173,7 @@ INSTALLED_APPS = [
     'south',
     'phileo',
     'dialogos',
+    'follow',
 
     # Pinax
     'pinax.apps.account',

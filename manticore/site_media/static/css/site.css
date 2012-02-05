@@ -1,179 +1,231 @@
+body.nail-detail div.container div.nail ul.comments li:last-child {
+     border-bottom-width: 0pt;
+}
+
+html body.nail-detail div.container div.nail ul.comments {
+     background-color: #EDEFF4;
+     border: 1px solid #CCCCCC;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 500px;
+}
+
+.home .nail:hover, .workbench-detail .nail:hover {
+     box-shadow: 0pt 1px 2px rgba(34, 25, 25, 0.6);
+}
+
 body.workbench-detail div.container h1 {
-    font-size: 30px;
-    line-height: 36px;
-    margin-top: -21px;
-    text-align: center;
+     font-size: 30px;
+     line-height: 36px;
+     margin-top: -21px;
+     text-align: center;
 }
+
 html body.nail-detail div.container div.nail form.comment textarea#id_comment {
-    height: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 440px;
+     height: 30px;
+     margin-left: 10px;
+     margin-right: 10px;
+     width: 440px;
 }
+
 html body.nail-detail div.container div.nail form.comment {
-    background: none repeat scroll 0 0 #F5F5F5;
-    margin-bottom: 0;
-    padding: 10px;
+     background: none repeat scroll 0pt 0pt #F5F5F5;
+     margin-bottom: 0pt;
+     padding: 10px;
 }
+
 html body.nail-detail div.container div.nail ul.comments li a {
-    color: #555555;
-    font-weight: bold;
+     color: darkcyan;
+     font-weight: bold;
 }
+
 html body.nail-detail div.container div.nail ul.actions {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 192px;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 192px;
 }
+
 html body.nail-detail div.container div.nail img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
 }
+
 html body.nail-detail div.container div.nail h1 a {
-    color: darkcyan;
-    text-decoration: underline;
+     color: darkcyan;
+     text-decoration: underline;
 }
+
 html body.nail-detail div.container div.nail h1 {
-    background: none repeat scroll 0 0 #F5F5F5;
-    border-bottom: 1px solid #CCCCCC;
-    padding: 10px 0 5px 20px;
+     background: none repeat scroll 0pt 0pt #F5F5F5;
+     border-bottom: 1px solid #CCCCCC;
+     padding: 10px 0pt 5px 20px;
 }
+
 html body.nail-detail div.container div.nail {
-    background: none repeat scroll 0 0 white;
-    border: 2px solid #B2B2B2;
-    box-shadow: 0 0 10px rgba(34, 25, 25, 0.4);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 650px;
+     background: none repeat scroll 0pt 0pt white;
+     border: 2px solid #B2B2B2;
+     box-shadow: 0pt 0pt 10px rgba(34, 25, 25, 0.4);
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 650px;
 }
+
 body.nail-detail div.container div.nail p {
-    text-align: center;
+     color: #797979;
+     text-align: center;
 }
+
 body.nail-detail div.container div.nail ul.comments li {
-    background: none repeat scroll 0 0 white;
-    padding-left: 20px;
+     border-bottom: 1px solid #DDDDDD;
+     border-top: 1px solid white;
+     color: #555555;
+     padding: 5px 20px 5px 10px;
 }
+
 div.container div.nail ul li.creds:last-child {
-    border-bottom-width: 0;
+     border-bottom-width: 0pt;
 }
+
 div.container div.nail ul li.comment {
-    border-top: 1px solid #FFFFFF;
+     border-top: 1px solid #FFFFFF;
 }
+
 div.nail ul li.stats {
-    background-color: #EDEFF4;
-    border-top: 1px solid white;
-    font-size: 10px;
-    padding-right: 10px;
-    text-align: right;
+     background-color: #EDEFF4;
+     border-top: 1px solid white;
+     font-size: 10px;
+     padding-right: 10px;
+     text-align: right;
 }
+
 div.container div.nail ul {
-    background-color: #EDEFF4;
+     background-color: #EDEFF4;
 }
+
 body.home div.container div.nail ul, body.workbench-detail div.container div.nail ul {
-    margin: 0;
+     margin: 0pt;
 }
+
 li.creds {
-    font-size: 11px;
+     font-size: 11px;
 }
+
 li.creds a, li.comment a {
-    color: #585757;
-    font-size: 11px;
-    font-weight: bold;
-    text-transform: capitalize;
+     color: #585757;
+     font-size: 11px;
+     font-weight: bold;
+     text-transform: capitalize;
 }
+
 div.nail ul li.creds, li.comment {
-    border-bottom: 1px solid #D8D8D8;
-    border-top: 1px solid #DDDDDD;
-    font-size: 11px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
+     border-bottom: 1px solid #D8D8D8;
+     border-top: 1px solid #DDDDDD;
+     font-size: 11px;
+     padding-left: 10px;
+     padding-right: 10px;
+     padding-top: 5px;
 }
+
 div.nail a img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 15px 15px 0;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 15px 15px 0pt;
 }
+
 form.comment label {
-    color: #404040;
-    float: left;
-    font-size: 13px;
-    line-height: 18px;
-    padding-top: 6px;
-    text-align: right;
-    width: 61px;
+     color: #404040;
+     float: left;
+     font-size: 13px;
+     line-height: 18px;
+     padding-top: 6px;
+     text-align: right;
+     width: 61px;
 }
+
 .well {
-    background-color: #EEEEEE;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    border-radius: 4px 4px 4px 4px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05) inset;
-    margin-left: 0;
-    margin-top: 0;
-    min-height: 20px;
-    padding: 19px;
-    width: 192px;
+     background-color: #EEEEEE;
+     border-radius: 4px 4px 4px 4px;
+     border: 1px solid rgba(0, 0, 0, 0.05);
+     box-shadow: 0pt 2px 3px rgba(0, 0, 0, 0.05) inset;
+     margin-left: 0pt;
+     margin-top: 0pt;
+     min-height: 20px;
+     padding: 19px;
+     width: 192px;
 }
+
 ul {
-    list-style: none outside none;
+     list-style: none outside none;
 }
+
 div.container div.nail ul li.comment a img, div.container div.nail ul li.creds a img {
-    display: none;
-    margin-right: 3px;
-    padding: 0;
+     display: none;
+     margin-right: 3px;
+     padding: 0pt;
 }
+
 div.topbar div.fill div.container ul.secondary-nav li img {
-    padding-top: 5px;
+     padding-top: 5px;
 }
+
 body.home div.container div.nail p, body.workbench-detail div.container div.nail p {
-    color: #7B7878;
-    font-size: 11px;
-    margin-top: 3px;
-    padding: 0 10px;
-    text-align: center;
+     color: #7B7878;
+     font-size: 11px;
+     margin-top: 3px;
+     padding: 0pt 10px;
+     text-align: center;
 }
+
 body {
-    background: url("http://manteresting.com/site_media/media/cache/nails/gray_background_normal.jpe") repeat scroll 50% 0 #F5F5F5;
-    margin-top: 70px;
-    padding-top: 0;
-    position: relative;
+     background: url("http://manteresting.com/site_media/media/cache/nails/gray_background_normal.jpe") repeat scroll 50% 0pt #F5F5F5;
+     margin-top: 70px;
+     padding-top: 0pt;
+     position: relative;
 }
+
 .home .nail {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #A6A6A6;
-    display: inline-block;
-    margin-top: 0;
-    width: 230px;
+     background: none repeat scroll 0pt 0pt #FFFFFF;
+     border: 1px solid #A6A6A6;
+     display: inline-block;
+     margin-top: 0pt;
+     width: 230px;
 }
+
 .workbench-detail .nail {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #CCCCCC;
-    display: inline-block;
-    margin-top: 20px;
-    width: 230px;
+     background: none repeat scroll 0pt 0pt #FFFFFF;
+     border: 1px solid #CCCCCC;
+     display: inline-block;
+     margin-top: 20px;
+     width: 230px;
 }
+
 .nail-detail .actions li {
-    display: inline;
-    list-style: none outside none;
+     display: inline;
+     list-style: none outside none;
 }
+
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 940px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 940px;
 }
+
 p {
-    font-weight: normal;
-    line-height: 18px;
-    margin-bottom: 9px;
-    word-wrap: break-word;
+     font-weight: normal;
+     line-height: 18px;
+     margin-bottom: 9px;
+     word-wrap: break-word;
 }
+
 li {
-    color: #808080;
-    font-size: 13px;
-    line-height: 18px;
-    padding-bottom: 3px;
-    word-wrap: break-word;
+     color: #808080;
+     font-size: 13px;
+     line-height: 18px;
+     padding-bottom: 3px;
+     word-wrap: break-word;
 }

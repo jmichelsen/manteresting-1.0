@@ -1,392 +1,456 @@
 html body.profile div#modal div#modal-popup.modal form.ajax div.modal-footer button.btn {
-    color: #FFFFFF;
+     color: #FFFFFF;
 }
+
 html body.profile div#modal div#modal-popup.modal form.ajax div.modal-body fieldset div.clearfix div.input input#id_avatar {
-    display: list-item;
+     display: list-item;
 }
+
 html body.profile div#modal div#modal-popup.modal form.ajax div.modal-body fieldset div.clearfix div.input input#avatar-clear_id {
-    display: inline;
-    margin-top: 9px;
+     display: inline;
+     margin-top: 9px;
 }
+
 html body.profile div#modal div#modal-popup.modal form.ajax div.modal-body fieldset div.clearfix div.input a {
-    display: block;
-    margin-bottom: 10px;
+     display: block;
+     margin-bottom: 10px;
 }
+
 html body.profile div#modal div#modal-popup.modal {
-    position: absolute;
+     position: absolute;
 }
+
 html body.profile div.container h1 {
-    color: #666666;
-    font-family: monospace;
-    font-size: 38px;
-    font-style: normal;
-    line-height: 15px;
-    margin-bottom: 17px;
-    padding: 0 10px 0 20px;
-    text-shadow: 1px 1px 0 #FFFFFF, 1px 1px 1px #333333;
+     color: #666666;
+     font-family: monospace;
+     font-size: 38px;
+     font-style: normal;
+     line-height: 15px;
+     margin-bottom: 17px;
+     padding: 0pt 10px 0pt 20px;
+     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
 }
+
 .topbar div > ul a, .nav a {
-    display: block;
-    float: none;
-    line-height: 19px;
-    padding: 14px 10px 0;
-    text-decoration: none;
+     display: block;
+     float: none;
+     line-height: 19px;
+     padding: 14px 10px 0pt;
+     text-decoration: none;
 }
+
 .topbar div > ul .active > a, .nav .active > a {
-    background: none repeat scroll 0 0 transparent;
-    color: #555555;
+     background: none repeat scroll 0pt 0pt transparent;
+     color: #555555;
 }
+
 .open .menu, .dropdown.open .menu, .open .dropdown-toggle, .dropdown.open .dropdown-toggle {
-    background: none repeat scroll 0 0 rgba(0, 0, 0, 0.3);
-    color: #555555;
+     background: none repeat scroll 0pt 0pt rgba(0, 0, 0, 0.3);
+     color: #555555;
 }
+
 .topbar div > ul .menu-dropdown li a:hover, .nav .menu-dropdown li a:hover, .topbar div > ul .dropdown-menu li a:hover, .nav .dropdown-menu li a:hover {
-    background: #f8f8f8;
-    background-repeat: repeat-x;
-    color: #999999;
+     background: none repeat-x scroll 0% 0% #F8F8F8;
+     color: #999999;
 }
+
 .topbar div > ul .menu-dropdown li a, .nav .menu-dropdown li a, .topbar div > ul .dropdown-menu li a, .nav .dropdown-menu li a {
-    color: #555555;
-    text-shadow: none;
+     color: #555555;
+     text-shadow: none;
 }
+
 .menu-dropdown .divider, .dropdown-menu .divider {
-    background-color: #F8F8F8;
-    border-bottom: 0 solid #FFFFFF;
-    height: 0;
-    margin: 2px 0;
-    overflow: hidden;
+     background-color: #F8F8F8;
+     border-bottom: 0pt solid #FFFFFF;
+     height: 0pt;
+     margin: 2px 0pt;
+     overflow: hidden;
 }
+
 .topbar div > ul .menu-dropdown .divider, .nav .menu-dropdown .divider, .topbar div > ul .dropdown-menu .divider, .nav .dropdown-menu .divider {
-    background-color: #F8F8F8;
-    border-color: #FFFFFF;
+     background-color: #F8F8F8;
+     border-color: #FFFFFF;
 }
+
 .topbar div > ul .menu-dropdown, .nav .menu-dropdown, .topbar div > ul .dropdown-menu, .nav .dropdown-menu {
-    background-color: #F8F8F8;
+     background-color: #F8F8F8;
 }
+
 .topbar h3 a:hover, .topbar .brand:hover {
-    color: #999999;
+     color: #999999;
 }
+
 .topbar h3 a, .topbar .brand {
-    color: #444444;
-    display: block;
-    float: left;
-    font-size: 20px;
-    font-weight: 200;
-    line-height: 1;
-    margin-left: -20px;
-    padding: 12px 20px 10px 0;
+     color: #444444;
+     display: block;
+     float: left;
+     font-size: 20px;
+     font-weight: 200;
+     line-height: 1;
+     margin-left: -20px;
+     padding: 12px 20px 10px 0pt;
 }
+
 .topbar div > ul a:hover, .nav a:hover {
-    color: #999999;
+     color: #999999;
 }
+
 .topbar a {
-    color: #555555;
-    font-family: lato;
-    font-size: 14px;
-    text-shadow: none;
-    text-transform: capitalize;
+     color: #555555;
+     font-family: lato;
+     font-size: 14px;
+     text-shadow: none;
+     text-transform: capitalize;
 }
-.topbar-inner, .topbar .fill {
-    background: #f8f8f8;
-    background-repeat: repeat-x;
-    border-bottom: 1px solid #CDCDCD;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+
+.topbar-inner, .topbar .fill, body.notices div.topbar div.fill {
+     background: none repeat-x scroll 0pt 0pt #F8F8F8;
+     border-bottom: 1px solid #CDCDCD;
+     box-shadow: 0pt 1px 2px rgba(0, 0, 0, 0.1);
 }
+
 html body.nail-detail div.container div.nail form.comment input.btn {
-    padding: 7px 17px 8px;
+     padding: 7px 17px 8px;
 }
+
 html body.nail-detail div.container div.nail ul.actions {
-    background: none repeat scroll 0 0 transparent;
+     background: none repeat scroll 0pt 0pt transparent;
 }
+
 input, textarea, select, .uneditable-input {
-    border: 1px solid #CCCCCC;
-    border-radius: 3px 3px 3px 3px;
-    color: #555555;
-    display: inline-block;
-    font-size: 13px;
-    line-height: 18px;
-    margin-right: 1px;
-    padding: 1px 9px 1px 11px;
+     border-radius: 3px 3px 3px 3px;
+     border: 1px solid #CCCCCC;
+     color: #555555;
+     display: inline-block;
+     font-size: 13px;
+     line-height: 18px;
+     margin-right: 1px;
+     padding: 1px 9px 1px 11px;
 }
+
 span.phileo-count {
-    color: #999999 !important;
-    font-size: 12px !important;
-    font-weight: normal !important;
-    vertical-align: inherit !important;
+     color: #999999 ! important;
+     font-size: 12px ! important;
+     font-weight: normal ! important;
+     vertical-align: inherit ! important;
 }
+
 .btn.danger, .alert-message.danger, .btn.danger:hover, .alert-message.danger:hover, .btn.error, .alert-message.error, .btn.error:hover, .alert-message.error:hover, .btn.success, .alert-message.success, .btn.success:hover, .alert-message.success:hover, .btn.info, .alert-message.info, .btn.info:hover, .alert-message.info:hover {
-    color: #444444;
+     color: #444444;
 }
+
 html body.nail-detail div.container div.nail ul.actions li a.btn {
-    background: #f8f8f8;
-    background-repeat: repeat-x;
-    margin-right: 7px;
-    text-shadow: none;
+     background: none repeat-x scroll 0% 0% #F8F8F8;
+     margin-right: 7px;
+     text-shadow: none;
 }
+
 .btn.primary {
-    color: #555555;
+     color: #555555;
 }
+
 .btn {
-    -moz-border-bottom-colors: none;
-    -moz-border-image: none;
-    -moz-border-left-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-top-colors: none;
-    -moz-transition: all 0.1s linear 0s;
-    border-radius: 4px 4px 4px 4px;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: none;
-    cursor: pointer;
-    display: inline-block;
-    font-size: 13px;
-    line-height: normal;
-    padding: 3px 22px;
+     -moz-border-bottom-colors: none;
+     -moz-border-image: none;
+     -moz-border-left-colors: none;
+     -moz-border-right-colors: none;
+     -moz-border-top-colors: none;
+     -moz-transition: all 0.1s linear 0s ;
+     border-radius: 4px 4px 4px 4px;
+     border-style: solid;
+     border-width: 1px;
+     box-shadow: none;
+     cursor: pointer;
+     display: inline-block;
+     font-size: 13px;
+     line-height: normal;
+     padding: 3px 22px;
 }
+
 html body.profile div.container div.profile_info p {
-    font-family: monospace;
-    font-size: 15px;
-    font-weight: lighter;
+     font-family: monospace;
+     font-size: 15px;
+     font-weight: lighter;
 }
+
 html body.profile div.container p a#edit-profile-box.btn {
-    display: block;
-    float: right;
-    margin-right: 30px;
-    margin-top: -45px;
-    padding-left: 50px;
-    width: 100px;
+     display: block;
+     float: right;
+     margin-right: 30px;
+     margin-top: -45px;
+     padding-left: 50px;
+     width: 100px;
 }
+
 html body.profile div.container div.profile_info p b {
-    color: darkcyan;
-    font-size: 22px;
-    font-weight: bold;
-    line-height: 43px;
-    padding-right: 7px;
-    text-decoration: inherit;
+     color: darkcyan;
+     font-size: 22px;
+     font-weight: bold;
+     line-height: 43px;
+     padding-right: 7px;
+     text-decoration: inherit;
 }
+
 html body.profile div.container div.profile_info {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 10px 10px 10px 10px;
-    display: block;
-    padding: 20px 20px 40px;
+     background: none repeat scroll 0pt 0pt #FFFFFF;
+     border-radius: 10px 10px 10px 10px;
+     border: 1px solid #CCCCCC;
+     display: block;
+     padding: 20px 20px 40px;
 }
+
 div.nail ul li.creds div.credstext, div.nail ul li.comment div.commenttext {
-    display: inline-block;
-    padding-left: 4px;
-    vertical-align: top;
-    width: 170px;
+     display: inline-block;
+     padding-left: 4px;
+     vertical-align: top;
+     width: 170px;
 }
+
 .topbar div > ul.secondary-nav .menu-dropdown, .nav.secondary-nav .menu-dropdown, .topbar div > ul.secondary-nav .dropdown-menu, .nav.secondary-nav .dropdown-menu {
-    border: 0 none;
-    right: auto;
+     border: 0pt none;
+     right: auto;
 }
+
 body.nail-detail div.container div.nail ul.comments li:last-child {
-    border-bottom-width: 0;
+     border-bottom-width: 0pt;
 }
+
 html body.nail-detail div.container div.nail ul.comments {
-    background-color: #EDEFF4;
-    border: 1px solid #DDDDDD;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 500px;
+     background-color: #EDEFF4;
+     border: 1px solid #DDDDDD;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 500px;
 }
+
 .home .nail:hover, .workbench-detail .nail:hover {
-    box-shadow: 0 0px 1px rgba(34, 25, 25, 0.6);
+     box-shadow: 0pt 0px 1px rgba(34, 25, 25, 0.6);
 }
+
 body.workbench-detail div.container h1 {
-    font-size: 30px;
-    line-height: 36px;
-    margin-top: -21px;
-    text-align: center;
+     font-size: 30px;
+     line-height: 36px;
+     margin-top: -21px;
+     text-align: center;
 }
+
 html body.nail-detail div.container div.nail form.comment textarea#id_comment {
-    height: 30px;
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 419px;
+     height: 30px;
+     margin-left: 10px;
+     margin-right: 10px;
+     width: 419px;
 }
+
 html body.nail-detail div.container div.nail form.comment {
-    background: none repeat scroll 0 0 #F5F5F5;
-    border-radius: 0 0 10px 10px;
-    margin-bottom: 0;
-    padding: 10px;
+     background: none repeat scroll 0pt 0pt #F5F5F5;
+     border-radius: 0pt 0pt 10px 10px;
+     margin-bottom: 0pt;
+     padding: 10px;
 }
+
 html body.nail-detail div.container div.nail ul.comments li a {
-    color: darkcyan;
-    font-weight: bold;
+     color: darkcyan;
+     font-weight: bold;
 }
+
 html body.nail-detail div.container div.nail ul.actions {
-    display: block;
-    margin: -7px auto 5px 25px;
-    width: auto;
+     display: block;
+     margin: -7px auto 5px 25px;
+     width: auto;
 }
+
 html body.nail-detail div.container div.nail img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
 }
+
 html body.nail-detail div.container div.nail h1 a {
-    color: darkcyan;
-    font-size: 20px;
-    margin-left: -10px;
-    text-decoration: underline;
-    text-shadow: none;
+     color: darkcyan;
+     font-size: 20px;
+     margin-left: -10px;
+     text-decoration: underline;
+     text-shadow: none;
 }
+
 html body.nail-detail div.container div.nail h1 {
-    border-bottom: 1px solid #DDDDDD;
-    color: #666666;
-    font-family: monospace;
-    font-size: 34px;
-    font-style: normal;
-    padding: 10px 10px 0 25px;
-    text-shadow: 1px 1px 0 #FFFFFF, 1px 1px 1px #333333;
+     border-bottom: 1px solid #DDDDDD;
+     color: #666666;
+     font-family: monospace;
+     font-size: 34px;
+     font-style: normal;
+     padding: 10px 10px 0pt 25px;
+     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
 }
+
 html body.nail-detail div.container div.nail {
-    background: none repeat scroll 0 0 white;
-    border: 2px solid #B2B2B2;
-    border-radius: 10px 10px 10px 10px;
-    box-shadow: 0 0 10px rgba(34, 25, 25, 0.4);
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 650px;
+     background: none repeat scroll 0pt 0pt white;
+     border-radius: 10px 10px 10px 10px;
+     border: 2px solid #B2B2B2;
+     box-shadow: 0pt 0pt 10px rgba(34, 25, 25, 0.4);
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 650px;
 }
+
 body.nail-detail div.container div.nail p {
-    color: #797979;
-    text-align: center;
+     color: #797979;
+     text-align: center;
 }
+
 body.nail-detail div.container div.nail ul.comments li {
-    border-bottom: 1px solid #DDDDDD;
-    border-top: 1px solid white;
-    color: #555555;
-    padding: 8px 20px 8px 10px;
+     border-bottom: 1px solid #DDDDDD;
+     border-top: 1px solid white;
+     color: #555555;
+     padding: 8px 20px 8px 10px;
 }
+
 div.container div.nail ul li.creds:last-child {
-    border-bottom-width: 0;
+     border-bottom-width: 0pt;
 }
+
 div.container div.nail ul li.comment {
-    border-top: 1px solid #FFFFFF;
+     border-top: 1px solid #FFFFFF;
 }
+
 div.nail ul li.stats {
-    background-color: #EDEFF4;
-    border-top: 1px solid white;
-    font-size: 10px;
-    padding-right: 10px;
-    text-align: right;
+     background-color: #EDEFF4;
+     border-top: 1px solid white;
+     font-size: 10px;
+     padding-right: 10px;
+     text-align: right;
 }
+
 div.container div.nail ul {
-    background-color: #EDEFF4;
+     background-color: #EDEFF4;
 }
+
 body.home div.container div.nail ul, body.workbench-detail div.container div.nail ul {
-    margin: 0;
+     margin: 0pt;
 }
+
 li.creds {
-    font-size: 11px;
+     font-size: 11px;
 }
+
 li.creds a, li.comment a {
-    color: #585757;
-    font-size: 11px;
-    font-weight: bold;
-    text-transform: capitalize;
+     color: #585757;
+     font-size: 11px;
+     font-weight: bold;
+     text-transform: capitalize;
 }
+
 div.nail ul li.creds, li.comment {
-    border-bottom: 1px solid #D8D8D8;
-    border-top: 1px solid #DDDDDD;
-    font-size: 11px;
-    padding: 6px 5px 6px 12px;
+     border-bottom: 1px solid #D8D8D8;
+     border-top: 1px solid #DDDDDD;
+     font-size: 11px;
+     padding: 6px 5px 6px 12px;
 }
+
 div.nail a img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 20px 20px 0;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 20px 20px 0pt;
 }
+
 form.comment label {
-    color: #404040;
-    float: left;
-    font-size: 13px;
-    line-height: 18px;
-    padding-top: 6px;
-    text-align: right;
-    width: 61px;
+     color: #404040;
+     float: left;
+     font-size: 13px;
+     line-height: 18px;
+     padding-top: 6px;
+     text-align: right;
+     width: 61px;
 }
+
 .well {
-    background-color: #EEEEEE;
-    border: medium none;
-    box-shadow: none;
-    margin-bottom: 5px;
-    margin-left: 0;
-    margin-top: 0;
-    min-height: 0;
-    padding: 0;
-    width: 192px;
+     background-color: #EEEEEE;
+     border: medium none;
+     box-shadow: none;
+     margin-bottom: 5px;
+     margin-left: 0pt;
+     margin-top: 0pt;
+     min-height: 0pt;
+     padding: 0pt;
+     width: 192px;
 }
+
 ul {
-    list-style: none outside none;
+     list-style: none outside none;
 }
+
 div.container div.nail ul li.comment a img, div.container div.nail ul li.creds a img {
-    display: inline-block;
-    margin-right: 3px;
-    padding: 0;
+     display: inline-block;
+     margin-right: 3px;
+     padding: 0pt;
 }
+
 div.topbar div.fill div.container ul.secondary-nav li img {
-    display: block;
-    padding-top: 5px;
+     display: block;
+     padding-top: 5px;
 }
+
 body.home div.container div.nail p, body.workbench-detail div.container div.nail p {
-    color: #7B7878;
-    font-size: 11px;
-    margin-top: 3px;
-    padding: 0 20px;
-    text-align: left;
+     color: #7B7878;
+     font-size: 11px;
+     margin-top: 3px;
+     padding: 0pt 20px;
+     text-align: left;
 }
+
 body {
-    background: none repeat scroll 0 0 #E9E9E9;
-    margin-top: 70px;
-    padding-top: 0;
-    position: relative;
+     background: none repeat scroll 0pt 0pt #E9E9E9;
+     margin-top: 70px;
+     padding-top: 0pt;
+     position: relative;
 }
+
 .home .nail {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #DDDDDD;
-    display: inline-block;
-    margin-top: 0;
-    width: 240px;
+     background: none repeat scroll 0pt 0pt #FFFFFF;
+     border: 1px solid #DDDDDD;
+     display: inline-block;
+     margin-top: 0pt;
+     width: 240px;
 }
+
 .workbench-detail .nail {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #CCCCCC;
-    display: inline-block;
-    margin-top: 20px;
-    width: 230px;
+     background: none repeat scroll 0pt 0pt #FFFFFF;
+     border: 1px solid #CCCCCC;
+     display: inline-block;
+     margin-top: 20px;
+     width: 230px;
 }
+
 .nail-detail .actions li {
-    display: inline;
-    list-style: none outside none;
+     display: inline;
+     list-style: none outside none;
 }
+
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    width: 940px;
+     margin-left: auto;
+     margin-right: auto;
+     width: 940px;
 }
+
 p {
-    font-weight: normal;
-    line-height: 18px;
-    margin-bottom: 9px;
-    word-wrap: break-word;
+     font-weight: normal;
+     line-height: 18px;
+     margin-bottom: 9px;
+     word-wrap: break-word;
 }
+
 li {
-    color: #808080;
-    font-size: 13px;
-    line-height: 18px;
-    padding-bottom: 3px;
-    word-wrap: break-word;
+     color: #808080;
+     font-size: 13px;
+     line-height: 18px;
+     padding-bottom: 3px;
+     word-wrap: break-word;
 }
 
 div.topbar {
-     background: f8f8f8;  
      background-repeat: repeat-x;
      border-bottom: 1px solid #CDCDCD;
      box-shadow: 0pt 1px 2px rgba(0, 0, 0, 0.1);

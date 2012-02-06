@@ -130,7 +130,6 @@ utils.register(Workbench)
 
 @receiver(post_save, sender=Nail)
 def nail_saved(sender, instance=None, created=None, **kwargs):
-    import pdb;pdb.set_trace()
     if not created:
         # remove nail from old friendfeeds
         instance.friendfeed.all().delete()

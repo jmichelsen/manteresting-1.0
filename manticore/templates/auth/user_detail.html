@@ -16,7 +16,9 @@
                 {% if workbench.nails.count %}
                     <ul>
                     {% for nail in workbench.nails.all %}
-                        <li><a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.thumb }}" width="{{ nail.thumb.width }}px" height="{{ nail.thumb.height }}px" /></a></li>
+                        {% if nail.thumb %}
+                            <li><a href="{{ nail.get_absolute_url }}"><img src="{{ MEDIA_URL }}{{ nail.thumb }}" width="{{ nail.thumb.width }}px" height="{{ nail.thumb.height }}px" /></a></li>
+                        {% endif %}
                     {% endfor %}
                     </ul>
                 {% else %}

@@ -27,7 +27,7 @@
                 <li class="workers-you-follow"><a href="{% url home %}">{% trans "Workers you follow" %}</a></li>
                 <li class="all"><a href="{% url all %}">{% trans "Everything" %}</a></li>
             {% else %}
-                <li class="all"><a href="{% url homepage %}">{% trans "Everything" %}</a></li>
+                <li class="all"><a href="{% url home %}">{% trans "Everything" %}</a></li>
             {% endif %}
         {% endspaceless %}</ul>
 {% endblock %}

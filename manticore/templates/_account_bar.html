@@ -31,6 +31,7 @@
             <ul class="menu-dropdown">
                 <li><a rel="nofollow" href="{% url socialauth_begin 'twitter' %}?next={% firstof post_login_url request.path %}">Twitter</a><li>
                 <li><a rel="nofollow" href="{% url socialauth_begin 'facebook' %}?next={% firstof post_login_url request.path %}">Facebook</a></li>
+		<li><a rel="nofollow" href="http://manteresting.com/account/login/">Personal</a></li>
             </ul>
         </li>
     {% endif %}

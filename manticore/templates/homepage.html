@@ -3,7 +3,7 @@
 {% load i18n %}
 {% load ifsetting_tag %}
 
-{% block head_title %}{% trans "Welcome" %}{% endblock %}
+{% block head_title %}{% trans "Beta" %}{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
@@ -29,10 +29,14 @@
                }, opts);
 
              $('.container').imagesLoaded(function() {
-                   $('.nail').wookmark({offset: 10, itemWidth: 222});
+                   $('.nail').wookmark({offset: 5, itemWidth: 231});
                });
                $(window).resize(function() {
-                 $('.nail').wookmark({offset: 13, itemWidth: 222});
+                 $('.nail').wookmark({offset: 5, itemWidth: 231});
+                   $('.nail').wookmark({offset: 15, itemWidth: 231});
+               });
+               $(window).resize(function() {
+                 $('.nail').wookmark({offset: 15, itemWidth: 231});
                });
        });
      </script>

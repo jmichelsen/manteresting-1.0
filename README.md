@@ -26,7 +26,7 @@ How to setup
     mysql> grant all on manteresting.* to `manteresting`@`localhost` identified by 'manteresting';
 
 * Run `./manage.py syncdb --migrate`, answer 'no' when it'll ask if you want to create a superuser;
-* Run `./manage.py runserver 0.0.0.0:8000`
+* Run `./manage.py runserver 0.0.0.0:8000 --settings=manticore.settings.development`
 * Add `127.0.0.1  dev.manteresting.com` into the `/etc/hosts` on your desktop;
 * Open `dev.manteresting.com:8000` in the browser.
 * Login using Twitter.

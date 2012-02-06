@@ -12,7 +12,7 @@ from manticore.apps.core.views import (
     CreateByView,
     UpdateWorkbenchView, DeleteWorkbenchView,
     CreateNailView, UpdateNailView, DeleteNailView,
-    HomepageView, RepinNailView,
+    HomepageView, RepinNailView, FriendFeedView,
 )
 
 
@@ -22,6 +22,7 @@ from idios.views import ProfileCreateView, ProfileDetailView, ProfileUpdateView
 
 urlpatterns = patterns("",
     url(r'^$', HomepageView.as_view(), name='home'),
+    url(r'^ff/$', FriendFeedView.as_view(), name='friendfeed'),
 
     url(r"^admin/invite_user/$", "pinax.apps.signup_codes.views.admin_invite_user", name="admin_invite_user"),
     url(r"^admin/", include(admin.site.urls)),

@@ -8,7 +8,7 @@ from django.forms.models import modelform_factory
 from django import forms
 from django.core.files.base import ContentFile
 
-from .models import Nail
+from .models import Nail, FriendFeed
 
 
 class ImmediateHttpResponse(BaseException):
@@ -221,5 +221,21 @@ class HomepageView(TemplateView):
     def get_context_data(self, **kwargs):
         data = super(HomepageView, self).get_context_data(**kwargs)
         data['nails'] = Nail.objects.all().order_by('-id')[:20]
+        return data
+
+
+class FriendFeedView(TemplateView):
+    template_name = 'friendfeed.html'
+
+    def get_context_data(self, **kwargs):
+        data = super(FriendFeedView, self).get_context_data(**kwargs)
+        user = self.request.user
+        if user.is_authenticated():
+            #if FriendFeed.objects.filter(user=user).count() == 0:
+            #    # trying to make a full update only
+            #    # if feed is empty
+            #    FriendFeed.rebuild_for(user)
+
+            data['nails'] = [ff.nail for ff in user.friendfeed.order_by('-timestamp')[:20]]
         return data
 

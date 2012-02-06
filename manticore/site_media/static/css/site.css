@@ -562,3 +562,9 @@ html body.account div.container div.alert-message {
 html body.notices div.container div.row div.span12 div.notice_settings div.alert-message a {
     text-decoration: underline;
 }
+
+/* make menu items corresponding to the current page, bold */
+.main-menu.all .all,
+.main-menu.workers-you-follow .workers-you-follow {
+    font-weight: bold;
+}

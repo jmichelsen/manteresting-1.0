@@ -215,20 +215,24 @@ class DeleteWorkbenchView(RestrictToOwner, DeleteByView):
         return obj
 
 
-class HomepageView(TemplateView):
+class AllNailsView(TemplateView):
     template_name = 'homepage.html'
 
     def get_context_data(self, **kwargs):
-        data = super(HomepageView, self).get_context_data(**kwargs)
+        data = super(AllNailsView, self).get_context_data(**kwargs)
         data['nails'] = Nail.objects.all().order_by('-id')[:20]
+        data['main_menu_item'] = 'all'
         return data
 
 
-class FriendFeedView(TemplateView):
-    template_name = 'friendfeed.html'
+class HomepageView(AllNailsView):
+    """Does the same as AllNailsView for anonymous users,
+    but shows only followed items for authorized.
+    """
 
     def get_context_data(self, **kwargs):
-        data = super(FriendFeedView, self).get_context_data(**kwargs)
+        data = super(HomepageView, self).get_context_data(**kwargs)
+
         user = self.request.user
         if user.is_authenticated():
             #if FriendFeed.objects.filter(user=user).count() == 0:
@@ -236,6 +240,14 @@ class FriendFeedView(TemplateView):
             #    # if feed is empty
             #    FriendFeed.rebuild_for(user)
 
-            data['nails'] = [ff.nail for ff in user.friendfeed.order_by('-timestamp')[:20]]
+            nails = [ff.nail for ff in user.friendfeed.order_by('-timestamp')[:20]]
+            if nails:
+                data['nails'] = nails
+            else:
+                data['nails'] = user.nails.all().order_by('-id')[:20]
+
+            data['main_menu_item'] = 'workers-you-follow'
+
+
         return data
 

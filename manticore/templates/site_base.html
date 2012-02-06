@@ -22,6 +22,15 @@
             <li id="tab_notices"><a href="{% url notification_notices %}">{% trans "Notices" %}{% if notice_unseen_count %} ({{ notice_unseen_count }}){% endif %}</a></li>
         {% endspaceless %}</ul>
     {% endif %}
+
+        <ul class="main-menu {{ main_menu_item }}">{% spaceless %}
+            {% if user.is_authenticated %}
+                <li class="workers-you-follow"><a href="{% url home %}">{% trans "Workers you follow" %}</a></li>
+                <li class="all"><a href="{% url all %}">{% trans "Everything" %}</a></li>
+            {% else %}
+                <li class="all"><a href="{% url homepage %}">{% trans "Everything" %}</a></li>
+            {% endif %}
+        {% endspaceless %}</ul>
 {% endblock %}
 
 {% block footer %}

@@ -87,7 +87,7 @@ html body.profile div.container h1 {
      font-size: 20px;
      font-weight: 200;
      line-height: 1;
-     margin-left: -20px;
+     margin-left: 0px;
      padding: 12px 20px 10px 0pt;
 }
 
@@ -206,6 +206,7 @@ div.nail ul li.creds div.credstext, div.nail ul li.comment div.commenttext {
      padding-left: 4px;
      vertical-align: top;
      width: 170px;
+     line-height: 14px;
 }
 
 .topbar div > ul.secondary-nav .menu-dropdown, .nav.secondary-nav .menu-dropdown, .topbar div > ul.secondary-nav .dropdown-menu, .nav.secondary-nav .dropdown-menu {

@@ -35,6 +35,7 @@ django-imagekit==1.0.3
 -e git+git@github.com:simplegeo/python-oauth2.git@1fcc1a6d49a7be2a9394125acf5b1c2227fcde79#egg=python-oauth2
 -e git+git@github.com:eldarion/phileo.git@59a9482f9dcf27e2add31a2f1840aaec767ee07d#egg=phileo
 -e git+git@github.com:eldarion/dialogos.git@71e1a5a972716a98cc5a31ca861a7e6c61162b9b#egg=dialogos
+-e git+git@github.com:caffeinehit/django-follow.git@541893d94c5ce104835a9166bcdc646da074c3cf#egg=django-follow
 # Source and documentation at https://github.com/omab/django-social-auth
 django-social-auth==0.6.0
 # Database migrations

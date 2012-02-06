@@ -3,7 +3,7 @@
 
 --requirement=base.txt
 
-django-debug-toolbar==0.8.5
+django-debug-toolbar==0.9.4
 nose==1.1.2
 NoseDjango==0.8.1
 pdbpp==0.7.2

@@ -8,7 +8,7 @@ from django.forms.models import modelform_factory
 from django import forms
 from django.core.files.base import ContentFile
 
-from .models import Nail
+from .models import Nail, FriendFeed
 
 
 class ImmediateHttpResponse(BaseException):
@@ -165,9 +165,6 @@ class CreateNailView(CreateByView):
 
 
 class UpdateNailView(RestrictToOwner, UpdateByView):
-    def is_owner(self, user, obj):
-        return obj.workbench.user == user
-
     def get_form_class(self):
         form_class = super(UpdateNailView, self).get_form_class()
         form_class.base_fields['workbench'].queryset = self.request.user.workbenches.all()
@@ -205,9 +202,6 @@ class RepinNailView(UpdateByView):
 
 
 class DeleteNailView(RestrictToOwner, DeleteByView):
-    def is_owner(self, user, obj):
-        return obj.workbench.user == user
-
     def get_object(self):
         obj = super(DeleteNailView, self).get_object()
         self.success_url = obj.workbench.get_absolute_url()
@@ -221,11 +215,39 @@ class DeleteWorkbenchView(RestrictToOwner, DeleteByView):
         return obj
 
 
-class HomepageView(TemplateView):
+class AllNailsView(TemplateView):
     template_name = 'homepage.html'
 
     def get_context_data(self, **kwargs):
-        data = super(HomepageView, self).get_context_data(**kwargs)
+        data = super(AllNailsView, self).get_context_data(**kwargs)
         data['nails'] = Nail.objects.all().order_by('-id')[:20]
+        data['main_menu_item'] = 'all'
+        return data
+
+
+class HomepageView(AllNailsView):
+    """Does the same as AllNailsView for anonymous users,
+    but shows only followed items for authorized.
+    """
+
+    def get_context_data(self, **kwargs):
+        data = super(HomepageView, self).get_context_data(**kwargs)
+
+        user = self.request.user
+        if user.is_authenticated():
+            #if FriendFeed.objects.filter(user=user).count() == 0:
+            #    # trying to make a full update only
+            #    # if feed is empty
+            #    FriendFeed.rebuild_for(user)
+
+            nails = [ff.nail for ff in user.friendfeed.order_by('-timestamp')[:20]]
+            if nails:
+                data['nails'] = nails
+            else:
+                data['nails'] = user.nails.all().order_by('-id')[:20]
+
+            data['main_menu_item'] = 'workers-you-follow'
+
+
         return data
 

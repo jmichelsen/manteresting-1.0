@@ -87,7 +87,7 @@ html body.profile div.container h1 {
      font-size: 20px;
      font-weight: 200;
      line-height: 1;
-     margin-left: -20px;
+     margin-left: 0px;
      padding: 12px 20px 10px 0pt;
 }
 
@@ -103,8 +103,8 @@ html body.profile div.container h1 {
      text-transform: capitalize;
 }
 
-.topbar-inner, .topbar .fill, body.notices div.topbar div.fill {
-     background: none repeat-x scroll 0pt 0pt #F8F8F8;
+.topbar-inner, .topbar .fill {
+     background: none repeat-x scroll 0% 0% #F8F8F8;
      border-bottom: 1px solid #CDCDCD;
      box-shadow: 0pt 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -139,8 +139,8 @@ span.phileo-count {
      color: #444444;
 }
 
-html body.nail-detail div.container div.nail ul.actions li a.btn {
-     background: none repeat-x scroll 0% 0% #F8F8F8;
+html body.nail-detail div.container div.nail ul.actions li a.btn, html body div.container form div.input input.btn {
+     background: none repeat-x scroll 0pt 0pt #F8F8F8;
      margin-right: 7px;
      text-shadow: none;
 }
@@ -174,12 +174,13 @@ html body.profile div.container div.profile_info p {
 }
 
 html body.profile div.container p a#edit-profile-box.btn {
-     display: block;
-     float: right;
-     margin-right: 30px;
-     margin-top: -45px;
-     padding-left: 50px;
-     width: 100px;
+    display: block;
+    float: left;
+    margin-left: 30px;
+    margin-top: -45px;
+    padding-left: 50px;
+    width: 100px;
+
 }
 
 html body.profile div.container div.profile_info p b {
@@ -192,11 +193,12 @@ html body.profile div.container div.profile_info p b {
 }
 
 html body.profile div.container div.profile_info {
-     background: none repeat scroll 0pt 0pt #FFFFFF;
-     border-radius: 10px 10px 10px 10px;
-     border: 1px solid #CCCCCC;
-     display: block;
-     padding: 20px 20px 40px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px 10px 10px 10px;
+    display: block;
+    padding: 20px 20px 40px;
+    width: 550px;
 }
 
 div.nail ul li.creds div.credstext, div.nail ul li.comment div.commenttext {
@@ -204,6 +206,7 @@ div.nail ul li.creds div.credstext, div.nail ul li.comment div.commenttext {
      padding-left: 4px;
      vertical-align: top;
      width: 170px;
+     line-height: 14px;
 }
 
 .topbar div > ul.secondary-nav .menu-dropdown, .nav.secondary-nav .menu-dropdown, .topbar div > ul.secondary-nav .dropdown-menu, .nav.secondary-nav .dropdown-menu {
@@ -454,4 +457,114 @@ div.topbar {
      background-repeat: repeat-x;
      border-bottom: 1px solid #CDCDCD;
      box-shadow: 0pt 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+html body.account div.container div.row div.span4 {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 0pt 0pt 4px #CCCCCC;
+     padding: 10px 23px 0pt 24px;
+     text-align: left;
+     width: auto;
+}
+
+html body.account div.container div.row div.span4 ul {
+     margin-left: 0px;
+}
+
+html body.account div.container div.row div.span4 h1 {
+     color: #666666;
+     font-family: monospace;
+     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+}
+
+html body.account div.container div.row div.span12 {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 0pt 0pt 4px #CCCCCC;
+     padding: 10px 20px 0px;
+}
+
+html body.account div.container div.row div.span12 h2 {
+     color: #666666;
+     font-family: monospace;
+     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+}
+
+html body.account div.container div.row div.span12 form div.actions {
+     background: none repeat scroll 0pt 0pt transparent;
+     border-top: medium none;
+     padding-bottom: 0pt;
+     padding-top: 0pt;
+}
+
+html body.account div.container div.row div.span12 form div.actions button.btn {
+     background: none repeat scroll 0% 0% #EEEEEE;
+     color: #444444;
+     margin-top: 0px;
+     padding-left: 40px;
+     padding-right: 40px;
+     text-shadow: none;
+}
+
+html body.account div.container div.row div.span12 form fieldset {
+     margin-bottom: -21px;
+}
+
+html body.account div.container div.row div.span12 form {
+     margin-left: 0px;
+     margin-top: -10px;
+}
+
+html body.notices div.container div.row div.span4 {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 0pt 0pt 4px #CCCCCC;
+     padding: 10px 23px 0pt 24px;
+     text-align: left;
+     width: auto;
+}
+
+html body.notices div.container div.row div.span4 ul {
+     margin-left: 0px;
+     margin-top: -13px;
+}
+
+html body.notices div.container div.row div.span4 h1 {
+     color: #666666;
+     font-family: monospace;
+     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+}
+
+html body.notices div.container div.row div.span12 {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 0pt 0pt 4px #CCCCCC;
+     padding: 10px 23px 0pt 24px;
+     text-align: left;
+     width: auto;
+}
+
+html body.notices div.container div.row div.span12 h2 {
+     color: #666666;
+     padding-bottom: 11px;
+}
+
+html body.notices div.container div.row div.span12 div.notice_settings form table.notice_settings tbody tr td button.btn {
+     color: white;
+}
+
+html body.account div.container div.alert-message {
+    width: 350px;
+    float: right;
+}
+
+html body.notices div.container div.row div.span12 div.notice_settings div.alert-message a {
+    text-decoration: underline;
+}
+
+/* make menu items corresponding to the current page, bold */
+.main-menu.all .all,
+.main-menu.workers-you-follow .workers-you-follow {
+    font-weight: bold;
 }

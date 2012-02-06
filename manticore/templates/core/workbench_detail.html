@@ -1,12 +1,17 @@
 {% extends "site_base.html" %}
-{% load manticore %}
+{% load manticore follow_tags %}
 
 {% block head_title %}{{ object.title }}{% endblock %}
 
 {% block body_class %}workbench-detail{% endblock %}
 
 {% block body %}
-    <h1>{{ object.title }}</h1>
+    <h1>{{ object.title }} {% follow_form object %}</h1>
+    {% with user=object.user profile=object.user.get_profile %}
+    <h2>by <a href="{% url user slug=user.username %}">{% if profile.avatar %}<img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/>{% endif %}{{ object.user }}</a></h2>
+
+    {% endwith %}
+
     {% for nail in object.nails.all %}
         {% include "_nail.html" %}
     {% endfor %}

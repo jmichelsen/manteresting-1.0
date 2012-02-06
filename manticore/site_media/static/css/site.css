@@ -174,12 +174,13 @@ html body.profile div.container div.profile_info p {
 }
 
 html body.profile div.container p a#edit-profile-box.btn {
-     display: block;
-     float: right;
-     margin-right: 30px;
-     margin-top: -45px;
-     padding-left: 50px;
-     width: 100px;
+    display: block;
+    float: left;
+    margin-left: 30px;
+    margin-top: -45px;
+    padding-left: 50px;
+    width: 100px;
+
 }
 
 html body.profile div.container div.profile_info p b {
@@ -192,11 +193,12 @@ html body.profile div.container div.profile_info p b {
 }
 
 html body.profile div.container div.profile_info {
-     background: none repeat scroll 0pt 0pt #FFFFFF;
-     border-radius: 10px 10px 10px 10px;
-     border: 1px solid #CCCCCC;
-     display: block;
-     padding: 20px 20px 40px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 10px 10px 10px 10px;
+    display: block;
+    padding: 20px 20px 40px;
+    width: 550px;
 }
 
 div.nail ul li.creds div.credstext, div.nail ul li.comment div.commenttext {
@@ -509,6 +511,53 @@ html body.account div.container div.row div.span12 form fieldset {
 }
 
 html body.account div.container div.row div.span12 form {
-     margin-left: -68px;
+     margin-left: 0px;
      margin-top: -10px;
+}
+
+html body.notices div.container div.row div.span4 {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 0pt 0pt 4px #CCCCCC;
+     padding: 10px 23px 0pt 24px;
+     text-align: left;
+     width: auto;
+}
+
+html body.notices div.container div.row div.span4 ul {
+     margin-left: 0px;
+     margin-top: -13px;
+}
+
+html body.notices div.container div.row div.span4 h1 {
+     color: #666666;
+     font-family: monospace;
+     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+}
+
+html body.notices div.container div.row div.span12 {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 0pt 0pt 4px #CCCCCC;
+     padding: 10px 23px 0pt 24px;
+     text-align: left;
+     width: auto;
+}
+
+html body.notices div.container div.row div.span12 h2 {
+     color: #666666;
+     padding-bottom: 11px;
+}
+
+html body.notices div.container div.row div.span12 div.notice_settings form table.notice_settings tbody tr td button.btn {
+     color: white;
+}
+
+html body.account div.container div.alert-message {
+    width: 350px;
+    float: right;
+}
+
+html body.notices div.container div.row div.span12 div.notice_settings div.alert-message a {
+    text-decoration: underline;
 }

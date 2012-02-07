@@ -618,3 +618,15 @@ html body div.container div.user-profile p.username {
      line-height: 35px;
      text-shadow: 2px 2px 1px #FFFFFF, 1px 1px 2px #000000;
 }
+
+html body div.container form div.clearfix label {
+     font-family: monospace;
+     font-size: 21px;
+     margin-left: 50px;
+     padding-bottom: 20px;
+     padding-right: 26px;
+}
+
+html body div.container form div.input input.btn {
+     margin-left: 56px;
+}

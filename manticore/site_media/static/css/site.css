@@ -1,24 +1,3 @@
-html body.profile div#modal div#modal-popup.modal form.ajax div.modal-footer button.btn {
-     color: #FFFFFF;
-}
-
-html body.profile div#modal div#modal-popup.modal form.ajax div.modal-body fieldset div.clearfix div.input input#id_avatar {
-     display: list-item;
-}
-
-html body.profile div#modal div#modal-popup.modal form.ajax div.modal-body fieldset div.clearfix div.input input#avatar-clear_id {
-     display: inline;
-     margin-top: 9px;
-}
-
-html body.profile div#modal div#modal-popup.modal form.ajax div.modal-body fieldset div.clearfix div.input a {
-     display: block;
-     margin-bottom: 10px;
-}
-
-html body.profile div#modal div#modal-popup.modal {
-     position: absolute;
-}
 
 html body.profile div.container h1 {
      color: #666666;

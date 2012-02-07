@@ -568,3 +568,53 @@ html body.notices div.container div.row div.span12 div.notice_settings div.alert
 .main-menu.workers-you-follow .workers-you-follow {
     font-weight: bold;
 }
+
+html body div.container div.workbench {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #DDDDDD;
+     box-shadow: 0px 0px 8px #C9C9C9;
+     float: right;
+     margin-bottom: 19px;
+     margin-right: 66px;
+     padding: 10px 20px;
+     width: 500px;
+}
+
+html body div.container div.workbench h1 {
+     border-bottom: 1px solid #EEEEEE;
+     color: #666666;
+     font-family: monospace;
+     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+}
+
+html body div.container div.workbench ul li {
+     display: inline-block;
+     padding: 0px 1px;
+}
+
+html body div.container div.user-profile {
+     background-color: white;
+     box-shadow: 0px 0px 8px #C9C9C9;
+     color: #555555;
+     float: left;
+     margin-bottom: 15px;
+     padding: 10px 5px 10px 15px;
+     text-align: left;
+     width: 287px;
+}
+
+html body div.container div.user-profile form {
+     margin-bottom: 5px;
+}
+
+html body div.container div.user-profile p.stats {
+     font-size: 14px;
+     padding-bottom: 7px;
+}
+
+html body div.container div.user-profile p.username {
+     color: darkcyan;
+     font-size: 36px;
+     line-height: 35px;
+     text-shadow: 2px 2px 1px #FFFFFF, 1px 1px 2px #000000;
+}

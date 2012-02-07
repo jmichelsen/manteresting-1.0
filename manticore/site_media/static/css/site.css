@@ -630,3 +630,16 @@ html body div.container form div.clearfix label {
 html body div.container form div.input input.btn {
      margin-left: 56px;
 }
+
+html body div.container form div.clearfix div.input img {
+    margin-left: 56px;
+}
+
+.btn.primary {
+    background-color: #f8f8f8;
+    background-repeat: repeat-x;
+    border-color: #ccc;
+    color: #000;
+    background-image: -moz-linear-gradient(center top , #FFFFFF, #FFFFFF 25%, #E6E6E6);
+    text-shadow: none;
+}

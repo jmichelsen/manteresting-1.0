@@ -550,9 +550,6 @@ html body.notices div.container div.row div.span12 h2 {
      padding-bottom: 11px;
 }
 
-html body.notices div.container div.row div.span12 div.notice_settings form table.notice_settings tbody tr td button.btn {
-     color: white;
-}
 
 html body.account div.container div.alert-message {
     width: 350px;
@@ -620,11 +617,10 @@ html body div.container div.user-profile p.username {
 }
 
 html body div.container form div.clearfix label {
-     font-family: monospace;
-     font-size: 21px;
-     margin-left: 50px;
-     padding-bottom: 20px;
-     padding-right: 26px;
+    font-size: 17px;
+    margin-left: 20px;
+    padding-bottom: 15px;
+    padding-right: 15px;
 }
 
 html body div.container form div.input input.btn {
@@ -666,3 +662,13 @@ html body.workbench-detail div.container h2 a img {
 html body.workbench-detail div.container h2 a {
     color: darkcyan;
 }
+
+html body div.container form fieldset {
+     background: none repeat scroll 0% 0% white;
+     margin-bottom: 0px;
+}
+
+html body div.container form div.actions {
+     margin-top: 0px;
+}
+

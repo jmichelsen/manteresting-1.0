@@ -643,3 +643,26 @@ html body div.container form div.clearfix div.input img {
     background-image: -moz-linear-gradient(center top , #FFFFFF, #FFFFFF 25%, #E6E6E6);
     text-shadow: none;
 }
+
+html body.workbench-detail div.container h1 {
+    font-family: monospace;
+    font-size: 40px;
+    text-shadow: 1px 1px 0 #FFFFFF, 1px 1px 1px #333333;
+    color: #666;
+    border-bottom: 1px solid #c5c5c5;
+    padding-top: 5px;
+}
+html body.workbench-detail div.container h1 form {
+    margin-bottom: 5px;
+    display: inline-block;
+}
+html body.workbench-detail div.container h2 {
+    color: #666;
+    margin-top: -61px;
+}
+html body.workbench-detail div.container h2 a img {
+    padding-right: 5px;
+}
+html body.workbench-detail div.container h2 a {
+    color: darkcyan;
+}

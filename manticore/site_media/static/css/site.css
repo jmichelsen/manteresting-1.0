@@ -27,25 +27,25 @@ html body.profile div.container h1 {
      font-style: normal;
      line-height: 15px;
      margin-bottom: 17px;
-     padding: 0pt 10px 0pt 20px;
-     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+     padding: 0px 10px 0px 20px;
+     text-shadow: 1px 1px 0px #FFFFFF, 1px 1px 1px #333333;
 }
 
 .topbar div > ul a, .nav a {
      display: block;
      float: none;
      line-height: 19px;
-     padding: 14px 10px 0pt;
+     padding: 14px 10px 0px;
      text-decoration: none;
 }
 
 .topbar div > ul .active > a, .nav .active > a {
-     background: none repeat scroll 0pt 0pt transparent;
+     background: none repeat scroll 0px 0px transparent;
      color: #555555;
 }
 
 .open .menu, .dropdown.open .menu, .open .dropdown-toggle, .dropdown.open .dropdown-toggle {
-     background: none repeat scroll 0pt 0pt rgba(0, 0, 0, 0.3);
+     background: none repeat scroll 0px 0px rgba(0, 0, 0, 0.3);
      color: #555555;
 }
 
@@ -61,9 +61,9 @@ html body.profile div.container h1 {
 
 .menu-dropdown .divider, .dropdown-menu .divider {
      background-color: #F8F8F8;
-     border-bottom: 0pt solid #FFFFFF;
-     height: 0pt;
-     margin: 2px 0pt;
+     border-bottom: 0px solid #FFFFFF;
+     height: 0px;
+     margin: 2px 0px;
      overflow: hidden;
 }
 
@@ -88,7 +88,7 @@ html body.profile div.container h1 {
      font-weight: 200;
      line-height: 1;
      margin-left: 0px;
-     padding: 12px 20px 10px 0pt;
+     padding: 12px 20px 10px 0px;
 }
 
 .topbar div > ul a:hover, .nav a:hover {
@@ -106,7 +106,7 @@ html body.profile div.container h1 {
 .topbar-inner, .topbar .fill {
      background: none repeat-x scroll 0% 0% #F8F8F8;
      border-bottom: 1px solid #CDCDCD;
-     box-shadow: 0pt 1px 2px rgba(0, 0, 0, 0.1);
+     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 html body.nail-detail div.container div.nail form.comment input.btn {
@@ -114,7 +114,7 @@ html body.nail-detail div.container div.nail form.comment input.btn {
 }
 
 html body.nail-detail div.container div.nail ul.actions {
-     background: none repeat scroll 0pt 0pt transparent;
+     background: none repeat scroll 0px 0px transparent;
 }
 
 input, textarea, select, .uneditable-input {
@@ -140,7 +140,7 @@ span.phileo-count {
 }
 
 html body.nail-detail div.container div.nail ul.actions li a.btn, html body div.container form div.input input.btn {
-     background: none repeat-x scroll 0pt 0pt #F8F8F8;
+     background: none repeat-x scroll 0px 0px #F8F8F8;
      margin-right: 7px;
      text-shadow: none;
 }
@@ -210,12 +210,12 @@ div.nail ul li.creds div.credstext, div.nail ul li.comment div.commenttext {
 }
 
 .topbar div > ul.secondary-nav .menu-dropdown, .nav.secondary-nav .menu-dropdown, .topbar div > ul.secondary-nav .dropdown-menu, .nav.secondary-nav .dropdown-menu {
-     border: 0pt none;
+     border: 0px none;
      right: auto;
 }
 
 body.nail-detail div.container div.nail ul.comments li:last-child {
-     border-bottom-width: 0pt;
+     border-bottom-width: 0px;
 }
 
 html body.nail-detail div.container div.nail ul.comments {
@@ -228,7 +228,7 @@ html body.nail-detail div.container div.nail ul.comments {
 }
 
 .home .nail:hover, .workbench-detail .nail:hover {
-     box-shadow: 0pt 0px 1px rgba(34, 25, 25, 0.6);
+     box-shadow: 0px 0px 1px rgba(34, 25, 25, 0.6);
 }
 
 body.workbench-detail div.container h1 {
@@ -246,9 +246,9 @@ html body.nail-detail div.container div.nail form.comment textarea#id_comment {
 }
 
 html body.nail-detail div.container div.nail form.comment {
-     background: none repeat scroll 0pt 0pt #F5F5F5;
-     border-radius: 0pt 0pt 10px 10px;
-     margin-bottom: 0pt;
+     background: none repeat scroll 0px 0px #F5F5F5;
+     border-radius: 0px 0px 10px 10px;
+     margin-bottom: 0px;
      padding: 10px;
 }
 
@@ -283,15 +283,15 @@ html body.nail-detail div.container div.nail h1 {
      font-family: monospace;
      font-size: 34px;
      font-style: normal;
-     padding: 10px 10px 0pt 25px;
-     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+     padding: 10px 10px 0px 25px;
+     text-shadow: 1px 1px 0px #FFFFFF, 1px 1px 1px #333333;
 }
 
 html body.nail-detail div.container div.nail {
-     background: none repeat scroll 0pt 0pt white;
+     background: none repeat scroll 0px 0px white;
      border-radius: 10px 10px 10px 10px;
      border: 2px solid #B2B2B2;
-     box-shadow: 0pt 0pt 10px rgba(34, 25, 25, 0.4);
+     box-shadow: 0px 0px 10px rgba(34, 25, 25, 0.4);
      display: block;
      margin-left: auto;
      margin-right: auto;
@@ -311,7 +311,7 @@ body.nail-detail div.container div.nail ul.comments li {
 }
 
 div.container div.nail ul li.creds:last-child {
-     border-bottom-width: 0pt;
+     border-bottom-width: 0px;
 }
 
 div.container div.nail ul li.comment {
@@ -331,7 +331,7 @@ div.container div.nail ul {
 }
 
 body.home div.container div.nail ul, body.workbench-detail div.container div.nail ul {
-     margin: 0pt;
+     margin: 0px;
 }
 
 li.creds {
@@ -356,7 +356,7 @@ div.nail a img {
      display: block;
      margin-left: auto;
      margin-right: auto;
-     padding: 20px 20px 0pt;
+     padding: 15px 15px 0px;
 }
 
 form.comment label {
@@ -374,10 +374,10 @@ form.comment label {
      border: medium none;
      box-shadow: none;
      margin-bottom: 5px;
-     margin-left: 0pt;
-     margin-top: 0pt;
-     min-height: 0pt;
-     padding: 0pt;
+     margin-left: 0px;
+     margin-top: 0px;
+     min-height: 0px;
+     padding: 0px;
      width: 192px;
 }
 
@@ -388,7 +388,7 @@ ul {
 div.container div.nail ul li.comment a img, div.container div.nail ul li.creds a img {
      display: inline-block;
      margin-right: 3px;
-     padding: 0pt;
+     padding: 0px;
 }
 
 div.topbar div.fill div.container ul.secondary-nav li img {
@@ -400,27 +400,27 @@ body.home div.container div.nail p, body.workbench-detail div.container div.nail
      color: #7B7878;
      font-size: 11px;
      margin-top: 3px;
-     padding: 0pt 20px;
+     padding: 0px 20px;
      text-align: left;
 }
 
 body {
-     background: none repeat scroll 0pt 0pt #E9E9E9;
+     background: none repeat scroll 0px 0px #E9E9E9;
      margin-top: 70px;
-     padding-top: 0pt;
+     padding-top: 0px;
      position: relative;
 }
 
 .home .nail {
-     background: none repeat scroll 0pt 0pt #FFFFFF;
-     border: 1px solid #DDDDDD;
-     display: inline-block;
-     margin-top: 0pt;
-     width: 240px;
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    display: inline-block;
+    margin-top: 0;
+    width: 230px;
 }
 
 .workbench-detail .nail {
-     background: none repeat scroll 0pt 0pt #FFFFFF;
+     background: none repeat scroll 0px 0px #FFFFFF;
      border: 1px solid #CCCCCC;
      display: inline-block;
      margin-top: 20px;
@@ -456,14 +456,14 @@ li {
 div.topbar {
      background-repeat: repeat-x;
      border-bottom: 1px solid #CDCDCD;
-     box-shadow: 0pt 1px 2px rgba(0, 0, 0, 0.1);
+     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 html body.account div.container div.row div.span4 {
      background: none repeat scroll 0% 0% white;
      border: 1px solid #CCCCCC;
-     box-shadow: 0pt 0pt 4px #CCCCCC;
-     padding: 10px 23px 0pt 24px;
+     box-shadow: 0px 0px 4px #CCCCCC;
+     padding: 10px 23px 0px 24px;
      text-align: left;
      width: auto;
 }
@@ -475,27 +475,27 @@ html body.account div.container div.row div.span4 ul {
 html body.account div.container div.row div.span4 h1 {
      color: #666666;
      font-family: monospace;
-     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+     text-shadow: 1px 1px 0px #FFFFFF, 1px 1px 1px #333333;
 }
 
 html body.account div.container div.row div.span12 {
      background: none repeat scroll 0% 0% white;
      border: 1px solid #CCCCCC;
-     box-shadow: 0pt 0pt 4px #CCCCCC;
+     box-shadow: 0px 0px 4px #CCCCCC;
      padding: 10px 20px 0px;
 }
 
 html body.account div.container div.row div.span12 h2 {
      color: #666666;
      font-family: monospace;
-     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+     text-shadow: 1px 1px 0px #FFFFFF, 1px 1px 1px #333333;
 }
 
 html body.account div.container div.row div.span12 form div.actions {
-     background: none repeat scroll 0pt 0pt transparent;
+     background: none repeat scroll 0px 0px transparent;
      border-top: medium none;
-     padding-bottom: 0pt;
-     padding-top: 0pt;
+     padding-bottom: 0px;
+     padding-top: 0px;
 }
 
 html body.account div.container div.row div.span12 form div.actions button.btn {
@@ -519,8 +519,8 @@ html body.account div.container div.row div.span12 form {
 html body.notices div.container div.row div.span4 {
      background: none repeat scroll 0% 0% white;
      border: 1px solid #CCCCCC;
-     box-shadow: 0pt 0pt 4px #CCCCCC;
-     padding: 10px 23px 0pt 24px;
+     box-shadow: 0px 00px 4px #CCCCCC;
+     padding: 10px 23px 0px 24px;
      text-align: left;
      width: auto;
 }
@@ -533,14 +533,14 @@ html body.notices div.container div.row div.span4 ul {
 html body.notices div.container div.row div.span4 h1 {
      color: #666666;
      font-family: monospace;
-     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+     text-shadow: 1px 1px 0px #FFFFFF, 1px 1px 1px #333333;
 }
 
 html body.notices div.container div.row div.span12 {
      background: none repeat scroll 0% 0% white;
      border: 1px solid #CCCCCC;
-     box-shadow: 0pt 0pt 4px #CCCCCC;
-     padding: 10px 23px 0pt 24px;
+     box-shadow: 0px 0px 4px #CCCCCC;
+     padding: 10px 23px 0px 24px;
      text-align: left;
      width: auto;
 }
@@ -584,7 +584,7 @@ html body div.container div.workbench h1 {
      border-bottom: 1px solid #EEEEEE;
      color: #666666;
      font-family: monospace;
-     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
+     text-shadow: 1px 1px 0px #FFFFFF, 1px 1px 1px #333333;
 }
 
 html body div.container div.workbench ul li {

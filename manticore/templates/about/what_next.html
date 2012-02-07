@@ -6,6 +6,7 @@
 {% block head_title %}{% trans "What Next?" %}{% endblock %}
 
 {% block body %}
+<div class="whatsnext">
     <h1>{% trans "What Next?" %}</h1>
     
     {% if user.is_authenticated %}
@@ -16,7 +17,7 @@
             <dd>so you can receive notifications, reset your password and so people can find you more easily.</dd>
             
             <dt><a href="{% url profile_detail user.username %}">fill out your profile</a></dt>
-            <dd>to tell the world a little about yourself.</dd>
+            <dd>to tell people a little about yourself.</dd>
             
             {% ifsetting ACCOUNT_OPEN_SIGNUP %}
             {% else %}
@@ -37,5 +38,6 @@
                     {% blocktrans %}Start by <a href="{{ login_url }}">logging in</a>.{% endblocktrans %}
                 {% endifsetting %}
             </p>
+</div>
         {% endif %}
 {% endblock %}

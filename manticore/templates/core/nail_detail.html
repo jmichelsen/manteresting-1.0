@@ -9,7 +9,7 @@
 
 {% block body %}
     <div class="nail">
-        <h1>Workbench: <a href="{{ object.workbench.get_absolute_url }}">{{ object.workbench }}</a></h1>
+        <h1>Posted to:<a href="{{ object.workbench.get_absolute_url }}">{{ object.workbench }}</a></h1>
         {% if user.is_authenticated %}
         <ul class="actions well">
             {% phileo_widget user object %}

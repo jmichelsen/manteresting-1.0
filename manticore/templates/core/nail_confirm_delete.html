@@ -10,7 +10,7 @@
         <img src="{{ object.thumb.url }}" width="{{ object.thumb.width }}px" height="{{ object.thumb.height }}px"/>
         <p>{{ object.description }}</p></div>
         <form action="." method="POST">
-            <p>Are you sure you want to delete this Nail?</p>
+            <p>Are you sure you want to delete this Nail (comments will be lost)?</p>
             <input type="submit" class="btn primary" value="Yes"/>
             <input type="reset" class="btn" value="No"/>
             {% csrf_token %}

@@ -225,9 +225,9 @@ html body.nail-detail div.container div.nail img {
 html body.nail-detail div.container div.nail h1 a {
      color: darkcyan;
      font-size: 20px;
+     padding-left: 10px;
      text-decoration: underline;
      text-shadow: none;
-     padding-left:10px;
 }
 
 html body.nail-detail div.container div.nail h1 {
@@ -573,4 +573,34 @@ html body div.container div.user-profile p.username {
 
 html body.workbench-detail div.container h1 form {
      margin-bottom: 8px;
+}
+
+html body div.container div.whatsnext {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 1px 1px 3px #000000;
+     padding: 10px 20px;
+}
+
+html body div.container div.whatsnext p {
+     font-size: 21px;
+     padding-bottom: 18px;
+}
+
+.btn.success, .alert-message.success {
+     background-color: #FFFFFF;
+     background-image: -moz-linear-gradient(center top , #F5F5F5, white);
+     background-repeat: repeat-x;
+     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+     text-shadow: 0pt 0px 0pt rgba(0, 0, 0, 0.25);
+}
+
+html body div.container div.whatsnext dl.what_next dt {
+     margin-left: 9px;
+     padding-bottom: 10px;
+     padding-top: 16px;
+}
+
+html body div.container div.whatsnext dl.what_next {
+     margin-top: -16px;
 }

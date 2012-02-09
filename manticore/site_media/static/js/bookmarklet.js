@@ -1,8 +1,8 @@
 function __man_show() {
     var preview_width = 200;
     var preview_height = 200;
-    var min_width = 300;
-    var min_height = 300;
+    var min_width = 100;
+    var min_height = 100;
 
     if (typeof jQuery == 'undefined') {// jQuery isn't loaded yet. Get back later
         setTimeout(__man_show, 500);

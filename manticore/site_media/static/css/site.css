@@ -532,7 +532,7 @@ html body.notices div.container div.row div.span12 div.notice_settings div.alert
 html body div.container div.workbench {
      background: none repeat scroll 0pt 0pt white;
      border: 1px solid #DDDDDD;
-     box-shadow: 0pt 0pt 8px #C9C9C9;
+     box-shadow: 0pt 0pt 8px #000000;
      float: right;
      margin-bottom: 19px;
      margin-right: 66px;
@@ -554,7 +554,7 @@ html body div.container div.workbench ul li {
 
 html body div.container div.user-profile {
      background-color: white;
-     box-shadow: 0pt 0pt 8px #C9C9C9;
+     box-shadow: 0pt 0pt 8px #000000;
      color: #555555;
      float: left;
      margin-bottom: 15px;

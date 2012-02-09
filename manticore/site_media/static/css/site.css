@@ -1,22 +1,37 @@
 html body.workbench-detail div.container h2 a img {
-     float: right;
+    float: right;
+    padding-right: 20px;
+}
+
+html body.workbench-detail div.container h2 a 
+ {
+     
      padding-right: 5px;
+color: PowderBlue;
+    text-shadow: 1px 1px 3px #444444;
 }
 
 html body.workbench-detail div.container h2 {
-     color: #EEEEEE;
-     margin-top: -55px;
+    color: #EEEEEE;
+    margin-bottom: 20px;
+    margin-top: -63px;
+    padding-left: 20px;
 }
 
-html body.workbench-detail div.container h2 a {
-     color: PowderBlue;
-     text-shadow: 1px 1px 3px #444444;
-}
 
 html body.workbench-detail div.container h1 {
-     border-bottom: 1px solid #EEEEEE;
-     color: #FFFFFF;
-     text-shadow: 1px 1px 4px #000000;
+    background: none repeat scroll center top transparent;
+    border: 1px solid #444444;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 3px 11px #000000;
+    color: #FFFFFF;
+    font-size: 35px;
+    line-height: 30px;
+    margin-top: -26px;
+    padding-bottom: 8px;
+    padding-top: 11px;
+    text-align: center;
+    text-shadow: 1px 1px 4px #000000;
 }
 
 .topbar-inner, .topbar .fill {
@@ -184,12 +199,6 @@ html body.nail-detail div.container div.nail ul.comments {
      box-shadow: 0pt 0px 1px rgba(34, 25, 25, 0.6);
 }
 
-body.workbench-detail div.container h1 {
-     font-size: 30px;
-     line-height: 36px;
-     margin-top: -21px;
-     text-align: center;
-}
 
 html body.nail-detail div.container div.nail form.comment textarea#id_comment {
      height: 30px;
@@ -309,7 +318,7 @@ div.nail a img {
      display: block;
      margin-left: auto;
      margin-right: auto;
-     padding: 20px 20px 0pt;
+     padding: 15px 15px 0pt;
 }
 
 form.comment label {
@@ -364,22 +373,21 @@ body {
      position: relative;
 }
 
-.home .nail {
+.home .nail, .workbench-detail .nail {
      background: none repeat scroll 0pt 0pt #FFFFFF;
      border: 1px solid #DDDDDD;
      box-shadow: 1px 2px 3px #000000;
      display: inline-block;
      margin-top: 0pt;
-     width: 240px;
+     width: 230px;
 }
 
 .workbench-detail .nail {
-     background: none repeat scroll 0pt 0pt #FFFFFF;
-     border: 1px solid #CCCCCC;
-     display: inline-block;
-     margin-top: 20px;
-     width: 230px;
+
+margin-top:20px;
+
 }
+
 
 .nail-detail .actions li {
      display: inline;

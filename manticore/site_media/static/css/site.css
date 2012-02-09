@@ -41,7 +41,7 @@ html body.workbench-detail div.container h1 {
      box-shadow: 0pt 1px 3px rgba(0, 0, 0, 0.25), 0pt -1px 0pt rgba(0, 0, 0, 0.1) inset;
 }
 
-body.home, body.nail-detail, html body.workbench-detail {
+body.home, body.nail-detail, html body.workbench-detail, html body.userpage {
      background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/Clean-Gray-BackGround.jpg") repeat-x fixed 50% 0pt #666666;
 }
 

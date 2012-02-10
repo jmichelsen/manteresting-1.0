@@ -1,5 +1,5 @@
 html body.home div.man-controls a.man-hide-button {
-     color: white !important;
+     color: white ! important;
 }
 
 .man-overlay {
@@ -42,7 +42,7 @@ html body.home div.man-controls a.man-hide-button {
 }
 
 .man-controls a {
-     color: #000000;
+     color: #FFFFFF ! important;
      text-decoration: none;
 }
 

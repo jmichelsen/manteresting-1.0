@@ -9,7 +9,7 @@ html body.home div.man-controls a.man-hide-button {
      opacity: 0.95;
      position: fixed;
      right: 0pt;
-     top: 50px;
+     top: 0pt;
      z-index: 1000;
 }
 

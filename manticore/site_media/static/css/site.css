@@ -34,6 +34,16 @@ html body.workbench-detail div.container h1 {
     text-shadow: 1px 1px 4px #000000;
 }
 
+.topbar {
+    height: 40px;
+    left: 0;
+    overflow: visible;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+
 .topbar-inner, .topbar .fill {
      background-color: #222222;
      background-image: -moz-linear-gradient(center top , #555555, #111111);
@@ -41,7 +51,7 @@ html body.workbench-detail div.container h1 {
      box-shadow: 0pt 1px 3px rgba(0, 0, 0, 0.25), 0pt -1px 0pt rgba(0, 0, 0, 0.1) inset;
 }
 
-body.home, body.nail-detail, html body.workbench-detail {
+body.home, body.nail-detail, html body.workbench-detail, html body.userpage {
      background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/Clean-Gray-BackGround.jpg") repeat-x fixed 50% 0pt #666666;
 }
 
@@ -532,7 +542,7 @@ html body.notices div.container div.row div.span12 div.notice_settings div.alert
 html body div.container div.workbench {
      background: none repeat scroll 0pt 0pt white;
      border: 1px solid #DDDDDD;
-     box-shadow: 0pt 0pt 8px #C9C9C9;
+     box-shadow: 0pt 0pt 8px #000000;
      float: right;
      margin-bottom: 19px;
      margin-right: 66px;
@@ -554,7 +564,7 @@ html body div.container div.workbench ul li {
 
 html body div.container div.user-profile {
      background-color: white;
-     box-shadow: 0pt 0pt 8px #C9C9C9;
+     box-shadow: 0pt 0pt 8px #000000;
      color: #555555;
      float: left;
      margin-bottom: 15px;

@@ -34,6 +34,16 @@ html body.workbench-detail div.container h1 {
     text-shadow: 1px 1px 4px #000000;
 }
 
+.topbar {
+    height: 40px;
+    left: 0;
+    overflow: visible;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+
 .topbar-inner, .topbar .fill {
      background-color: #222222;
      background-image: -moz-linear-gradient(center top , #555555, #111111);

@@ -1,67 +1,92 @@
-.man-overlay {
-    position: fixed;
-    z-index: 1000;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: #FFF0F0;
-    opacity: .95;
+html body.home div.man-controls a.man-hide-button {
+     color: white;
 }
-.man-controls {
-    position: fixed;
-    z-index: 1002;
-    left: 0;
-    right: 0;
-    top: 0;
-    background: black;
-    color: #DDD;
-    font-size: 40px;
-    height: 50px;
-    text-align: center;
-}
-.man-controls h1{
-    position: absolute;
-    left: 10px;
-padding:5px;
-font-size:35px;
-color:#ffffff;
 
+.man-overlay {
+     background-color: #F5F5F5;
+     bottom: 0pt;
+     left: 0pt;
+     opacity: 0.95;
+     position: fixed;
+     right: 0pt;
+     top: 0pt;
+     z-index: 1000;
 }
+
+.man-controls {
+     background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/bookmarkletgradient.png") repeat-x scroll 0pt 0pt #FFFFFF;
+     border-bottom: 1px solid #CCCCCC;
+     color: #211922;
+     font-size: 14px;
+     font-weight: bold;
+     height: 24px;
+     left: 0pt;
+     line-height: 1em;
+     padding: 12px 0pt 0pt;
+     position: fixed;
+     right: 0pt;
+     text-align: center;
+     text-decoration: none;
+     text-shadow: 0pt 1px #000000;
+     top: 0pt;
+     z-index: 10001;
+}
+
+.man-controls h1 {
+     color: #FFFFFF;
+     display: none;
+     font-size: 35px;
+     left: 10px;
+     padding: 5px;
+     position: absolute;
+}
+
 .man-controls a {
-    text-decoration: none;
-    color: #DDD;
+     color: #000000;
+     text-decoration: none;
 }
+
 .man-controls a:visited {
-    color: #DDD;
+     color: #DDDDDD;
 }
+
 .man-previews {
-    position: absolute;
-    z-index: 1001;
-    font-family: 'helvetica neue', arial, sans-serif;
-    margin-top: 50px;
-    top: 0;
-    left: 0;
-    background-color: transparent;
-    opacity: 1;
+     background-color: transparent;
+     font-family: 'helvetica neue',arial,sans-serif;
+     left: 0pt;
+     margin-top: 0px;
+     opacity: 1;
+     position: absolute;
+     top: 0pt;
+     z-index: 1001;
 }
+
 .man-preview {
-    position: relative;
-    padding: 0;
-    margin: 0;
-    float: left;
-    background-color: white;
-    border: solid #E7E7E7;
-    width: 220px;
-    height: 230px;
-    opacity: 1;
-    text-align: center;
-    border-width: 0 1px 1px 0;
+     -moz-border-bottom-colors: none;
+     -moz-border-image: none;
+     -moz-border-left-colors: none;
+     -moz-border-right-colors: none;
+     -moz-border-top-colors: none;
+     background-color: white;
+     border-color: #E7E7E7;
+     border-style: solid;
+     border-width: 0pt 1px 1px 0pt;
+     float: left;
+     font-size: 10px;
+     height: 230px;
+     margin: 0pt;
+     opacity: 1;
+     padding: 0pt;
+     position: relative;
+     text-align: center;
+     width: 230px;
 }
+
 .man-preview img {
-    margin-top: 10px;
+     margin-top: 10px;
 }
+
 .man-preview span {
-    position: absolute;
-    top: 210px;
+     position: absolute;
+     top: 210px;
 }

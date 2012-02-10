@@ -4,6 +4,7 @@
 {% block head_title %}{{ object.username }} — Manticore{% endblock %}
 
 {% block body %}
+<body class="{% block body_class %}userpage{% endblock %}>
     <div class="user-profile">
         <p class="username">{{ object.username }}</p>
         <p class="stats">Workbenches: {{ object.workbenches.count }}, Nails: {{ object.nails.count }}</p>

@@ -129,7 +129,8 @@ html body.nail-detail div.container div.nail ul.actions li a.btn, html body div.
 }
 
 .btn.primary {
-     color: #555555;
+     color: #000000 ! important;
+     text-shadow: none ! important;
 }
 
 .btn {
@@ -270,7 +271,7 @@ html body.nail-detail div.container div.nail {
      display: block;
      margin-left: auto;
      margin-right: auto;
-     position: inherit !important;
+     position: inherit ! important;
      width: 650px;
 }
 

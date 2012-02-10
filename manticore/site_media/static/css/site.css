@@ -270,6 +270,7 @@ html body.nail-detail div.container div.nail {
      display: block;
      margin-left: auto;
      margin-right: auto;
+     position: inherit !important;
      width: 650px;
 }
 

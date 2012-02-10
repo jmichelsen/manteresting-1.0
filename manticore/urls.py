@@ -21,6 +21,8 @@ handler500 = "pinax.views.server_error"
 from idios.views import ProfileCreateView, ProfileDetailView, ProfileUpdateView
 
 urlpatterns = patterns("",
+    url(r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/site_media/media/favicon.ico'}),
+
     url(r'^$', HomepageView.as_view(), name='home'),
     url(r'^all/$', AllNailsView.as_view(), name='all'),
 

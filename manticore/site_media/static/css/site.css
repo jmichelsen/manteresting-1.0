@@ -44,6 +44,13 @@ html body.workbench-detail div.container h1 {
     z-index: 999;
 }
 
+.sticky .topbar {
+      position:fixed;
+        top:0;
+          left:0;
+            width:100%;
+}
+
 .topbar-inner, .topbar .fill {
      background-color: #222222;
      background-image: -moz-linear-gradient(center top , #555555, #111111);
@@ -621,4 +628,47 @@ html body div.container div.whatsnext dl.what_next dt {
 
 html body div.container div.whatsnext dl.what_next {
      margin-top: -16px;
+}
+
+.top {
+    position:fixed;
+    right:15px;
+    bottom:15px;
+    width:50px;
+    height:25px;
+    padding-top:25px;
+    line-height:25px;
+    background:#333;
+    color:#888;
+    display:block;
+    text-decoration:none;
+    text-align:center;
+    font-size:14px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    border-radius:10px;
+    behavior:url(../PIE.htc);
+
+    opacity:1;
+    -webkit-transition:opacity 700ms linear;
+    -moz-transition:opacity 700ms linear;
+    transition:opacity 700ms linear;
+}
+.top:before {
+    position:absolute;
+    top:11px;
+    left:14px;
+    content:"";
+    border-bottom:11px solid #888;
+    border-left:11px solid transparent;
+    border-right:11px solid transparent;
+}
+.top:hover {
+    color:#eee;
+}
+.top:hover:before {
+    border-bottom-color:#eee;
+}
+.top.hidden {
+    opacity:0;
 }

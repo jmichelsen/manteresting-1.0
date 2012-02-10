@@ -9,7 +9,7 @@ html body.home div.man-controls a.man-hide-button {
      opacity: 0.95;
      position: fixed;
      right: 0pt;
-     top: 50px;
+     top: 0px;
      z-index: 1000;
 }
 
@@ -57,7 +57,7 @@ html body.home div.man-controls a.man-hide-button {
      margin-top: 0px;
      opacity: 1;
      position: absolute;
-     top: 0pt;
+     top: 60px;
      z-index: 1001;
 }
 

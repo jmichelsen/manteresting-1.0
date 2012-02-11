@@ -1,54 +1,51 @@
 html body.workbench-detail div.container h2 a img {
-    float: right;
-    padding-right: 20px;
+     float: right;
+     padding-right: 20px;
 }
 
-html body.workbench-detail div.container h2 a 
- {
-     
+html body.workbench-detail div.container h2 a {
+     color: PowderBlue;
      padding-right: 5px;
-color: PowderBlue;
-    text-shadow: 1px 1px 3px #444444;
+     text-shadow: 1px 1px 3px #444444;
 }
 
 html body.workbench-detail div.container h2 {
-    color: #EEEEEE;
-    margin-bottom: 20px;
-    margin-top: -63px;
-    padding-left: 20px;
+     color: #EEEEEE;
+     margin-bottom: 20px;
+     margin-top: -63px;
+     padding-left: 20px;
 }
 
-
 html body.workbench-detail div.container h1 {
-    background: none repeat scroll center top transparent;
-    border: 1px solid #444444;
-    border-radius: 3px 3px 3px 3px;
-    box-shadow: 0 3px 11px #000000;
-    color: #FFFFFF;
-    font-size: 35px;
-    line-height: 30px;
-    margin-top: -26px;
-    padding-bottom: 8px;
-    padding-top: 11px;
-    text-align: center;
-    text-shadow: 1px 1px 4px #000000;
+     background: none repeat scroll center top transparent;
+     border-radius: 3px 3px 3px 3px;
+     border: 1px solid #444444;
+     box-shadow: 0pt 3px 11px #000000;
+     color: #FFFFFF;
+     font-size: 35px;
+     line-height: 30px;
+     margin-top: -26px;
+     padding-bottom: 8px;
+     padding-top: 11px;
+     text-align: center;
+     text-shadow: 1px 1px 4px #000000;
 }
 
 .topbar {
-    height: 40px;
-    left: 0;
-    overflow: visible;
-    position: fixed;
-    right: 0;
-    top: 0;
-    z-index: 999;
+     height: 40px;
+     left: 0pt;
+     overflow: visible;
+     position: fixed;
+     right: 0pt;
+     top: 0pt;
+     z-index: 999;
 }
 
 .sticky .topbar {
-      position:fixed;
-        top:0;
-          left:0;
-            width:100%;
+     left: 0pt;
+     position: fixed;
+     top: 0pt;
+     width: 100%;
 }
 
 .topbar-inner, .topbar .fill {
@@ -132,7 +129,8 @@ html body.nail-detail div.container div.nail ul.actions li a.btn, html body div.
 }
 
 .btn.primary {
-     color: #555555;
+     color: #000000 ! important;
+     text-shadow: none ! important;
 }
 
 .btn {
@@ -216,7 +214,6 @@ html body.nail-detail div.container div.nail ul.comments {
      box-shadow: 0pt 0px 1px rgba(34, 25, 25, 0.6);
 }
 
-
 html body.nail-detail div.container div.nail form.comment textarea#id_comment {
      height: 30px;
      margin-left: 10px;
@@ -274,6 +271,7 @@ html body.nail-detail div.container div.nail {
      display: block;
      margin-left: auto;
      margin-right: auto;
+     position: inherit ! important;
      width: 650px;
 }
 
@@ -396,15 +394,12 @@ body {
      box-shadow: 1px 2px 3px #000000;
      display: inline-block;
      margin-top: 0pt;
-     width: 230px;
+     width: 280px;
 }
 
 .workbench-detail .nail {
-
-margin-top:20px;
-
+     margin-top: 90px;
 }
-
 
 .nail-detail .actions li {
      display: inline;
@@ -546,30 +541,31 @@ html body.notices div.container div.row div.span12 div.notice_settings div.alert
      font-weight: bold;
 }
 
-html body div.container div.workbench {
+html body.userpage div.workbench {
      background: none repeat scroll 0pt 0pt white;
      border: 1px solid #DDDDDD;
      box-shadow: 0pt 0pt 8px #000000;
-     float: right;
+     float: none;
      margin-bottom: 19px;
-     margin-right: 66px;
+     margin-left: 70px;
+     margin-right: 50px;
      padding: 10px 20px;
-     width: 500px;
+     width: 600px;
 }
 
-html body div.container div.workbench h1 {
+html body.userpage .workbench h1 {
      border-bottom: 1px solid #EEEEEE;
      color: #666666;
      font-family: arial;
      text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
 }
 
-html body div.container div.workbench ul li {
+html body.userpage div.workbench ul li {
      display: inline-block;
      padding: 0pt 1px;
 }
 
-html body div.container div.user-profile {
+html body.userpage div.container div.user-profile {
      background-color: white;
      box-shadow: 0pt 0pt 8px #000000;
      color: #555555;
@@ -584,16 +580,18 @@ html body div.container div.user-profile form {
      margin-bottom: 5px;
 }
 
-html body div.container div.user-profile p.stats {
+html body.userpage div.container p.stats {
+     color: white;
      font-size: 14px;
      padding-bottom: 7px;
 }
 
-html body div.container div.user-profile p.username {
-     color: darkcyan;
+html body.userpage div.container p.username {
+     color: lightBlue;
      font-size: 36px;
      line-height: 35px;
-     text-shadow: 2px 2px 1px #FFFFFF, 1px 1px 2px #000000;
+     text-shadow: 2px 2px 1px #000000, 1px 1px 2px #000000;
+     text-transform: capitalize;
 }
 
 html body.workbench-detail div.container h1 form {
@@ -631,46 +629,44 @@ html body div.container div.whatsnext dl.what_next {
 }
 
 .top {
-    position:fixed;
-    right:15px;
-    bottom:15px;
-    width:50px;
-    height:25px;
-    padding-top:25px;
-    line-height:25px;
-    background:#333;
-    color:#888;
-    display:block;
-    text-decoration:none;
-    text-align:center;
-    font-size:14px;
-    -webkit-border-radius:10px;
-    -moz-border-radius:10px;
-    border-radius:10px;
-    behavior:url(../PIE.htc);
+     -moz-transition: opacity 700ms linear 0s;
+     background: none repeat scroll 0% 0% #333333;
+     border-radius: 10px 10px 10px 10px;
+     bottom: 15px;
+     color: #888888;
+     display: block;
+     font-size: 14px;
+     height: 25px;
+     line-height: 25px;
+     opacity: 1;
+     padding-top: 25px;
+     position: fixed;
+     right: 15px;
+     text-align: center;
+     text-decoration: none;
+     width: 50px;
+}
 
-    opacity:1;
-    -webkit-transition:opacity 700ms linear;
-    -moz-transition:opacity 700ms linear;
-    transition:opacity 700ms linear;
-}
 .top:before {
-    position:absolute;
-    top:11px;
-    left:14px;
-    content:"";
-    border-bottom:11px solid #888;
-    border-left:11px solid transparent;
-    border-right:11px solid transparent;
+     border-bottom: 11px solid #888888;
+     border-left: 11px solid transparent;
+     border-right: 11px solid transparent;
+     content: "";
+     left: 14px;
+     position: absolute;
+     top: 11px;
 }
+
 .top:hover {
-    color:#eee;
+     color: #EEEEEE;
 }
+
 .top:hover:before {
-    border-bottom-color:#eee;
+     border-bottom-color: #EEEEEE;
 }
+
 .top.hidden {
-    opacity:0;
+     opacity: 0;
 }
 
 #footer{clear:both;}

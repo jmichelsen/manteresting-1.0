@@ -18,9 +18,9 @@
                }, opts);
 
              $('.container').imagesLoaded(function() {
-                   $('.nail').wookmark({offset: 20, itemWidth: 280});
+                   $('.nail').wookmark({offset: 16, itemWidth: 280});
                });
                $(window).resize(function() {
-                 $('.nail').wookmark({offset: 20, itemWidth: 280});
+                 $('.nail').wookmark({offset: 16, itemWidth: 280});
                });
        });

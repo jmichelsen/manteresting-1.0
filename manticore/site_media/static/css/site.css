@@ -672,3 +672,5 @@ html body div.container div.whatsnext dl.what_next {
 .top.hidden {
     opacity:0;
 }
+
+#footer{clear:both;}

@@ -220,10 +220,20 @@ class AllNailsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         data = super(AllNailsView, self).get_context_data(**kwargs)
-        data['nails'] = Nail.objects.all().order_by('-id')[:20]
+        data['nails'] = Nail.objects.all().order_by('-id')[:200]
         data['main_menu_item'] = 'all'
         return data
 
+'''class AjaxNailsView(TemplateView):
+    template_name = 'homepage.html'
+
+    def get_context_data(self, **kwargs):
+        data = super(AllNailsView, self).get_context_data(**kwargs)
+        if request.is_ajax()
+            data['nails'] = Nail.objects.all().order_by('-timestamp')[:200]
+            data['main_menu_item'] = 'all'
+        return data
+'''
 
 class HomepageView(AllNailsView):
     """Does the same as AllNailsView for anonymous users,
@@ -240,11 +250,11 @@ class HomepageView(AllNailsView):
             #    # if feed is empty
             #    FriendFeed.rebuild_for(user)
 
-            nails = [ff.nail for ff in user.friendfeed.order_by('-timestamp')[:20]]
+            nails = [ff.nail for ff in user.friendfeed.order_by('-timestamp')[:40]]
             if nails:
                 data['nails'] = nails
             else:
-                data['nails'] = user.nails.all().order_by('-id')[:20]
+                data['nails'] = user.nails.all().order_by('-id')[:40]
 
             data['main_menu_item'] = 'workers-you-follow'
 

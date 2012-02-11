@@ -4,31 +4,33 @@ html body.workbench-detail div.container h2 a img {
 }
 
 html body.workbench-detail div.container h2 a {
-     color: PowderBlue;
+     color: Orange;
      padding-right: 5px;
-     text-shadow: 1px 1px 3px #444444;
+     text-shadow: 2px 2px 3px #000000;
 }
 
 html body.workbench-detail div.container h2 {
      color: #EEEEEE;
-     margin-bottom: 20px;
-     margin-top: -63px;
+     font-size: 16px;
+     margin: -63px auto 20px;
      padding-left: 20px;
+     width: 700px;
 }
 
 html body.workbench-detail div.container h1 {
-     background: none repeat scroll center top transparent;
-     border-radius: 3px 3px 3px 3px;
+     background-color: SlateGray;
      border: 1px solid #444444;
-     box-shadow: 0pt 3px 11px #000000;
-     color: #FFFFFF;
+     color: #EEEEEE;
      font-size: 35px;
      line-height: 30px;
-     margin-top: -26px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: -15px;
      padding-bottom: 8px;
      padding-top: 11px;
      text-align: center;
-     text-shadow: 1px 1px 4px #000000;
+     text-shadow: 2px 2px 2px #000000;
+     width: 700px;
 }
 
 .topbar {
@@ -407,9 +409,9 @@ body {
 }
 
 .container {
-     margin-left: 30px;
-     margin-right: 30px;
-     width: auto;
+     margin-left: auto;
+     margin-right: auto;
+     width: 940px;
 }
 
 p {

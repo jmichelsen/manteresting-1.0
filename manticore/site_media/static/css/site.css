@@ -225,7 +225,6 @@ html body.nail-detail div.container div.nail form.comment textarea#id_comment {
 
 html body.nail-detail div.container div.nail form.comment {
      background: none repeat scroll 0pt 0pt #F5F5F5;
-     border-radius: 0pt 0pt 10px 10px;
      margin-bottom: 0pt;
      padding: 10px;
 }
@@ -267,7 +266,6 @@ html body.nail-detail div.container div.nail h1 {
 
 html body.nail-detail div.container div.nail {
      background: none repeat scroll 0pt 0pt white;
-     border-radius: 10px 10px 10px 10px;
      border: 1px solid #000000;
      box-shadow: 0pt 0pt 26px rgba(34, 25, 25, 0.99);
      display: block;

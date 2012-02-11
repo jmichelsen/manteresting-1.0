@@ -189,7 +189,7 @@ div.nail ul li.creds div.credstext, div.nail ul li.comment div.commenttext {
      line-height: 14px;
      padding-left: 4px;
      vertical-align: top;
-     width: 220px;
+     width: 250px;
 }
 
 .topbar div > ul.secondary-nav .menu-dropdown, .nav.secondary-nav .menu-dropdown, .topbar div > ul.secondary-nav .dropdown-menu, .nav.secondary-nav .dropdown-menu {
@@ -545,11 +545,10 @@ html body.userpage div.workbench {
      background: none repeat scroll 0pt 0pt white;
      border: 1px solid #DDDDDD;
      box-shadow: 0pt 0pt 8px #000000;
-     float: none;
+     float: right;
      margin-bottom: 19px;
-     margin-left: 70px;
-     margin-right: 50px;
-     padding: 10px 20px;
+     margin-right: 0px;
+     padding: 10px 0px;
      width: 600px;
 }
 
@@ -557,6 +556,7 @@ html body.userpage .workbench h1 {
      border-bottom: 1px solid #EEEEEE;
      color: #666666;
      font-family: arial;
+     padding: 0pt 20px;
      text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
 }
 
@@ -565,7 +565,7 @@ html body.userpage div.workbench ul li {
      padding: 0pt 1px;
 }
 
-html body.userpage div.container div.user-profile {
+html body.userpage div.container div.profizzle2 {
      background-color: white;
      box-shadow: 0pt 0pt 8px #000000;
      color: #555555;
@@ -576,17 +576,17 @@ html body.userpage div.container div.user-profile {
      width: 287px;
 }
 
-html body div.container div.user-profile form {
+html body.userpage div.container div.profizzle2 form {
      margin-bottom: 5px;
 }
 
-html body.userpage div.container p.stats {
-     color: white;
+html body.userpage div.container div.profizzle2 p.stats {
+     color: #666666;
      font-size: 14px;
      padding-bottom: 7px;
 }
 
-html body.userpage div.container p.username {
+html body.userpage div.container div.profizzle2 p.username {
      color: lightBlue;
      font-size: 36px;
      line-height: 35px;
@@ -668,5 +668,3 @@ html body div.container div.whatsnext dl.what_next {
 .top.hidden {
      opacity: 0;
 }
-
-#footer{clear:both;}

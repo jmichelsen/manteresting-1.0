@@ -1,3 +1,5 @@
+
+
 {% extends "site_base.html" %}
 {% load manticore follow_tags %}
 
@@ -6,6 +8,7 @@
 {% block body %}
 <body class="{% block body_class %}userpage{% endblock %}>
     <div class="profizzle">
+<div class="profizzle2">
         <p class="username">{{ object.username }}</p>
         <p class="stats">Workbenches: {{ object.workbenches.count }}, Nails: {{ object.nails.count }}</p>
         {% follow_form object %}
@@ -30,4 +33,5 @@
     {% else %}
         <p>No workbenches</p>
     {% endif %}
-{% endblock %}
+{% endblock %}</div>
+

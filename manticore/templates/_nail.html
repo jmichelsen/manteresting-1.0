@@ -14,7 +14,7 @@
         {% endwith %}
         {% if comments %}
             {% comment %} show 5 latest comments {% endcomment %}
-            {% for comment in comments|slice:":3" %}
+            {% for comment in comments|slice:":5" %}
                 {% with profile=comment.author.get_profile %}
                 <li class="comment">{% if profile.avatar %}<img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/>{% endif %}<div class="commenttext"><a href="{% url user slug=comment.author.username %}">{{ comment.author }}</a> — {{ comment.comment }}</div></li>
                 {% endwith %}

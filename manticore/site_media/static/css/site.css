@@ -51,8 +51,8 @@ html body.workbench-detail div.container h1 {
 }
 
 .topbar-inner, .topbar .fill {
-     background-color: #222222;
-     background-image: -moz-linear-gradient(center top , #555555, #111111);
+     background-color: #333333;
+     background-image: none !important;
      background-repeat: repeat-x;
      box-shadow: 0pt 1px 3px rgba(0, 0, 0, 0.25), 0pt -1px 0pt rgba(0, 0, 0, 0.1) inset;
 }
@@ -191,7 +191,7 @@ div.nail ul li.creds div.credstext, div.nail ul li.comment div.commenttext {
      line-height: 14px;
      padding-left: 4px;
      vertical-align: top;
-     width: 250px;
+     width: 220px;
 }
 
 .topbar div > ul.secondary-nav .menu-dropdown, .nav.secondary-nav .menu-dropdown, .topbar div > ul.secondary-nav .dropdown-menu, .nav.secondary-nav .dropdown-menu {

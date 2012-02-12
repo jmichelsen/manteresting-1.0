@@ -1,3 +1,11 @@
+html body.home div#header {
+     background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/MAN-header-copy.png") no-repeat fixed 50% 0pt transparent;
+     height: 120px;
+     position: inherit;
+     top: -70px;
+     width: auto;
+}
+
 html body.workbench-detail div.container h2 a img {
      float: right;
      padding-right: 20px;
@@ -37,9 +45,9 @@ html body.workbench-detail div.container h1 {
      height: 40px;
      left: 0pt;
      overflow: visible;
-     position: fixed;
+     position: absolute;
      right: 0pt;
-     top: 0pt;
+     top: 45px;
      z-index: 999;
 }
 
@@ -51,10 +59,10 @@ html body.workbench-detail div.container h1 {
 }
 
 .topbar-inner, .topbar .fill {
-     background-color: #333333;
+     background-color: #444444;
      background-image: none ! important;
      background-repeat: repeat-x;
-     box-shadow: 0pt 1px 3px rgba(0, 0, 0, 0.25), 0pt -1px 0pt rgba(0, 0, 0, 0.1) inset;
+     box-shadow: none ! important;
 }
 
 body.home, body.nail-detail, html body.workbench-detail, html body.userpage {
@@ -393,7 +401,7 @@ body {
      border: 1px solid #DDDDDD;
      box-shadow: 1px 2px 3px #000000;
      display: inline-block;
-     margin-top: 0pt;
+     margin-top: 120px;
      width: 280px;
 }
 
@@ -430,7 +438,7 @@ li {
 div.topbar {
      background-repeat: repeat-x;
      border-bottom: 1px solid #000000;
-     box-shadow: 0pt 2px 9px rgba(0, 0, 0, 0.99);
+     box-shadow: 0pt 1px 6px rgba(0, 0, 0, 0.99);
 }
 
 html body.account div.container div.row div.span4 {

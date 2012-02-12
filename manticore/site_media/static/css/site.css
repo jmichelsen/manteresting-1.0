@@ -1,8 +1,12 @@
-html body.home div#header {
+div.legal {
+     display: none;
+}
+
+div#header {
      background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/MAN-header-copy.png") no-repeat fixed 50% 0pt transparent;
      height: 120px;
      position: inherit;
-     top: -70px;
+     top: -170px;
      width: auto;
 }
 
@@ -33,7 +37,7 @@ html body.workbench-detail div.container h1 {
      line-height: 30px;
      margin-left: auto;
      margin-right: auto;
-     margin-top: -15px;
+     margin-top: 7px;
      padding-bottom: 8px;
      padding-top: 11px;
      text-align: center;
@@ -47,7 +51,7 @@ html body.workbench-detail div.container h1 {
      overflow: visible;
      position: absolute;
      right: 0pt;
-     top: 45px;
+     top: -50px;
      z-index: 999;
 }
 
@@ -63,6 +67,7 @@ html body.workbench-detail div.container h1 {
      background-image: none ! important;
      background-repeat: repeat-x;
      box-shadow: none ! important;
+     margin-top: 105px;
 }
 
 body.home, body.nail-detail, html body.workbench-detail, html body.userpage {
@@ -391,7 +396,7 @@ body.home div.container div.nail p, body.workbench-detail div.container div.nail
 
 body {
      background: none repeat scroll 0pt 0pt #EEEEEE;
-     margin-top: 70px;
+     margin-top: 170px;
      padding-top: 0pt;
      position: relative;
 }
@@ -401,12 +406,12 @@ body {
      border: 1px solid #DDDDDD;
      box-shadow: 1px 2px 3px #000000;
      display: inline-block;
-     margin-top: 120px;
+     margin-top: 20px;
      width: 280px;
 }
 
 .workbench-detail .nail {
-     margin-top: 90px;
+     margin-top: 140px;
 }
 
 .nail-detail .actions li {
@@ -417,6 +422,7 @@ body {
 .container {
      margin-left: auto;
      margin-right: auto;
+     margin-top: -105px;
      width: 940px;
 }
 
@@ -554,8 +560,9 @@ html body.userpage div.workbench {
      border: 1px solid #DDDDDD;
      box-shadow: 0pt 0pt 8px #000000;
      float: right;
-     margin-bottom: 19px;
+     margin-bottom: 100px;
      margin-right: 0px;
+     margin-top: 20px;
      padding: 10px 0px;
      width: 600px;
 }
@@ -579,6 +586,7 @@ html body.userpage div.container div.profizzle2 {
      color: #555555;
      float: left;
      margin-bottom: 15px;
+     margin-top: 20px;
      padding: 10px 5px 10px 15px;
      text-align: left;
      width: 287px;

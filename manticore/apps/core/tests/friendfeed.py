@@ -69,6 +69,17 @@ class FriendFeedTest(TestCase):
         self.unfollow(self.peter)
         self.assertEqual(2, self.alex.friendfeed.count())
 
+    def test_alex_see_nothing_after_complete_unfollow(self):
+        self.login(self.alex)
+        self.follow(self.peter)
+        self.follow(self.peter_w1)
+        self.follow(self.peter_w2)
+
+        self.unfollow(self.peter)
+        self.unfollow(self.peter_w1)
+        self.unfollow(self.peter_w2)
+        self.assertEqual(0, self.alex.friendfeed.count())
+
     def test_if_two_users_can_follow_the_same_object(self):
         bob = create_user('bob')
         martin = create_user('martin')

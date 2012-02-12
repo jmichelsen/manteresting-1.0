@@ -175,12 +175,12 @@ def workbench_or_user_unfollowed(user, target, instance, **kwargs):
     """
     cursor = connection.cursor()
 
-    unfollowed_nails = target.nails.values('id').query
+    nail_ids = list(target.nails.values_list('id', flat=True))
     cursor.execute(
         'UPDATE core_friendfeed '
         'SET ref_count=ref_count-1 '
-        'WHERE nail_id in (%s)',
-        [unfollowed_nails]
+        'WHERE nail_id in (%s)' % (','.join(('%s',) * len(nail_ids))),
+        nail_ids
     )
     cursor.execute(
         'DELETE FROM core_friendfeed '

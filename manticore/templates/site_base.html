@@ -6,6 +6,7 @@
 
 {% block extra_head %}
 <link rel="stylesheet" href="{{ STATIC_URL }}css/site.css">
+<link rel="icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon"> 
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.wookmark.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.imagesloaded.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/waypoints.min.js"></script>
@@ -13,6 +14,11 @@
 
 {% phileo_css %}
 {% phileo_js %}
+{% endblock %}
+
+{% block header %}
+    <div id="header">
+    </div>
 {% endblock %}
 
 {% block nav %}

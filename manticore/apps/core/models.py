@@ -1,7 +1,8 @@
 import datetime
 
-from django.db import models, transaction, IntegrityError
+from django.db import models, transaction, IntegrityError, connection
 from django.db.models.signals import post_save, post_delete
+
 from django.dispatch import receiver
 from django.contrib.auth.models import User
 from imagekit.models import ImageSpec
@@ -94,8 +95,15 @@ class FriendFeed(models.Model):
     """
 
     user = models.ForeignKey(User, related_name='friendfeed')
-    nail = models.ForeignKey(Nail, related_name='friendfeed', unique=True)
+    nail = models.ForeignKey(Nail, related_name='friendfeed')
     timestamp = models.DateTimeField(db_index=True)
+    # this field used to track, from how many sources user got this item
+    # when user unfollows one of the sources, this counter should be decremented
+    # and if it is zero, then item should be removed from the feed
+    ref_count = models.IntegerField(default=1)
+
+    class Meta:
+        unique_together = ('user', 'nail')
 
     def save(self, *args, **kwargs):
         if self.timestamp is None:
@@ -115,11 +123,18 @@ class FriendFeed(models.Model):
     def populate_user_feed(user, query):
         """Add's nails from query to user's friendfeed.
         """
+        cursor = connection.cursor()
+
         for nail in query:
             try:
-                FriendFeed.objects.create(
-                    user=user, nail=nail, timestamp=nail.timestamp
+                cursor.execute(
+                    'INSERT INTO core_friendfeed (user_id, nail_id, timestamp, ref_count) '
+                    'VALUES (%s, %s, %s, 1) '
+                    'ON DUPLICATE KEY '
+                    'UPDATE ref_count=ref_count+1',
+                    [user.id, nail.id, nail.timestamp]
                 )
+                transaction.commit_unless_managed()
             except IntegrityError:
                 # just ignore dupes
                 pass
@@ -158,5 +173,18 @@ def workbench_or_user_followed(user, target, instance, **kwargs):
 def workbench_or_user_unfollowed(user, target, instance, **kwargs):
     """Add all nails from that workbench to user's friendfeed.
     """
-    FriendFeed.objects.filter(user=user, nail__in=target.nails.all()).delete()
+    cursor = connection.cursor()
+
+    unfollowed_nails = target.nails.values('id').query
+    cursor.execute(
+        'UPDATE core_friendfeed '
+        'SET ref_count=ref_count-1 '
+        'WHERE nail_id in (%s)',
+        [unfollowed_nails]
+    )
+    cursor.execute(
+        'DELETE FROM core_friendfeed '
+        'WHERE ref_count = 0'
+    )
+    transaction.commit_unless_managed()
 

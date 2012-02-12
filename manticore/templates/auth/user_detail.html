@@ -16,7 +16,7 @@
     {% if object.workbenches.count %}
         {% for workbench in object.workbenches.all %}
             <div class="workbench">
-                <h1>{{ workbench.title }}</h1>
+                <h1><a href="{{ workbench.get_absolute_url }}">{{ workbench.title }}</a></h1>
                 {% if workbench.nails.count %}
                     <ul>
                     {% for nail in workbench.nails.all %}

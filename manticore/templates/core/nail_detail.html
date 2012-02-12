@@ -21,7 +21,12 @@
             {% endif %}
         </ul>
         {% endif %}
-        <img src="{{ object.normal.url }}" width="{{ object.normal.width }}px" height="{{ object.normal.height }}px"/>
+        {% if object.source_url %}
+            <a href="{{ object.source_url }}"><img src="{{ object.normal.url }}" width="{{ object.normal.width }}px" height="{{ object.normal.height }}px"/></a>
+        {% else %}
+            <img src="{{ object.normal.url }}" width="{{ object.normal.width }}px" height="{{ object.normal.height }}px"/>
+        {% endif %}
+
         <p>{{ object.description }}</p>
         <p>
             {% if object.source_url %}Nailed from <a href="{{ object.source_url }}">{{ object.source_title }}</a>

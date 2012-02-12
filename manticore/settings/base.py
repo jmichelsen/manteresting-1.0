@@ -5,6 +5,7 @@ import os.path
 import posixpath
 
 from manticore.apps.core.utils import reverse
+from django.template.defaultfilters import slugify
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
@@ -202,10 +203,10 @@ NOTIFICATION_LANGUAGE_MODULE = 'account.Account'
 
 ACCOUNT_OPEN_SIGNUP = True
 ACCOUNT_USE_OPENID = False
-ACCOUNT_REQUIRED_EMAIL = False
-ACCOUNT_EMAIL_VERIFICATION = False
+ACCOUNT_REQUIRED_EMAIL = True 
+ACCOUNT_EMAIL_VERIFICATION = True
 ACCOUNT_EMAIL_AUTHENTICATION = False
-ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = False
+ACCOUNT_UNIQUE_EMAIL = EMAIL_CONFIRMATION_UNIQUE_EMAIL = True
 
 AUTHENTICATION_BACKENDS = [
     'social_auth.backends.twitter.TwitterBackend',
@@ -214,6 +215,8 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SOCIAL_AUTH_ENABLED_BACKENDS = ('twitter', 'facebook')
+SOCIAL_AUTH_USERNAME_FIXER = lambda u: slugify(u)
+SOCIAL_AUTH_EXTRA_DATA = False
 
 LOGIN_URL = '/account/login/' # @@@ any way this can be a url name?
 LOGIN_REDIRECT_URLNAME = 'what_next'

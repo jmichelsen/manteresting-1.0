@@ -1,3 +1,79 @@
+div.legal {
+     display: none;
+}
+
+div#header {
+     background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/man-header.png") no-repeat fixed 64% 0pt transparent;
+     height: 120px;
+     position: inherit;
+     top: -170px;
+     width: auto;
+}
+
+html body.workbench-detail div.container h2 a img {
+     float: right;
+     padding-right: 20px;
+}
+
+html body.workbench-detail div.container h2 a {
+     color: Orange;
+     padding-right: 5px;
+     text-shadow: 2px 2px 3px #000000;
+}
+
+html body.workbench-detail div.container h2 {
+     color: #EEEEEE;
+     font-size: 16px;
+     margin: -63px auto 20px;
+     padding-left: 20px;
+     width: 700px;
+}
+
+html body.workbench-detail div.container h1 {
+     background-color: SlateGray;
+     border: 1px solid #444444;
+     color: #EEEEEE;
+     font-size: 35px;
+     line-height: 30px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 7px;
+     padding-bottom: 8px;
+     padding-top: 11px;
+     text-align: center;
+     text-shadow: 2px 2px 2px #000000;
+     width: 700px;
+}
+
+.topbar {
+     height: 40px;
+     left: 0pt;
+     overflow: visible;
+     position: absolute;
+     right: 0pt;
+     top: -50px;
+     z-index: 999;
+}
+
+.sticky .topbar {
+     left: 0pt;
+     position: fixed;
+     top: 0pt;
+     width: 100%;
+}
+
+.topbar-inner, .topbar .fill {
+     background-color: #444444;
+     background-image: none ! important;
+     background-repeat: repeat-x;
+     box-shadow: none ! important;
+     margin-top: 105px;
+}
+
+body.home, body.nail-detail, html body.workbench-detail, html body.userpage {
+     background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/Clean-Gray-BackGround.jpg") repeat-x fixed 50% 0pt #666666;
+}
+
 html body.profile div#modal div#modal-popup.modal form.ajax div.modal-footer button.btn {
      color: #FFFFFF;
 }
@@ -22,91 +98,13 @@ html body.profile div#modal div#modal-popup.modal {
 
 html body.profile div.container h1 {
      color: #666666;
-     font-family: monospace;
+     font-family: arial;
      font-size: 38px;
      font-style: normal;
      line-height: 15px;
      margin-bottom: 17px;
-     padding: 0pt 10px 0pt 20px;
+     padding: 10px 10px 0pt 20px;
      text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
-}
-
-.topbar div > ul a, .nav a {
-     display: block;
-     float: none;
-     line-height: 19px;
-     padding: 14px 10px 0pt;
-     text-decoration: none;
-}
-
-.topbar div > ul .active > a, .nav .active > a {
-     background: none repeat scroll 0pt 0pt transparent;
-     color: #555555;
-}
-
-.open .menu, .dropdown.open .menu, .open .dropdown-toggle, .dropdown.open .dropdown-toggle {
-     background: none repeat scroll 0pt 0pt rgba(0, 0, 0, 0.3);
-     color: #555555;
-}
-
-.topbar div > ul .menu-dropdown li a:hover, .nav .menu-dropdown li a:hover, .topbar div > ul .dropdown-menu li a:hover, .nav .dropdown-menu li a:hover {
-     background: none repeat-x scroll 0% 0% #F8F8F8;
-     color: #999999;
-}
-
-.topbar div > ul .menu-dropdown li a, .nav .menu-dropdown li a, .topbar div > ul .dropdown-menu li a, .nav .dropdown-menu li a {
-     color: #555555;
-     text-shadow: none;
-}
-
-.menu-dropdown .divider, .dropdown-menu .divider {
-     background-color: #F8F8F8;
-     border-bottom: 0pt solid #FFFFFF;
-     height: 0pt;
-     margin: 2px 0pt;
-     overflow: hidden;
-}
-
-.topbar div > ul .menu-dropdown .divider, .nav .menu-dropdown .divider, .topbar div > ul .dropdown-menu .divider, .nav .dropdown-menu .divider {
-     background-color: #F8F8F8;
-     border-color: #FFFFFF;
-}
-
-.topbar div > ul .menu-dropdown, .nav .menu-dropdown, .topbar div > ul .dropdown-menu, .nav .dropdown-menu {
-     background-color: #F8F8F8;
-}
-
-.topbar h3 a:hover, .topbar .brand:hover {
-     color: #999999;
-}
-
-.topbar h3 a, .topbar .brand {
-     color: #444444;
-     display: block;
-     float: left;
-     font-size: 20px;
-     font-weight: 200;
-     line-height: 1;
-     margin-left: 0px;
-     padding: 12px 20px 10px 0pt;
-}
-
-.topbar div > ul a:hover, .nav a:hover {
-     color: #999999;
-}
-
-.topbar a {
-     color: #555555;
-     font-family: lato;
-     font-size: 14px;
-     text-shadow: none;
-     text-transform: capitalize;
-}
-
-.topbar-inner, .topbar .fill {
-     background: none repeat-x scroll 0% 0% #F8F8F8;
-     border-bottom: 1px solid #CDCDCD;
-     box-shadow: 0pt 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 html body.nail-detail div.container div.nail form.comment input.btn {
@@ -146,7 +144,8 @@ html body.nail-detail div.container div.nail ul.actions li a.btn, html body div.
 }
 
 .btn.primary {
-     color: #555555;
+     color: #000000 ! important;
+     text-shadow: none ! important;
 }
 
 .btn {
@@ -168,19 +167,18 @@ html body.nail-detail div.container div.nail ul.actions li a.btn, html body div.
 }
 
 html body.profile div.container div.profile_info p {
-     font-family: monospace;
+     font-family: arial;
      font-size: 15px;
      font-weight: lighter;
 }
 
 html body.profile div.container p a#edit-profile-box.btn {
-    display: block;
-    float: left;
-    margin-left: 30px;
-    margin-top: -45px;
-    padding-left: 50px;
-    width: 100px;
-
+     display: block;
+     float: left;
+     margin-left: 30px;
+     margin-top: -45px;
+     padding-left: 50px;
+     width: 100px;
 }
 
 html body.profile div.container div.profile_info p b {
@@ -193,20 +191,20 @@ html body.profile div.container div.profile_info p b {
 }
 
 html body.profile div.container div.profile_info {
-    background: none repeat scroll 0 0 #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 10px 10px 10px 10px;
-    display: block;
-    padding: 20px 20px 40px;
-    width: 550px;
+     background: none repeat scroll 0pt 0pt #FFFFFF;
+     border-radius: 10px 10px 10px 10px;
+     border: 1px solid #CCCCCC;
+     display: block;
+     padding: 20px 20px 40px;
+     width: 550px;
 }
 
 div.nail ul li.creds div.credstext, div.nail ul li.comment div.commenttext {
      display: inline-block;
+     line-height: 14px;
      padding-left: 4px;
      vertical-align: top;
-     width: 170px;
-     line-height: 14px;
+     width: 220px;
 }
 
 .topbar div > ul.secondary-nav .menu-dropdown, .nav.secondary-nav .menu-dropdown, .topbar div > ul.secondary-nav .dropdown-menu, .nav.secondary-nav .dropdown-menu {
@@ -231,13 +229,6 @@ html body.nail-detail div.container div.nail ul.comments {
      box-shadow: 0pt 0px 1px rgba(34, 25, 25, 0.6);
 }
 
-body.workbench-detail div.container h1 {
-     font-size: 30px;
-     line-height: 36px;
-     margin-top: -21px;
-     text-align: center;
-}
-
 html body.nail-detail div.container div.nail form.comment textarea#id_comment {
      height: 30px;
      margin-left: 10px;
@@ -247,7 +238,6 @@ html body.nail-detail div.container div.nail form.comment textarea#id_comment {
 
 html body.nail-detail div.container div.nail form.comment {
      background: none repeat scroll 0pt 0pt #F5F5F5;
-     border-radius: 0pt 0pt 10px 10px;
      margin-bottom: 0pt;
      padding: 10px;
 }
@@ -272,7 +262,7 @@ html body.nail-detail div.container div.nail img {
 html body.nail-detail div.container div.nail h1 a {
      color: darkcyan;
      font-size: 20px;
-     margin-left: -10px;
+     padding-left: 10px;
      text-decoration: underline;
      text-shadow: none;
 }
@@ -280,7 +270,7 @@ html body.nail-detail div.container div.nail h1 a {
 html body.nail-detail div.container div.nail h1 {
      border-bottom: 1px solid #DDDDDD;
      color: #666666;
-     font-family: monospace;
+     font-family: arial;
      font-size: 34px;
      font-style: normal;
      padding: 10px 10px 0pt 25px;
@@ -289,12 +279,12 @@ html body.nail-detail div.container div.nail h1 {
 
 html body.nail-detail div.container div.nail {
      background: none repeat scroll 0pt 0pt white;
-     border-radius: 10px 10px 10px 10px;
-     border: 2px solid #B2B2B2;
-     box-shadow: 0pt 0pt 10px rgba(34, 25, 25, 0.4);
+     border: 1px solid #000000;
+     box-shadow: 0pt 0pt 26px rgba(34, 25, 25, 0.99);
      display: block;
      margin-left: auto;
      margin-right: auto;
+     position: inherit ! important;
      width: 650px;
 }
 
@@ -356,7 +346,7 @@ div.nail a img {
      display: block;
      margin-left: auto;
      margin-right: auto;
-     padding: 20px 20px 0pt;
+     padding: 15px 15px 0pt;
 }
 
 form.comment label {
@@ -405,26 +395,23 @@ body.home div.container div.nail p, body.workbench-detail div.container div.nail
 }
 
 body {
-     background: none repeat scroll 0pt 0pt #E9E9E9;
-     margin-top: 70px;
+     background: none repeat scroll 0pt 0pt #EEEEEE;
+     margin-top: 170px;
      padding-top: 0pt;
      position: relative;
 }
 
-.home .nail {
+.home .nail, .workbench-detail .nail {
      background: none repeat scroll 0pt 0pt #FFFFFF;
      border: 1px solid #DDDDDD;
+     box-shadow: 1px 2px 3px #000000;
      display: inline-block;
-     margin-top: 0pt;
-     width: 240px;
+     margin-top: 20px;
+     width: 280px;
 }
 
 .workbench-detail .nail {
-     background: none repeat scroll 0pt 0pt #FFFFFF;
-     border: 1px solid #CCCCCC;
-     display: inline-block;
-     margin-top: 20px;
-     width: 230px;
+     margin-top: 140px;
 }
 
 .nail-detail .actions li {
@@ -435,6 +422,7 @@ body {
 .container {
      margin-left: auto;
      margin-right: auto;
+     margin-top: -105px;
      width: 940px;
 }
 
@@ -455,8 +443,8 @@ li {
 
 div.topbar {
      background-repeat: repeat-x;
-     border-bottom: 1px solid #CDCDCD;
-     box-shadow: 0pt 1px 2px rgba(0, 0, 0, 0.1);
+     border-bottom: 1px solid #000000;
+     box-shadow: 0pt 1px 6px rgba(0, 0, 0, 0.99);
 }
 
 html body.account div.container div.row div.span4 {
@@ -474,7 +462,7 @@ html body.account div.container div.row div.span4 ul {
 
 html body.account div.container div.row div.span4 h1 {
      color: #666666;
-     font-family: monospace;
+     font-family: arial;
      text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
 }
 
@@ -487,7 +475,7 @@ html body.account div.container div.row div.span12 {
 
 html body.account div.container div.row div.span12 h2 {
      color: #666666;
-     font-family: monospace;
+     font-family: arial;
      text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
 }
 
@@ -532,7 +520,7 @@ html body.notices div.container div.row div.span4 ul {
 
 html body.notices div.container div.row div.span4 h1 {
      color: #666666;
-     font-family: monospace;
+     font-family: arial;
      text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
 }
 
@@ -542,7 +530,7 @@ html body.notices div.container div.row div.span12 {
      box-shadow: 0pt 0pt 4px #CCCCCC;
      padding: 10px 23px 0pt 24px;
      text-align: left;
-     width: auto;
+     width: 650px;
 }
 
 html body.notices div.container div.row div.span12 h2 {
@@ -555,16 +543,144 @@ html body.notices div.container div.row div.span12 div.notice_settings form tabl
 }
 
 html body.account div.container div.alert-message {
-    width: 350px;
-    float: right;
+     float: right;
+     width: 350px;
 }
 
 html body.notices div.container div.row div.span12 div.notice_settings div.alert-message a {
-    text-decoration: underline;
+     text-decoration: underline;
 }
 
-/* make menu items corresponding to the current page, bold */
-.main-menu.all .all,
-.main-menu.workers-you-follow .workers-you-follow {
-    font-weight: bold;
+.main-menu.all .all, .main-menu.workers-you-follow .workers-you-follow {
+     font-weight: bold;
+}
+
+html body.userpage div.workbench {
+     background: none repeat scroll 0pt 0pt white;
+     border: 1px solid #DDDDDD;
+     box-shadow: 0pt 0pt 8px #000000;
+     float: right;
+     margin-bottom: 100px;
+     margin-right: 0px;
+     margin-top: 20px;
+     padding: 10px 0px;
+     width: 600px;
+}
+
+html body.userpage div.container div.workbench h1 a {
+     border-bottom: 1px solid #EEEEEE;
+     color: darkcyan;
+     font-family: arial;
+     font-size: 37px;
+     padding: 0pt 20px;
+}
+
+html body.userpage div.workbench ul li {
+     display: inline-block;
+     padding: 0pt 1px;
+}
+
+html body.userpage div.container div.profizzle2 {
+     background-color: white;
+     box-shadow: 0pt 0pt 8px #000000;
+     color: #555555;
+     float: left;
+     margin-bottom: 15px;
+     margin-top: 20px;
+     padding: 10px 5px 10px 15px;
+     text-align: left;
+     width: 287px;
+}
+
+html body.userpage div.container div.profizzle2 form {
+     margin-bottom: 5px;
+}
+
+html body.userpage div.container div.profizzle2 p.stats {
+     color: #666666;
+     font-size: 14px;
+     padding-bottom: 7px;
+}
+
+html body.userpage div.container div.profizzle2 p.username {
+     color: lightBlue;
+     font-size: 36px;
+     line-height: 35px;
+     text-shadow: 2px 2px 1px #000000, 1px 1px 2px #000000;
+     text-transform: capitalize;
+}
+
+html body.workbench-detail div.container h1 form {
+     margin-bottom: 8px;
+}
+
+html body div.container div.whatsnext {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 1px 1px 3px #000000;
+     padding: 10px 20px;
+}
+
+html body div.container div.whatsnext p {
+     font-size: 21px;
+     padding-bottom: 18px;
+}
+
+.btn.success, .alert-message.success {
+     background-color: #FFFFFF;
+     background-image: -moz-linear-gradient(center top , #F5F5F5, white);
+     background-repeat: repeat-x;
+     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+     text-shadow: 0pt 0px 0pt rgba(0, 0, 0, 0.25);
+}
+
+html body div.container div.whatsnext dl.what_next dt {
+     margin-left: 9px;
+     padding-bottom: 10px;
+     padding-top: 16px;
+}
+
+html body div.container div.whatsnext dl.what_next {
+     margin-top: -16px;
+}
+
+.top {
+     -moz-transition: opacity 700ms linear 0s;
+     background: none repeat scroll 0% 0% #333333;
+     border-radius: 10px 10px 10px 10px;
+     bottom: 15px;
+     color: #888888;
+     display: block;
+     font-size: 14px;
+     height: 25px;
+     line-height: 25px;
+     opacity: 1;
+     padding-top: 25px;
+     position: fixed;
+     right: 15px;
+     text-align: center;
+     text-decoration: none;
+     width: 50px;
+}
+
+.top:before {
+     border-bottom: 11px solid #888888;
+     border-left: 11px solid transparent;
+     border-right: 11px solid transparent;
+     content: "";
+     left: 14px;
+     position: absolute;
+     top: 11px;
+}
+
+.top:hover {
+     color: #EEEEEE;
+}
+
+.top:hover:before {
+     border-bottom-color: #EEEEEE;
+}
+
+.top.hidden {
+     opacity: 0;
 }

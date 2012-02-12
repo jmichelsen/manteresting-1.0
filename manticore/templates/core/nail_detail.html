@@ -9,18 +9,24 @@
 
 {% block body %}
     <div class="nail">
-        <h1>Workbench: <a href="{{ object.workbench.get_absolute_url }}">{{ object.workbench }}</a></h1>
+        <h1>Posted to:<a href="{{ object.workbench.get_absolute_url }}">{{ object.workbench }}</a></h1>
         {% if user.is_authenticated %}
         <ul class="actions well">
             {% phileo_widget user object %}
             <li><a href="{% url nail-repin pk=object.pk %}" class="btn primary">Nail It!</a></li>
+            <li><a onclick="window.open('http://twitter.com/share?text=Check%20out%20what%20got%20Nailed%20at&amp;url=http://manteresting.com{{ nail.get_absolute_url }}','C2G','menubar=no,width=550,height=450,toolbar=no'); return false;" href="#">Tweet it!</a></li>
             {% if object.workbench.user == user %}
             <li><a href="{% url nail-edit pk=object.pk %}" class="btn success">Edit</a></li>
             <li><a href="{% url nail-delete pk=object.pk %}" class="btn danger">Delete</a></li>
             {% endif %}
         </ul>
         {% endif %}
-        <img src="{{ object.normal.url }}" width="{{ object.normal.width }}px" height="{{ object.normal.height }}px"/>
+        {% if object.source_url %}
+            <a href="{{ object.source_url }}"><img src="{{ object.normal.url }}" width="{{ object.normal.width }}px" height="{{ object.normal.height }}px"/></a>
+        {% else %}
+            <img src="{{ object.normal.url }}" width="{{ object.normal.width }}px" height="{{ object.normal.height }}px"/>
+        {% endif %}
+
         <p>{{ object.description }}</p>
         <p>
             {% if object.source_url %}Nailed from <a href="{{ object.source_url }}">{{ object.source_title }}</a>
@@ -31,7 +37,7 @@
         {% if comments %}
         <ul class="comments">
             {% for comment in comments %}
-            <li><a href="#">{{ comment.author }}</a> — {{ comment.comment }}</li>
+            <li><a href="{% url user slug=comment.author.username %}">{{ comment.author }}</a> — {{ comment.comment }}</li>
             {% endfor %}
         </ul>
         {% endif %}

@@ -6,7 +6,7 @@
 {% block body %}
     <h1>{{ object.title }}</h1>
     <form action="." method="POST">
-        <p>Do you really want to delete this nice workbench?</p>
+        <p>Do you really want to delete this workbench?</p>
         <input type="submit" class="btn primary" value="Yes"/>
         <input type="reset" class="btn" value="No"/>
         {% csrf_token %}

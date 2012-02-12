@@ -7,6 +7,8 @@
 {% block head_title %}{% trans "Add workbench" %}{% endblock %}
 
 {% block body %}
+<h1>Create a workbench:</h1>
+
 <form action="" method="POST">
     <div class="clearfix{% if form.errors.title %} error{% endif %}">
         {{ form.title.label_tag }}

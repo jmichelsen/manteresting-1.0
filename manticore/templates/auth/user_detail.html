@@ -1,10 +1,14 @@
+
+
 {% extends "site_base.html" %}
 {% load manticore follow_tags %}
 
 {% block head_title %}{{ object.username }} — Manticore{% endblock %}
 
 {% block body %}
-    <div class="user-profile">
+<body class="{% block body_class %}userpage{% endblock %}>
+    <div class="profizzle">
+<div class="profizzle2">
         <p class="username">{{ object.username }}</p>
         <p class="stats">Workbenches: {{ object.workbenches.count }}, Nails: {{ object.nails.count }}</p>
         {% follow_form object %}
@@ -12,7 +16,7 @@
     {% if object.workbenches.count %}
         {% for workbench in object.workbenches.all %}
             <div class="workbench">
-                <h1>{{ workbench.title }}</h1>
+                <h1><a href="{{ workbench.get_absolute_url }}">{{ workbench.title }}</a></h1>
                 {% if workbench.nails.count %}
                     <ul>
                     {% for nail in workbench.nails.all %}
@@ -29,4 +33,5 @@
     {% else %}
         <p>No workbenches</p>
     {% endif %}
-{% endblock %}
+{% endblock %}</div>
+

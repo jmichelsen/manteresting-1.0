@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 # Django settings for basic pinax project.
 
+import re
 import os.path
 import posixpath
 
+from manticore.apps.core.extlinks import ExtlinksBlankMiddleware
 from manticore.apps.core.utils import reverse
 from django.template.defaultfilters import slugify
 
@@ -114,6 +116,7 @@ MIDDLEWARE_CLASSES = [
     'pinax.apps.account.middleware.LocaleMiddleware',
     'pagination.middleware.PaginationMiddleware',
     'pinax.middleware.security.HideSensistiveFieldsMiddleware',
+    'manticore.apps.core.extlinks.ExtlinksBlankMiddleware',
 ]
 
 ROOT_URLCONF = 'manticore.urls'

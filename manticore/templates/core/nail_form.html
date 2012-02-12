@@ -8,7 +8,7 @@
 
 {% block body %}
     {% if cloned_from %}
-        <h1>Nail It! (1mb limit)</h1>
+        <h1>Nail It!</h1>
     {% else %}
         {% if object %}
         <h1>Edit</h1>
@@ -22,6 +22,7 @@
     <div class="clearfix">
         <div class="input">
             <img src="{{ MEDIA_URL }}{{ cloned_from.small }}" width="{{ cloned_from.small.width }}px" height="{{ cloned_from.small.height }}px" />
+
         </div>
     </div>
     {% endif %}
@@ -45,10 +46,14 @@
     <div class="clearfix{% if 'media' in form.errors %} error{% endif %}">
         {{ form.original.label_tag }}
         <div class="input">
-            <img src="{{ form.media.value }}"/>
-            {{ form.media }}
-            {{ form.source_url }}
-            {{ form.source_title }}
+<!--            <img src="{{ form.media.value }}"/> -->
+            {% if cloned_from %}
+                {{ form.media }}
+            {% else %}
+                {{ form.media }}
+                {{ form.source_url }}
+                {{ form.source_title }}
+            {% endif %}
         </div>
     </div>
     {% endif %}
@@ -59,7 +64,7 @@
             <span class="help-inline">{% if form.errors.description %}{{ form.errors.description.0 }}{% endif %}</span>
         </div>
     </div>
-    <div class="input"><input type="submit" value="{% if cloned_from %}Repin{% else %}{% if object %}Edit{% else %}Upload{% endif %}{% endif %}" class="btn primary"/></div>
+    <div class="input"><input type="submit" value="{% if cloned_from %}Renail{% else %}{% if object %}Edit{% else %}Upload{% endif %}{% endif %}" class="btn primary"/></div>
     {% csrf_token %}
 </form>
 {% endblock %}

@@ -47,6 +47,6 @@ def deploy():
     with cd(env.project_dir):
         run('git pull')
         run('env/bin/pip install -r requirements/testing.txt')
-        run('env/bin/python manage.py migrate')
+        run('env/bin/python manage.py syncdb --migrate')
         run('./start-daemon.sh')
 

@@ -46,7 +46,7 @@ class Nail(models.Model):
     original = models.ImageField(upload_to='nails')
     normal = ImageSpec(
         [
-            resize.Fit(600, 1200)
+            resize.Fit(600)
         ],
         image_field='original',
         format='JPEG',
@@ -54,7 +54,7 @@ class Nail(models.Model):
     )
     small = ImageSpec(
         [
-            resize.Fit(250, 500)
+            resize.Fit(250)
         ],
         image_field='original',
         format='JPEG',

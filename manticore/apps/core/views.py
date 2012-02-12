@@ -220,7 +220,7 @@ class AllNailsView(TemplateView):
 
     def get_context_data(self, **kwargs):
         data = super(AllNailsView, self).get_context_data(**kwargs)
-        data['nails'] = Nail.objects.all().order_by('-id')[:200]
+        data['nails'] = Nail.objects.all().order_by('-id')[:100]
         data['main_menu_item'] = 'all'
         return data
 

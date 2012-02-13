@@ -10,7 +10,11 @@
         <li>
             <a href="#" class="menu">About</a>
             <ul class="menu-dropdown">
+                <li><a href="{% url about %}">FAQ</a></li>
                 <li><a href="{% url goodies %}">Goodies</a></li>
+                <li><a href="{% url terms %}">TOS</a></li>
+                <li><a href="{% url dmca %}">Copyright</a></li>
+                <li><a href="{% url privacy %}">Privacy</a></li>
             </ul>
         </li>
         {% with profile=user.get_profile %}{% if profile.avatar %}<li><img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/></li>{% endif %}{% endwith %}

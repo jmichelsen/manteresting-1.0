@@ -1,4 +1,4 @@
-@import url('extra.css');
+@import url("extra.css");
 
 div.legal {
      display: none;
@@ -55,13 +55,6 @@ html body.workbench-detail div.container h1 {
      right: 0pt;
      top: -50px;
      z-index: 999;
-}
-
-.topbar .search {
-    float: left;
-}
-.topbar .search #id_search_query {
-    color: #BFBFBF;
 }
 
 .sticky .topbar {
@@ -692,4 +685,12 @@ html body div.container div.whatsnext dl.what_next {
 
 .top.hidden {
      opacity: 0;
+}
+
+html body.home div.topbar div.fill div.container div.search form input.btn {
+     display: none;
+}
+
+html body.home div.topbar div.fill div.container div.search form {
+     width: 198px;
 }

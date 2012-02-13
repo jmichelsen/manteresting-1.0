@@ -4,6 +4,7 @@ env
 dev.db
 manticore.egg-info
 manticore/site_media/media
+manticore/search_index/*
 .noseids
 *.log
 .vim/ide.session

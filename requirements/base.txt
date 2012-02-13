@@ -44,3 +44,7 @@ South==0.7.3
 # simple and elegant http library
 requests==0.9.0
 simplejson==2.3.2
+
+# Search
+django-haystack==1.2
+whoosh==2.3

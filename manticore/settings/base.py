@@ -178,6 +178,7 @@ INSTALLED_APPS = [
     'phileo',
     'dialogos',
     'follow',
+    'haystack',
 
     # Pinax
     'pinax.apps.account',
@@ -235,6 +236,11 @@ DEBUG_TOOLBAR_CONFIG = {
 PHILEO_LIKABLE_MODELS = [
     'core.Nail',
 ]
+
+# Search settings
+HAYSTACK_SITECONF = 'manticore.search_sites'
+HAYSTACK_SEARCH_ENGINE = 'whoosh'
+HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
 
 
 # local_settings.py can be used to override environment-specific settings

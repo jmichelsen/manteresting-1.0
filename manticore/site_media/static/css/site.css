@@ -5,7 +5,7 @@ div.legal {
 }
 
 div#header {
-     background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/man-header.png") no-repeat fixed 64% 0pt transparent;
+     background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/man-header1.png") no-repeat fixed 64% 0pt transparent;
      height: 120px;
      position: inherit;
      top: -170px;
@@ -692,5 +692,29 @@ html body.home div.topbar div.fill div.container div.search form input.btn {
 }
 
 html body.home div.topbar div.fill div.container div.search form {
-     width: 198px;
+     width: 161px;
+}
+
+.topbar input:-moz-placeholder {
+     color: #E6E6E6;
+     font-size: 12px;
+}
+
+.topbar input {
+     -moz-transition: none 0s ease 0s ;
+     background-color: #555555;
+     border-radius: 4px 4px 4px 4px;
+     border: 1px solid #333333;
+     box-shadow: 0pt 1px 2px rgba(0, 0, 0, 0.1) inset, 0pt 1px 0pt rgba(255, 255, 255, 0.25);
+     color: rgba(255, 255, 255, 0.75);
+     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+     line-height: 1;
+     padding: 4px 9px;
+}
+
+:-moz-placeholder {
+     color: #BFBFBF;
+     height: 12px;
+     margin-top: 3px;
+     width: 129px;
 }

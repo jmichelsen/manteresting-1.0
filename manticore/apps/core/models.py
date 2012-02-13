@@ -14,6 +14,9 @@ from follow.signals import followed, unfollowed
 class Category(models.Model):
     title = models.CharField(max_length=100)
 
+    class Meta:
+        verbose_name_plural = 'categories'
+
     def __unicode__(self):
         return self.title
 
@@ -23,6 +26,9 @@ class Workbench(models.Model):
     title = models.CharField(max_length=100)
     category = models.ForeignKey(Category, related_name='workbenches')
     timestamp = models.DateTimeField(blank=True)
+
+    class Meta:
+        verbose_name_plural = 'workbenches'
 
     def __unicode__(self):
         return self.title

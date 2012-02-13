@@ -708,11 +708,5 @@ html body.home div.topbar div.fill div.container div.search form {
      font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
      line-height: 1;
      padding: 4px 9px;
-}
-
-:-moz-placeholder {
-     color: #BFBFBF;
-     height: 12px;
-     margin-top: 3px;
-     width: 129px;
+     width: 117px;
 }

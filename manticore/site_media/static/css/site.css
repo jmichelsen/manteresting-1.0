@@ -687,7 +687,7 @@ html body div.container div.whatsnext dl.what_next {
      opacity: 0;
 }
 
-html body.home div.topbar div.fill div.container div.search form input.btn {
+div.search form input.btn {
      display: none;
 }
 

@@ -55,6 +55,13 @@ html body.workbench-detail div.container h1 {
      z-index: 999;
 }
 
+.topbar .search {
+    float: left;
+}
+.topbar .search #id_search_query {
+    color: #BFBFBF;
+}
+
 .sticky .topbar {
      left: 0pt;
      position: fixed;

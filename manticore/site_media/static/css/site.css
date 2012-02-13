@@ -4,6 +4,32 @@ div.legal {
      display: none;
 }
 
+div#google {
+     float: right;
+     height: 40px;
+     margin-left: 16px;
+     margin-right: 13px;
+     margin-top: 9px;
+     width: 40px;
+}
+
+div#facebook {
+     float: right;
+     height: 40px;
+     margin-left: 12px;
+     margin-right: 125px;
+     margin-top: 8px;
+     position: relative;
+     width: 40px;
+}
+
+div#twitter {
+     float: right;
+     height: 40px;
+     margin-top: 9px;
+     width: 40px;
+}
+
 div#header {
      background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/man-header1.png") no-repeat fixed 64% 0pt transparent;
      height: 120px;

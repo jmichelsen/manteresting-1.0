@@ -464,7 +464,6 @@ html body.account div.container div.row div.span4 ul {
 html body.account div.container div.row div.span4 h1 {
      color: #666666;
      font-family: arial;
-     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
 }
 
 html body.account div.container div.row div.span12 {
@@ -477,7 +476,6 @@ html body.account div.container div.row div.span12 {
 html body.account div.container div.row div.span12 h2 {
      color: #666666;
      font-family: arial;
-     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
 }
 
 html body.account div.container div.row div.span12 form div.actions {
@@ -522,7 +520,6 @@ html body.notices div.container div.row div.span4 ul {
 html body.notices div.container div.row div.span4 h1 {
      color: #666666;
      font-family: arial;
-     text-shadow: 1px 1px 0pt #FFFFFF, 1px 1px 1px #333333;
 }
 
 html body.notices div.container div.row div.span12 {

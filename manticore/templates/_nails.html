@@ -1,0 +1,8 @@
+{% load dialogos_tags i18n phileo_tags %}
+{% load endless %}
+
+{% lazy_paginate nails %}
+{% for nail in nails %}
+    {% include "_nail.html" %}
+{% endfor %}
+{% show_more %}

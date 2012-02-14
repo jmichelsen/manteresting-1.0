@@ -179,6 +179,7 @@ INSTALLED_APPS = [
     'dialogos',
     'follow',
     'haystack',
+    'endless_pagination',
 
     # Pinax
     'pinax.apps.account',
@@ -242,6 +243,9 @@ HAYSTACK_SITECONF = 'manticore.search_sites'
 HAYSTACK_SEARCH_ENGINE = 'whoosh'
 HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
 
+# Endless scrolling settings.
+# See http://django-endless-pagination.readthedocs.org/en/latest/customization.html#settings
+ENDLESS_PAGINATION_PER_PAGE = 40
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.

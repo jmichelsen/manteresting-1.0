@@ -8,6 +8,8 @@ from django.forms.models import modelform_factory
 from django import forms
 from django.core.files.base import ContentFile
 
+from endless_pagination.views import AjaxListView
+
 from .models import Nail, FriendFeed
 
 
@@ -259,5 +261,29 @@ class HomepageView(AllNailsView):
             data['main_menu_item'] = 'workers-you-follow'
 
 
+        return data
+
+
+class AjaxHomepageView(AjaxListView):
+    template_name = 'homepage.html'
+    page_template = '_nails.html'
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_authenticated():
+            self.nails = [ff.nail for ff in user.friendfeed.order_by('-timestamp')]
+            if not self.nails:
+                self.nails = user.nails.all().order_by('-id')
+        else:
+            self.nails = Nail.objects.all().order_by('-id')
+        return self.nails
+
+
+    def get_context_data(self, **kwargs):
+        data = super(AjaxHomepageView, self).get_context_data(**kwargs)
+        user = self.request.user
+        data['nails'] = self.nails
+        if user.is_authenticated():
+            data['main_menu_item'] = 'workers-you-follow'
         return data
 

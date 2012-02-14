@@ -12,7 +12,7 @@ from manticore.apps.core.views import (
     CreateByView,
     UpdateWorkbenchView, DeleteWorkbenchView,
     CreateNailView, UpdateNailView, DeleteNailView,
-    HomepageView, RepinNailView, AllNailsView,
+    RepinNailView, AllNailsView, AjaxHomepageView
 )
 
 
@@ -23,7 +23,7 @@ from idios.views import ProfileCreateView, ProfileDetailView, ProfileUpdateView
 urlpatterns = patterns("",
     url(r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '/site_media/media/favicon.ico'}),
 
-    url(r'^$', HomepageView.as_view(), name='home'),
+    url(r'^$', AjaxHomepageView.as_view(), name='home'),
     url(r'^all/$', AllNailsView.as_view(), name='all'),
 
     url(r"^admin/invite_user/$", "pinax.apps.signup_codes.views.admin_invite_user", name="admin_invite_user"),

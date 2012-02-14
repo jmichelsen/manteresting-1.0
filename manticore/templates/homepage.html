@@ -3,17 +3,23 @@
 {% load i18n %}
 {% load ifsetting_tag %}
 
+{% block extra_head %}
+{{ block.super }}
+    <script type="text/javascript" src="{{ STATIC_URL }}endless_pagination/js/endless.js" charset="utf-8"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}endless_pagination/js/endless_on_scroll.js" charset="utf-8"></script>
+    {# Distance in pixels from bottom of page to trigger endless scrolling #}
+    <script type="text/javascript" charset="utf-8">
+        var endless_on_scroll_margin = 100;
+    </script>
+{% endblock %}
+
 {% block head_title %}{% trans "Beta" %}{% endblock %}
 
 {% block body_class %}home{% endblock %}
 
 {% block body %}
     
-    {% for nail in nails %}
-    
-        {% include "_nail.html" %}
-    
-    {% endfor %}
+    {% include "_nails.html" %}
 
 {% endblock %}
 

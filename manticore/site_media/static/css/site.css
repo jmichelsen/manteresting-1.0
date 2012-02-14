@@ -787,3 +787,8 @@ html body.search div.container form h3 {
 form .input {
      margin-left: 130px;
 }
+
+.endless_container {
+    position: absolute;
+    bottom: 5px;
+}

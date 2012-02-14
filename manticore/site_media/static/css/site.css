@@ -4,8 +4,6 @@ div.legal {
      display: none;
 }
 
-
-
 div#header {
      background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/man-header2.png") no-repeat scroll 64% 0pt transparent;
      height: 120px;
@@ -562,7 +560,7 @@ html body.userpage div.workbench {
      border: 1px solid #DDDDDD;
      box-shadow: 0pt 0pt 8px #000000;
      float: right;
-     margin-bottom: 100px;
+     margin-bottom: 20px;
      margin-right: 0px;
      margin-top: 20px;
      padding: 10px 0px;

@@ -31,6 +31,15 @@
         </li>
     {% else %}
         <li>
+            <a href="#" class="menu">About</a>
+            <ul class="menu-dropdown">
+                <li><a href="{% url about %}">FAQ</a></li>
+                <li><a href="{% url terms %}">TOS</a></li>
+                <li><a href="{% url dmca %}">Copyright</a></li>
+                <li><a href="{% url privacy %}">Privacy</a></li>
+            </ul>
+        </li>
+        <li>
             <a href="#" class="menu">Login or Sign Up</a>
             <ul class="menu-dropdown">
                 <li><a rel="nofollow" href="{% url socialauth_begin 'twitter' %}?next={% firstof post_login_url request.path %}">via Twitter</a><li>

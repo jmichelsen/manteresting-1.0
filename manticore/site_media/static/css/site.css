@@ -692,7 +692,7 @@ html body.home div.topbar div.fill div.container div.search form {
 }
 
 .topbar input:-moz-placeholder {
-     color: #E6E6E6;
+     color: #999999;
      font-size: 12px;
 }
 

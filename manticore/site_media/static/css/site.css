@@ -1,5 +1,16 @@
 @import url("extra.css");
 
+html body.home div#header div#socialbox ul.social li {
+     display: inline;
+     float: right;
+     margin-top: 10px;
+     padding-left: 14px;
+}
+
+html body.home div#header div#socialbox {
+     margin-right: 120px;
+}
+
 div.legal {
      display: none;
 }

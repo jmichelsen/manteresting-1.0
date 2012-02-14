@@ -10,7 +10,7 @@
         <li>
             <a href="#" class="menu">About</a>
             <ul class="menu-dropdown">
-                <li><a href="{% url about %}">FAQ</a></li>
+                <li><a href="{% url about %}">About</a></li>
                 <li><a href="{% url goodies %}">Goodies</a></li>
                 <li><a href="{% url terms %}">TOS</a></li>
                 <li><a href="{% url dmca %}">Copyright</a></li>
@@ -31,11 +31,20 @@
         </li>
     {% else %}
         <li>
+            <a href="#" class="menu">About</a>
+            <ul class="menu-dropdown">
+                <li><a href="{% url about %}">FAQ</a></li>
+                <li><a href="{% url terms %}">TOS</a></li>
+                <li><a href="{% url dmca %}">Copyright</a></li>
+                <li><a href="{% url privacy %}">Privacy</a></li>
+            </ul>
+        </li>
+        <li>
             <a href="#" class="menu">Login or Sign Up</a>
             <ul class="menu-dropdown">
                 <li><a rel="nofollow" href="{% url socialauth_begin 'twitter' %}?next={% firstof post_login_url request.path %}">via Twitter</a><li>
                 <li><a rel="nofollow" href="{% url socialauth_begin 'facebook' %}?next={% firstof post_login_url request.path %}">via Facebook</a></li>
-		<li><a rel="nofollow" href="http://manteresting.com/account/login/">Personal</a></li>
+        		<li><a rel="nofollow" href="{% url acct_login %}">Personal</a></li>
             </ul>
         </li>
     {% endif %}

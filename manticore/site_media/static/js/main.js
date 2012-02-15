@@ -17,10 +17,11 @@
                  });
                }, opts);
 
+             var wookmark_options = {offset: 16, itemWidth: 280, container: $('#nails_container')};
              $('.container').imagesLoaded(function() {
-                   $('.nail').wookmark({offset: 16, itemWidth: 280});
+                   $('.nail').wookmark(wookmark_options);
                });
                $(window).resize(function() {
-                 $('.nail').wookmark({offset: 16, itemWidth: 280});
+                 $('.nail').wookmark(wookmark_options);
                });
        });

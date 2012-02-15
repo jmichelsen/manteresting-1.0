@@ -788,6 +788,12 @@ form .input {
      margin-left: 130px;
 }
 
+#nails_container {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
 .endless_container {
     position: absolute;
     bottom: 5px;

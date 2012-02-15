@@ -32,7 +32,7 @@
 
            // Show back to top button after scrolling
            $(window).scroll(function(){
-               if($(this).scrollTop() > 15) {
+               if($(this).scrollTop() > 71) {
                    $('.back_to_top').show();
                    $('.topbar').css({'position': 'fixed', 'top': 0});
                } else {

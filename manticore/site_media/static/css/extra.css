@@ -1,257 +1,816 @@
-/* Add additional stylesheets below
--------------------------------------------------- */
-/*
-  Bootstrap's documentation styles
-  Special styles for presenting Bootstrap's documentation and examples
-*/
-/* Body and structure
--------------------------------------------------- */
+div.nail ul li.creds img, div.nail ul li.comment img {
+     float: left;
+}
+
+div#socialbox ul.social li {
+     display: inline;
+     float: right;
+     margin-top: 10px;
+     padding-left: 14px;
+}
+
+div#header div#socialbox {
+     margin-right: 120px;
+}
+
+div.legal {
+     display: none;
+}
+
+div#header {
+     background: url("/site_media/media/ManBeta.png") no-repeat scroll 64% 0pt transparent;
+     height: 120px;
+     position: inherit;
+     top: -170px;
+     width: auto;
+}
+
+html body.workbench-detail div.container h2 a img {
+     float: right;
+     padding-right: 20px;
+}
+
+html body.workbench-detail div.container h2 a {
+     color: Orange;
+     padding-right: 5px;
+     text-shadow: 2px 2px 3px #000000;
+}
+
+html body.workbench-detail div.container h2 {
+     color: #EEEEEE;
+     font-size: 16px;
+     margin: -63px auto 20px;
+     padding-left: 20px;
+     width: 700px;
+}
+
+html body.workbench-detail div.container h1 {
+     background-color: SlateGray;
+     border: 1px solid #444444;
+     color: #EEEEEE;
+     font-size: 35px;
+     line-height: 30px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 7px;
+     padding-bottom: 8px;
+     padding-top: 11px;
+     text-align: center;
+     text-shadow: 2px 2px 2px #000000;
+     width: 700px;
+}
+
+.topbar {
+     height: 40px;
+     left: 0pt;
+     overflow: visible;
+     position: absolute;
+     right: 0pt;
+     top: -50px;
+     z-index: 999;
+}
+
+.sticky .topbar {
+     left: 0pt;
+     position: fixed;
+     top: 0pt;
+     width: 100%;
+}
+
+.topbar-inner, .topbar .fill {
+     background-color: #444444;
+     background-image: none ! important;
+     background-repeat: repeat-x;
+     box-shadow: none ! important;
+     margin-top: 105px;
+}
+
+body.home, body.nail-detail, html body.workbench-detail, html body.userpage, html body.search {
+     background: url("http://www.punchdebtintheface.com/wp-content/uploads/2012/02/Clean-Gray-BackGround.jpg") repeat-x fixed 50% 0pt #666666;
+}
+
+html body.profile div#modal div#modal-popup.modal form.ajax div.modal-footer button.btn {
+     color: #FFFFFF;
+}
+
+html body.profile div#modal div#modal-popup.modal form.ajax div.modal-body fieldset div.clearfix div.input input#id_avatar {
+     display: list-item;
+}
+
+html body.profile div#modal div#modal-popup.modal form.ajax div.modal-body fieldset div.clearfix div.input input#avatar-clear_id {
+     display: inline;
+     margin-top: 9px;
+}
+
+html body.profile div#modal div#modal-popup.modal form.ajax div.modal-body fieldset div.clearfix div.input a {
+     display: block;
+     margin-bottom: 10px;
+}
+
+html body.profile div#modal div#modal-popup.modal {
+     position: absolute;
+}
+
+html body.profile div.container h1 {
+     color: #666666;
+     font-family: arial;
+     font-size: 38px;
+     font-style: normal;
+     line-height: 15px;
+     margin-bottom: 17px;
+     padding: 10px 10px 0pt 20px;
+}
+
+html body.nail-detail div.container div.nail form.comment input.btn {
+     padding: 7px 17px 8px;
+}
+
+html body.nail-detail div.container div.nail ul.actions {
+     background: none repeat scroll 0pt 0pt transparent;
+}
+
+input, textarea, select, .uneditable-input {
+     border-radius: 3px 3px 3px 3px;
+     border: 1px solid #CCCCCC;
+     color: #555555;
+     display: inline-block;
+     font-size: 13px;
+     line-height: 18px;
+     margin-left: 84px;
+     margin-right: 1px;
+     padding: 1px 9px 1px 11px;
+}
+
+span.phileo-count {
+     color: #999999 ! important;
+     font-size: 12px ! important;
+     font-weight: normal ! important;
+     vertical-align: inherit ! important;
+}
+
+.btn.danger, .alert-message.danger, .btn.danger:hover, .alert-message.danger:hover, .btn.error, .alert-message.error, .btn.error:hover, .alert-message.error:hover, .btn.success, .alert-message.success, .btn.success:hover, .alert-message.success:hover, .btn.info, .alert-message.info, .btn.info:hover, .alert-message.info:hover {
+     color: #444444;
+}
+
+html body.nail-detail div.container div.nail ul.actions li a.btn, html body div.container form div.input input.btn {
+     background: none repeat-x scroll 0pt 0pt #F8F8F8;
+     margin-right: 7px;
+     text-shadow: none;
+}
+
+.btn.primary {
+     color: #000000 ! important;
+     text-shadow: none ! important;
+}
+
+.btn {
+     -moz-border-bottom-colors: none;
+     -moz-border-image: none;
+     -moz-border-left-colors: none;
+     -moz-border-right-colors: none;
+     -moz-border-top-colors: none;
+     -moz-transition: all 0.1s linear 0s ;
+     border-radius: 4px 4px 4px 4px;
+     border-style: solid;
+     border-width: 1px;
+     box-shadow: none;
+     cursor: pointer;
+     display: inline-block;
+     font-size: 13px;
+     line-height: normal;
+     padding: 3px 22px;
+}
+
+html body.profile div.container div.profile_info p {
+     font-family: arial;
+     font-size: 15px;
+     font-weight: lighter;
+}
+
+html body.profile div.container p a#edit-profile-box.btn {
+     display: block;
+     float: left;
+     margin-left: 30px;
+     margin-top: -45px;
+     padding-left: 50px;
+     width: 100px;
+}
+
+html body.profile div.container div.profile_info p b {
+     color: darkcyan;
+     font-size: 22px;
+     font-weight: bold;
+     line-height: 43px;
+     padding-right: 7px;
+     text-decoration: inherit;
+}
+
+html body.profile div.container div.profile_info {
+     background: none repeat scroll 0pt 0pt #FFFFFF;
+     border-radius: 10px 10px 10px 10px;
+     border: 1px solid #CCCCCC;
+     display: block;
+     padding: 20px 20px 40px;
+     width: 550px;
+}
+
+div.nail ul li.creds div.credstext, div.nail ul li.comment div.commenttext {
+     display: inline-block;
+     line-height: 14px;
+     padding-left: 4px;
+     vertical-align: top;
+     width: 220px;
+}
+
+.topbar div > ul.secondary-nav .menu-dropdown, .nav.secondary-nav .menu-dropdown, .topbar div > ul.secondary-nav .dropdown-menu, .nav.secondary-nav .dropdown-menu {
+     border: 0pt none;
+     right: auto;
+}
+
+body.nail-detail div.container div.nail ul.comments li:last-child {
+     border-bottom-width: 0pt;
+}
+
+html body.nail-detail div.container div.nail ul.comments {
+     background-color: #EDEFF4;
+     border: 1px solid #DDDDDD;
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 500px;
+}
+
+.home .nail:hover, .workbench-detail .nail:hover {
+     box-shadow: 0pt 0px 1px rgba(34, 25, 25, 0.6);
+}
+
+html body.nail-detail div.container div.nail form.comment textarea#id_comment {
+     height: 30px;
+     margin-left: 10px;
+     margin-right: -10px;
+     width: 359px;
+}
+
+html body.nail-detail div.container div.nail form.comment {
+     background: none repeat scroll 0pt 0pt #F5F5F5;
+     margin-bottom: 0pt;
+     padding: 10px;
+}
+
+html body.nail-detail div.container div.nail ul.comments li a {
+     color: darkcyan;
+     font-weight: bold;
+}
+
+html body.nail-detail div.container div.nail ul.actions {
+     display: block;
+     margin: -7px auto 5px 25px;
+     width: auto;
+}
+
+html body.nail-detail div.container div.nail img {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+html body.nail-detail div.container div.nail h1 a {
+     color: darkcyan;
+     font-size: 20px;
+     padding-left: 10px;
+     text-decoration: underline;
+     text-shadow: none;
+}
+
+html body.nail-detail div.container div.nail h1 {
+     border-bottom: 1px solid #DDDDDD;
+     color: #666666;
+     font-family: arial;
+     font-size: 34px;
+     font-style: normal;
+     padding: 10px 10px 0pt 25px;
+}
+
+html body.nail-detail div.container div.nail {
+     background: none repeat scroll 0pt 0pt white;
+     border: 1px solid #000000;
+     box-shadow: 0pt 0pt 26px rgba(34, 25, 25, 0.99);
+     display: block;
+     margin-bottom: 30px;
+     margin-left: auto;
+     margin-right: auto;
+     position: inherit ! important;
+     width: 650px;
+}
+
+body.nail-detail div.container div.nail p {
+     color: #797979;
+     font-style: normal;
+     text-align: center;
+}
+
+body.nail-detail div.container div.nail ul.comments li {
+     border-bottom: 1px solid #DDDDDD;
+     border-top: 1px solid white;
+     color: #555555;
+     padding: 8px 20px 8px 10px;
+}
+
+div.container div.nail ul li.creds:last-child {
+     border-bottom-width: 0pt;
+}
+
+div.container div.nail ul li.comment {
+     border-top: 1px solid #FFFFFF;
+}
+
+div.nail ul li.stats {
+     background-color: #EDEFF4;
+     border-top: 1px solid white;
+     font-size: 10px;
+     padding-right: 10px;
+     text-align: right;
+}
+
+div.container div.nail ul {
+     background-color: #EDEFF4;
+}
+
+body.home div.container div.nail ul, body.workbench-detail div.container div.nail ul {
+     margin: 0pt;
+}
+
+li.creds {
+     font-size: 11px;
+}
+
+li.creds a, li.comment a {
+     color: #585757;
+     font-size: 11px;
+     font-weight: bold;
+     text-transform: capitalize;
+}
+
+div.nail ul li.creds, li.comment {
+     border-bottom: 1px solid #D8D8D8;
+     border-top: 1px solid #DDDDDD;
+     font-size: 11px;
+     padding: 6px 5px 17px 12px;
+}
+
+div.nail a img {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     padding: 15px 15px 0pt;
+}
+
+form.comment label {
+     color: #404040;
+     float: left;
+     font-size: 13px;
+     line-height: 18px;
+     padding-top: 6px;
+     text-align: right;
+     width: 61px;
+}
+
+.well {
+     background-color: #EEEEEE;
+     border: medium none;
+     box-shadow: none;
+     margin-bottom: 5px;
+     margin-left: 0pt;
+     margin-top: 0pt;
+     min-height: 0pt;
+     padding: 0pt;
+     width: 192px;
+}
+
+ul {
+     list-style: none outside none;
+}
+
+div.container div.nail ul li.comment a img, div.container div.nail ul li.creds a img {
+     display: inline-block;
+     margin-right: 3px;
+     padding: 0pt;
+}
+
+div.topbar div.fill div.container ul.secondary-nav li img {
+     display: block;
+     padding-top: 5px;
+}
+
+body.home div.container div.nail p, body.workbench-detail div.container div.nail p {
+     color: #7B7878;
+     font-size: 11px;
+     font-style: normal;
+     margin-top: 3px;
+     padding: 0pt 20px;
+     text-align: left;
+}
 
 body {
-  background-color: #fff;
-  position: relative;
-  padding-top: 80px;
-}
-section {
-  padding-top: 60px;
-}
-.modal form {
-  margin-bottom: 0px;
-}
-/*
-section > .row {
-  margin-bottom: 10px;
-}
-#masthead, #footer {
-  background-color: #049cd9;
-  background-repeat: no-repeat;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#004D9F), to(#049cd9));
-  background-image: -webkit-linear-gradient(#004D9F, #049cd9);
-  background-image: -moz-linear-gradient(#004D9F, #049cd9);
-  background-image: -o-linear-gradient(top, #004D9F, #049cd9);
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#004D9F), to(#049cd9));
-  filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#004D9F', EndColorStr='#049cd9', GradientType=0);
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#004D9F', EndColorStr='#049cd9', GradientType=0))";
-}
-#masthead div.inner, #footer div.inner {
-  background: transparent url(../img/grid-18px.png) top center;
-  padding: 45px 0;
-  -webkit-box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.3);
-     -moz-box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.3);
-          box-shadow: inset 0 10px 30px rgba(0, 0, 0, 0.3);
-}
-#masthead h1,
-#footer h1,
-#masthead p,
-#footer p {
-  color: #fff;
-  text-shadow: 0 1px 1px rgba(0,0,0,.3);
-}
-#masthead p a,
-#footer p a {
-  color: #fff;
-  font-weight: bold;
-}
-#masthead {
-  margin-top: 40px;
-}
-#masthead h1,
-#masthead p {
-  text-align: center;
-  margin-bottom: 9px;
-}
-#masthead h1 {
-  font-size: 54px;
-  line-height: 1;
-  text-shadow: 0 1px 2px rgba(0,0,0,.5);
-}
-#masthead p {
-  font-weight: 300;
-}
-#masthead p.lead {
-  font-size: 20px;
-  line-height: 27px;
+     background: none repeat scroll 0pt 0pt #EEEEEE;
+     margin-top: 170px;
+     padding-top: 0pt;
+     position: relative;
 }
 
-div.quickstart {
-  background-color: #f5f5f5;
-  background-repeat: repeat-x;
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#f9f9f9), to(#f5f5f5));
-  background-image: -moz-linear-gradient(#f9f9f9, #f5f5f5);
-  background-image: -ms-linear-gradient(#f9f9f9, #f5f5f5);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f9f9f9), color-stop(100%, #f5f5f5));
-  background-image: -webkit-linear-gradient(#f9f9f9, #f5f5f5);
-  background-image: -o-linear-gradient(#f9f9f9, #f5f5f5);
-  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#f5f5f5', GradientType=0)";
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f9f9f9', endColorstr='#f5f5f5', GradientType=0);
-  background-image: linear-gradient(#f9f9f9, #f5f5f5);
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #eee;
-}
-div.quickstart div.row {
-  margin: 0 -20px;
-  -webkit-box-shadow: 1px 0 0 #f9f9f9;
-     -moz-box-shadow: 1px 0 0 #f9f9f9;
-          box-shadow: 1px 0 0 #f9f9f9;
-}
-div.quickstart div.columns {
-  width: 285px;
-  height: 117px;
-  margin-left: 0;
-  padding: 17px 20px 26px;
-  border-left: 1px solid #eee;
-  -webkit-box-shadow: inset 1px 0 0 #f9f9f9;
-     -moz-box-shadow: inset 1px 0 0 #f9f9f9;
-          box-shadow: inset 1px 0 0 #f9f9f9;
-}
-div.quickstart div.columns:last-child {
-  border-right: 1px solid #eee;
-  width: 286px;
-}
-div.quickstart h6,
-div.quickstart p {
-  line-height: 18px;
-  text-align: center;
-  margin-bottom: 9px;
-  color: #333;
-}
-div.quickstart h6 {
-  color: #999;
-}
-div.quickstart form textarea {
-  display: block;
-  width: 275px;
-  height: auto;
-  margin: 0 0 9px;
-  line-height: 21px;
-  white-space: nowrap;
-  overflow: hidden;
-}
-*/
-#footer {
-  margin-top: 80px;
-}
-#footer p {
-  margin-bottom: 0;
-}
-#footer p.right {
-  float: right;
+.home .nail, .workbench-detail .nail {
+     background: none repeat scroll 0pt 0pt #FFFFFF;
+     border: 1px solid #DDDDDD;
+     box-shadow: 1px 2px 3px #000000;
+     display: inline-block;
+     margin-top: 20px;
+     width: 280px;
 }
 
-/* Special grid styles
--------------------------------------------------- */
-/*
-.show-grid {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.show-grid .column, .show-grid .columns {
-  background-color: #eee;
-  text-align: center;
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-  height: 30px;
-  line-height: 30px;
-}
-.show-grid:hover .column, .show-grid:hover .columns {
-  background: rgba(0, 0, 0, 0.25);
-}
-*/
-/* Render mini layout previews
--------------------------------------------------- */
-/*
-div.mini-layout {
-  height: 340px;
-  margin-bottom: 20px;
-  padding: 9px;
-  border: 1px solid #ccc;
-  -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-          border-radius: 6px;
-  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.125);
-     -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.125);
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.125);
-}
-div.mini-layout div {
-  -webkit-border-radius: 3px;
-     -moz-border-radius: 3px;
-          border-radius: 3px;
-}
-div.mini-layout div.mini-layout-body {
-  background-color: #dceaf4;
-  margin: 0 auto;
-  width: 340px;
-  height: 340px;
-}
-div.mini-layout.fluid div.mini-layout-sidebar,
-div.mini-layout.fluid div.mini-layout-header,
-div.mini-layout.fluid div.mini-layout-body {
-  float: left;
-}
-div.mini-layout.fluid div.mini-layout-sidebar {
-  background-color: #bbd8e9;
-  width: 90px;
-  height: 340px;
-}
-div.mini-layout.fluid div.mini-layout-body {
-  width: 300px;
-  margin-left: 10px;
-}
-*/
-/* Topbar special styles
--------------------------------------------------- */
-/*
-div.topbar-wrapper {
-  position: relative;
-  height: 40px;
-  margin: 5px 0 15px;
-}
-div.topbar-wrapper div.topbar {
-  position: absolute;
-  margin: 0 -20px;
+.workbench-detail .nail {
+     margin-top: 140px;
 }
 
-div.topbar-wrapper div.topbar .fill {
-  padding-left: 20px;
-  padding-right: 20px;
-  -webkit-border-radius: 4px;
-     -moz-border-radius: 4px;
-          border-radius: 4px;
-}
-*/
-/* Popover docs
--------------------------------------------------- */
-/*
-div.popover-well {
-  min-height: 160px;
+.nail-detail .actions li {
+     display: inline;
+     list-style: none outside none;
 }
 
-div.popover-well div.popover {
-  display: block;
+.container {
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: -105px;
+     width: 940px;
 }
 
-div.popover-well div.popover-wrapper {
-  width: 50%;
-  height: 160px;
-  float: left;
-  margin-left: 55px;
-  position: relative;
+p {
+     font-style: normal;
+     font-weight: normal;
+     line-height: 18px;
+     margin-bottom: 9px;
+     text-align: left;
+     word-wrap: break-word;
 }
 
-div.popover-well div.popover-menu-wrapper {
-  height: 80px;
+li {
+     color: #808080;
+     font-size: 13px;
+     line-height: 18px;
+     padding-bottom: 3px;
+     word-wrap: break-word;
 }
 
-img.large-bird {
-  margin: 5px 0 0 310px;
-  opacity: .1;
+div.topbar {
+     background-repeat: repeat-x;
+     border-bottom: 1px solid #000000;
+     box-shadow: 0pt 1px 6px rgba(0, 0, 0, 0.99);
 }
-*/
-/* Pretty Print
--------------------------------------------------- */
-/*
-PRE.prettyprint {
-  overflow: hidden;
+
+html body.account div.container div.row div.span4 {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 0pt 0pt 4px #CCCCCC;
+     padding: 10px 23px 0pt 24px;
+     text-align: left;
+     width: auto;
 }
-*/
+
+html body.account div.container div.row div.span4 ul {
+     margin-left: 0px;
+}
+
+html body.account div.container div.row div.span4 h1 {
+     color: #666666;
+     font-family: arial;
+}
+
+html body.account div.container div.row div.span12 {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 0pt 0pt 4px #CCCCCC;
+     padding: 10px 20px 0px;
+}
+
+html body.account div.container div.row div.span12 h2 {
+     color: #666666;
+     font-family: arial;
+}
+
+html body.account div.container div.row div.span12 form div.actions {
+     background: none repeat scroll 0pt 0pt transparent;
+     border-top: medium none;
+     padding-bottom: 0pt;
+     padding-top: 0pt;
+}
+
+html body.account div.container div.row div.span12 form div.actions button.btn {
+     background: none repeat scroll 0% 0% #EEEEEE;
+     color: #444444;
+     margin-top: 0px;
+     padding-left: 40px;
+     padding-right: 40px;
+     text-shadow: none;
+}
+
+html body.account div.container div.row div.span12 form fieldset {
+     margin-bottom: -21px;
+}
+
+html body.account div.container div.row div.span12 form {
+     margin-left: 0px;
+     margin-top: -10px;
+}
+
+html body.notices div.container div.row div.span4 {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 0pt 0pt 4px #CCCCCC;
+     padding: 10px 23px 0pt 24px;
+     text-align: left;
+     width: auto;
+}
+
+html body.notices div.container div.row div.span4 ul {
+     margin-left: 0px;
+     margin-top: -13px;
+}
+
+html body.notices div.container div.row div.span4 h1 {
+     color: #666666;
+     font-family: arial;
+}
+
+html body.notices div.container div.row div.span12 {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 0pt 0pt 4px #CCCCCC;
+     padding: 10px 23px 0pt 24px;
+     text-align: left;
+     width: 650px;
+}
+
+html body.notices div.container div.row div.span12 h2 {
+     color: #666666;
+     padding-bottom: 11px;
+}
+
+html body.notices div.container div.row div.span12 div.notice_settings form table.notice_settings tbody tr td button.btn {
+     color: white;
+}
+
+html body.account div.container div.alert-message {
+     float: right;
+     width: 350px;
+}
+
+html body.notices div.container div.row div.span12 div.notice_settings div.alert-message a {
+     text-decoration: underline;
+}
+
+.main-menu.all .all, .main-menu.workers-you-follow .workers-you-follow {
+     font-weight: bold;
+}
+
+html body.userpage div.workbench {
+     background: none repeat scroll 0pt 0pt white;
+     border: 1px solid #DDDDDD;
+     box-shadow: 0pt 0pt 8px #000000;
+     float: right;
+     margin-bottom: 20px;
+     margin-right: 0px;
+     margin-top: 0px;
+     padding: 10px 0px;
+     width: 600px;
+}
+
+html body.userpage div.container div.workbench h1 a {
+     border-bottom: 1px solid #EEEEEE;
+     color: darkcyan;
+     font-family: arial;
+     font-size: 37px;
+     padding: 0pt 20px;
+}
+
+html body.userpage div.workbench ul li {
+     display: inline-block;
+     padding: 0pt 1px;
+}
+
+html body.userpage div.container div.profizzle2 {
+     background-color: white;
+     box-shadow: 0pt 0pt 8px #000000;
+     color: #555555;
+     float: left;
+     margin-bottom: 15px;
+     margin-top: 38px;
+     padding: 10px 5px 10px 15px;
+     text-align: left;
+     width: 287px;
+}
+
+html body.userpage div.container div.profizzle2 form {
+     margin-bottom: 5px;
+}
+
+html body.userpage div.container div.profizzle2 p.stats {
+     color: #666666;
+     font-size: 14px;
+     padding-bottom: 7px;
+}
+
+html body.userpage div.container div.profizzle2 p.username {
+     color: darkcyan;
+     font-size: 31px;
+     font-weight: bold;
+     line-height: 35px;
+     text-transform: capitalize;
+}
+
+html body.workbench-detail div.container h1 form {
+     margin-bottom: 8px;
+}
+
+html body div.container div.whatsnext {
+     background: none repeat scroll 0% 0% white;
+     border: 1px solid #CCCCCC;
+     box-shadow: 1px 1px 3px #000000;
+     padding: 10px 20px;
+}
+
+html body div.container div.whatsnext p {
+     font-size: 21px;
+     padding-bottom: 18px;
+}
+
+.btn.success, .alert-message.success {
+     background-color: #FFFFFF;
+     background-image: -moz-linear-gradient(center top , #F5F5F5, white);
+     background-repeat: repeat-x;
+     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+     text-shadow: 0pt 0px 0pt rgba(0, 0, 0, 0.25);
+}
+
+html body div.container div.whatsnext dl.what_next dt {
+     margin-left: 9px;
+     padding-bottom: 10px;
+     padding-top: 16px;
+}
+
+html body div.container div.whatsnext dl.what_next {
+     margin-top: -16px;
+}
+
+.top {
+     -moz-transition: opacity 700ms linear 0s;
+     background: none repeat scroll 0% 0% #333333;
+     border-radius: 10px 10px 10px 10px;
+     bottom: 15px;
+     color: #888888;
+     display: block;
+     font-size: 14px;
+     height: 25px;
+     line-height: 25px;
+     opacity: 1;
+     padding-top: 25px;
+     position: fixed;
+     right: 15px;
+     text-align: center;
+     text-decoration: none;
+     width: 50px;
+}
+
+.top:before {
+     border-bottom: 11px solid #888888;
+     border-left: 11px solid transparent;
+     border-right: 11px solid transparent;
+     content: "";
+     left: 14px;
+     position: absolute;
+     top: 11px;
+}
+
+.top:hover {
+     color: #EEEEEE;
+}
+
+.top:hover:before {
+     border-bottom-color: #EEEEEE;
+}
+
+.top.hidden {
+     opacity: 0;
+}
+
+div.search form input.btn {
+     display: none;
+}
+
+html body.home div.topbar div.fill div.container div.search form {
+     width: 161px;
+}
+
+.topbar input:-moz-placeholder {
+     color: #999999;
+     font-size: 12px;
+}
+
+.topbar input {
+     -moz-transition: none 0s ease 0s ;
+     background-color: #555555;
+     border-radius: 4px 4px 4px 4px;
+     border: 1px solid #333333;
+     box-shadow: 0pt 1px 2px rgba(0, 0, 0, 0.1) inset, 0pt 1px 0pt rgba(255, 255, 255, 0.25);
+     color: rgba(255, 255, 255, 0.75);
+     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+     height: 10px;
+     line-height: 1;
+     margin-left: 0px;
+     margin-top: 4px;
+     padding: 4px 9px;
+     width: 117px;
+}
+
+html body.search div.container form {
+     background: none repeat scroll 0% 0% #FFFFFF;
+     padding: 20px 10px 1px;
+}
+
+body.search .topbar form {
+     background: none repeat scroll 0% 0% transparent ! important;
+     float: left;
+     margin: 5px 0pt 0pt;
+     opacity: 1;
+     padding: 0px ! important;
+     position: relative;
+}
+
+table tbody th {
+     width: 137px;
+}
+
+input, textarea, select, .uneditable-input {
+     margin-left: 77px;
+}
+
+table tbody th {
+     border-bottom: medium none;
+     border-top: medium none;
+}
+
+table td {
+     border-bottom: medium none;
+     border-top: medium none;
+     margin-top: 76px;
+}
+
+html body.search div.container form table tbody tr th label {
+     font-size: 23px;
+     margin-top: -2px;
+}
+
+html body.search div.container h2 {
+     background: none repeat scroll 0% 0% #EEEEEE;
+     border-bottom: 1px solid #DDDDDD;
+     color: darkcyan;
+     font-size: 40px;
+     padding: 10px 20px 6px;
+}
+
+html body.search div.container form p {
+     font-size: 17px;
+     font-style: italic;
+     font-weight: bold;
+     margin-left: 71px;
+}
+
+html body.search div.container form h3 {
+     font-size: 27px;
+     font-weight: normal;
+     margin-left: auto;
+     margin-right: auto;
+     width: 91px;
+}
+
+form .input {
+     margin-left: 130px;
+}
+
+#nails_container {
+     margin: 0pt;
+     padding: 0pt;
+     position: relative;
+}
+
+.endless_container {
+     bottom: 5px;
+     position: absolute;
+}
+
+html body.profile div.container div.profile_info p {
+     font-family: arial;
+     font-size: 15px;
+     font-style: normal;
+     font-weight: lighter;
+}
+
+

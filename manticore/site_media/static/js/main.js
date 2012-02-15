@@ -24,4 +24,9 @@
                $(window).resize(function() {
                  $('.nail').wookmark(wookmark_options);
                });
+           // Not elegant, but possibly the only way to force a wookmark
+           // re-flow after loading more nails
+           $('.container').ajaxComplete(function() {
+               $('.nail').wookmark(wookmark_options);
+           });
        });

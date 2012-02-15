@@ -12,9 +12,11 @@
 
     {% endwith %}
 
-    {% for nail in object.nails.all %}
-        {% include "_nail.html" %}
-    {% endfor %}
+    <div id="nails_container">
+        {% for nail in object.nails.all %}
+            {% include "_nail.html" %}
+        {% endfor %}
+    </div>
 {% endblock %}
 
 

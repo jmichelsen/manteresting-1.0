@@ -825,3 +825,10 @@ height: 100px;
 width: 550px;
 background-color: transparent;
 }
+
+.back_to_top {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    display: none; /* Hidden until user scrolls */
+}

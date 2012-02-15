@@ -29,4 +29,13 @@
            $('.container').ajaxComplete(function() {
                $('.nail').wookmark(wookmark_options);
            });
+
+           // Show back to top button after scrolling
+           $(window).scroll(function(){
+               if($(this).scrollTop() > 200) {
+                   $('.back_to_top').show();
+               } else {
+                   $('.back_to_top').hide();
+               }
+           });
        });

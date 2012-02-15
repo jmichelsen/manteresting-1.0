@@ -5,7 +5,7 @@ div.nail ul li.creds img, div.nail ul li.comment img {
 div#socialbox ul.social li {
      display: inline;
      float: right;
-     margin-top: 0px;
+     margin-top: -3px;
      padding-left: 14px;
 }
 

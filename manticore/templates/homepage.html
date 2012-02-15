@@ -9,7 +9,7 @@
     <script type="text/javascript" src="{{ STATIC_URL }}endless_pagination/js/endless_on_scroll.js" charset="utf-8"></script>
     {# Distance in pixels from bottom of page to trigger endless scrolling #}
     <script type="text/javascript" charset="utf-8">
-        var endless_on_scroll_margin = 50;
+        var endless_on_scroll_margin = 80;
     </script>
 {% endblock %}
 
@@ -25,6 +25,5 @@
 
 {% block footer %}
 
-    <div class="more"><a href="?ts={{ last_nail.timestamp }}">more</a></div>
 
 {% endblock %}

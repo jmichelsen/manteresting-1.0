@@ -246,6 +246,7 @@ HAYSTACK_WHOOSH_PATH = os.path.join(PROJECT_ROOT, 'search_index')
 # Endless scrolling settings.
 # See http://django-endless-pagination.readthedocs.org/en/latest/customization.html#settings
 ENDLESS_PAGINATION_PER_PAGE = 40
+ENDLESS_PAGINATION_LOADING = """<img src="{{ STATIC_URL }}/loading.gif" alt="loading" />"""
 
 # local_settings.py can be used to override environment-specific settings
 # like database and email that differ between development and production.

@@ -1,3 +1,7 @@
+html body div.container form div.clearfix div.input img {
+    margin-left: 78px;
+}
+
 div.nail ul li.creds img, div.nail ul li.comment img {
      float: left;
 }
@@ -10,7 +14,7 @@ div#socialbox ul.social li {
 }
 
 div#header div#socialbox {
-     margin-right: 120px;
+     margin-right: 100px;
 }
 
 div.legal {

@@ -1,1 +1,3 @@
 {{ object.description }}
+{{ object.source_url }}
+{{ object.source_title }}

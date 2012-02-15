@@ -22,6 +22,8 @@ site.register(Workbench, WorkbenchIndex)
 class NailIndex(indexes.SearchIndex):
     text = indexes.CharField(document=True, use_template=True)
     description = indexes.CharField(model_attr='description')
+    source_url = indexes.CharField(model_attr='source_url', null=True)
+    source_title= indexes.CharField(model_attr='source_title', null=True)
 
 
 site.register(Nail, NailIndex)

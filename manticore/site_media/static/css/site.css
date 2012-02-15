@@ -444,9 +444,11 @@ body {
 }
 
 p {
+     font-style: normal;
      font-weight: normal;
      line-height: 18px;
      margin-bottom: 9px;
+     text-align: left;
      word-wrap: break-word;
 }
 
@@ -576,7 +578,7 @@ html body.userpage div.workbench {
      float: right;
      margin-bottom: 20px;
      margin-right: 0px;
-     margin-top: 20px;
+     margin-top: 0px;
      padding: 10px 0px;
      width: 600px;
 }
@@ -600,7 +602,7 @@ html body.userpage div.container div.profizzle2 {
      color: #555555;
      float: left;
      margin-bottom: 15px;
-     margin-top: 20px;
+     margin-top: 38px;
      padding: 10px 5px 10px 15px;
      text-align: left;
      width: 287px;

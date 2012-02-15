@@ -264,7 +264,30 @@ class HomepageView(AllNailsView):
         return data
 
 
+class AjaxAllNailsView(AjaxListView):
+    """Shows all nails using infinite scrolling.
+    """
+
+    template_name = 'homepage.html'
+    page_template = '_nails.html'
+
+    def get_queryset(self):
+        self.nails = Nail.objects.all().order_by('-id')
+        return self.nails
+
+
+    def get_context_data(self, **kwargs):
+        data = super(AjaxAllNailsView, self).get_context_data(**kwargs)
+        data['nails'] = self.nails
+        data['main_menu_item'] = 'all'
+        return data
+
+
 class AjaxHomepageView(AjaxListView):
+    """Does the same as AjaxAllNailsView for anonymous users,
+    but shows only followed items for authorized.
+    """
+
     template_name = 'homepage.html'
     page_template = '_nails.html'
 

@@ -1,3 +1,7 @@
+div.nail ul li.creds img, div.nail ul li.comment img {
+     float: left;
+}
+
 div#socialbox ul.social li {
      display: inline;
      float: right;
@@ -243,8 +247,8 @@ html body.nail-detail div.container div.nail ul.comments {
 html body.nail-detail div.container div.nail form.comment textarea#id_comment {
      height: 30px;
      margin-left: 10px;
-     margin-right: 10px;
-     width: 419px;
+     margin-right: -10px;
+     width: 359px;
 }
 
 html body.nail-detail div.container div.nail form.comment {
@@ -292,6 +296,7 @@ html body.nail-detail div.container div.nail {
      border: 1px solid #000000;
      box-shadow: 0pt 0pt 26px rgba(34, 25, 25, 0.99);
      display: block;
+     margin-bottom: 30px;
      margin-left: auto;
      margin-right: auto;
      position: inherit ! important;
@@ -300,6 +305,7 @@ html body.nail-detail div.container div.nail {
 
 body.nail-detail div.container div.nail p {
      color: #797979;
+     font-style: normal;
      text-align: center;
 }
 
@@ -349,7 +355,7 @@ div.nail ul li.creds, li.comment {
      border-bottom: 1px solid #D8D8D8;
      border-top: 1px solid #DDDDDD;
      font-size: 11px;
-     padding: 6px 5px 6px 12px;
+     padding: 6px 5px 17px 12px;
 }
 
 div.nail a img {
@@ -399,6 +405,7 @@ div.topbar div.fill div.container ul.secondary-nav li img {
 body.home div.container div.nail p, body.workbench-detail div.container div.nail p {
      color: #7B7878;
      font-size: 11px;
+     font-style: normal;
      margin-top: 3px;
      padding: 0pt 20px;
      text-align: left;
@@ -440,7 +447,6 @@ p {
      font-weight: normal;
      line-height: 18px;
      margin-bottom: 9px;
-     text-align: left;
      word-wrap: break-word;
 }
 
@@ -570,7 +576,7 @@ html body.userpage div.workbench {
      float: right;
      margin-bottom: 20px;
      margin-right: 0px;
-     margin-top: 0px;
+     margin-top: 20px;
      padding: 10px 0px;
      width: 600px;
 }
@@ -594,7 +600,7 @@ html body.userpage div.container div.profizzle2 {
      color: #555555;
      float: left;
      margin-bottom: 15px;
-     margin-top: 38px;
+     margin-top: 20px;
      padding: 10px 5px 10px 15px;
      text-align: left;
      width: 287px;
@@ -798,6 +804,9 @@ form .input {
      position: absolute;
 }
 
-p {
-    font-style: normal;
+html body.profile div.container div.profile_info p {
+     font-family: arial;
+     font-size: 15px;
+     font-style: normal;
+     font-weight: lighter;
 }

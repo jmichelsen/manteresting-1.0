@@ -18,7 +18,7 @@ div.legal {
 }
 
 div#header {
-     background: url("/site_media/media/ManBeta.png") no-repeat scroll 64% 0pt transparent;
+     background: url("/site_media/media/ManBeta.png") no-repeat scroll 64% 0pt #DDDDDD;
      height: 120px;
      position: inherit;
      top: -170px;
@@ -463,7 +463,7 @@ li {
 div.topbar {
      background-repeat: repeat-x;
      border-bottom: 1px solid #000000;
-     box-shadow: 0pt 1px 6px rgba(0, 0, 0, 0.99);
+     box-shadow: 0pt 6px 6px rgba(0, 0, 0, 0.69);
 }
 
 html body.account div.container div.row div.span4 {

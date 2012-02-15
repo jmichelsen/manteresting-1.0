@@ -11,6 +11,7 @@
 <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.imagesloaded.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/waypoints.min.js"></script>
 <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+<script type="text/javascript" src="{{ STATIC_URL }}js/ga.js"></script>
 
 {% phileo_css %}
 {% phileo_js %}
@@ -18,6 +19,7 @@
 
 {% block header %}
    <div id="header">
+        <a id="clickable"  href="{% url home %}"></a>
         <div id="socialbox">
             <ul class="social">
                 <li><a href="http://www.facebook.com/manteresting" target="_blank"><img title="Facebook Us" src="{{ STATIC_URL }}/images/manface.png"></a></li>

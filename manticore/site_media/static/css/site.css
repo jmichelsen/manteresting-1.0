@@ -403,7 +403,7 @@ div.container div.nail ul li.comment a img, div.container div.nail ul li.creds a
 
 div.topbar div.fill div.container ul.secondary-nav li img {
      display: block;
-     padding-top: 5px;
+     padding-top: 8px;
 }
 
 body.home div.container div.nail p, body.workbench-detail div.container div.nail p {
@@ -432,7 +432,7 @@ body {
 }
 
 .workbench-detail .nail {
-     margin-top: 140px;
+     margin-top: 25px;
 }
 
 .nail-detail .actions li {
@@ -606,7 +606,7 @@ html body.userpage div.container div.profizzle2 {
      color: #555555;
      float: left;
      margin-bottom: 15px;
-     margin-top: 38px;
+     margin-top: 25px;
      padding: 10px 5px 10px 15px;
      text-align: left;
      width: 287px;

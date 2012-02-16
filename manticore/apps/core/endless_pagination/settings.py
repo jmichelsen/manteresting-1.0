@@ -15,7 +15,7 @@ ORPHANS = getattr(settings, "ENDLESS_PAGINATION_ORPHANS", 0)
 #        <img src="/static/img/loader.gif" alt="loading" />
 #    """
 LOADING = getattr(settings, 
-    "ENDLESS_PAGINATION_LOADING", """<img src="{{ STATIC_URL }}/loading.gif" alt="loading" />""")
+    "ENDLESS_PAGINATION_LOADING", """<img src="http://manteresting.com/site_media/static/loading.gif" alt="loading" />""")
 
 # Labels for previous and next page links.
 PREVIOUS_LABEL = getattr(settings, "ENDLESS_PAGINATION_PREVIOUS_LABEL", u"&lt;&lt;")

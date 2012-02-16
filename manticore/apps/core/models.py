@@ -10,6 +10,10 @@ from imagekit.processors import resize, Adjust
 from follow import utils
 from follow.signals import followed, unfollowed
 
+class UserProfile(models.Model):
+    user = models.OneToOneField(User)
+    is_first_login = models.BooleanField(default=True,
+        verbose_name= (u"Is first login?"))
 
 class Category(models.Model):
     title = models.CharField(max_length=100)

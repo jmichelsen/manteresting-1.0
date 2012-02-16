@@ -1,19 +1,20 @@
 html body div.container form fieldset div.clearfix div.input input#id_remember {
-    margin-left: 10px;
-    margin-top: 9px;
-}
-.help-inline, .help-block {
-    color: #444444;
-    font-size: 13px;
-    line-height: 18px;
-}
-a {
-    color: blue;
+     margin-left: 10px;
+     margin-top: 9px;
 }
 
+.help-inline, .help-block {
+     color: #444444;
+     font-size: 13px;
+     line-height: 18px;
+}
+
+a {
+     color: blue;
+}
 
 html body div.container form div.clearfix div.input img {
-    margin-left: 78px;
+     margin-left: 78px;
 }
 
 div.nail ul li.creds img, div.nail ul li.comment img {
@@ -433,7 +434,7 @@ body.home div.container div.nail p, body.workbench-detail div.container div.nail
 }
 
 body {
-     background: none repeat scroll 0pt 0pt #dddddd;
+     background: none repeat scroll 0pt 0pt #DDDDDD;
      margin-top: 170px;
      padding-top: 0pt;
      position: relative;
@@ -589,6 +590,7 @@ html body.notices div.container div.row div.span12 div.notice_settings div.alert
 }
 
 .main-menu.all .all, .main-menu.workers-you-follow .workers-you-follow {
+     background: none repeat scroll 0% 0% #333333;
      font-weight: bold;
 }
 
@@ -835,17 +837,17 @@ html body.profile div.container div.profile_info p {
 }
 
 #clickable {
-position: absolute;
-top: 10px;
-left: 200px;
-height: 100px;
-width: 550px;
-background-color: transparent;
+     background-color: transparent;
+     height: 100px;
+     left: 200px;
+     position: absolute;
+     top: 10px;
+     width: 550px;
 }
 
 .back_to_top {
-    position: fixed;
-    right: 10px;
-    bottom: 10px;
-    display: none; /* Hidden until user scrolls */
+     bottom: 10px;
+     display: none;
+     position: fixed;
+     right: 10px;
 }

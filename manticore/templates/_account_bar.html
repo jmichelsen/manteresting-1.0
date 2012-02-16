@@ -17,11 +17,13 @@
                 <li><a href="{% url privacy %}">Privacy</a></li>
             </ul>
         </li>
-        {% with profile=user.get_profile %}{% if profile.avatar %}<li><img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/></li>{% endif %}{% endwith %}
+        {% url user slug=user.username as user_url %}
+        {% with profile=user.get_profile %}{% if profile.avatar %}<li class="avatar-nav"><a href="{{ user_url }}"><img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/></a></li>{% endif %}{% endwith %}
         <li>
             <a href="#" class="menu">{{ user }}</a>
             <ul class="menu-dropdown">
                 <li><a href="{% url acct_email %}">Account</a></li>
+                <li><a href="{{ user_url }}">My Nails</a></li>
                 {% if user.is_staff %}
                     <li><a href="/admin/">Admin</a></li>
                 {% endif %}

@@ -415,9 +415,12 @@ div.container div.nail ul li.comment a img, div.container div.nail ul li.creds a
      padding: 0pt;
 }
 
-div.topbar div.fill div.container ul.secondary-nav li img {
-     display: block;
-     padding-top: 8px;
+.avatar-nav {
+      padding: 0px;
+}
+
+.topbar div > ul li.avatar-nav a {
+    padding: 7px 0 0 0;
 }
 
 body.home div.container div.nail p, body.workbench-detail div.container div.nail p {

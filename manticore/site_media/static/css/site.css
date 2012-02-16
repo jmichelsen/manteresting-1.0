@@ -89,7 +89,7 @@ html body.workbench-detail div.container h1 {
      z-index: 999;
 }
 
-.sticky .topbar {
+.sticky .topbar, .sticky .topbar-inner, .sticky .topbar .fill {
      left: 0pt;
      position: fixed;
      top: 0pt;

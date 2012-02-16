@@ -1,4 +1,4 @@
-html body.home div#header div#socialbox ul.social div#like-button {
+div#socialbox ul.social div#like-button {
     display: inline;
     margin-left: -40px;
 }

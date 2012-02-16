@@ -18,15 +18,15 @@ class PinningTest(TestCase):
         # Peter creates workbench too
         self.create_workbench(self.peter, title='another workbench')
 
-    def test_nail_repin_page_contains_original_description_and_right_workbenches(self):
-        # Peter tries to repin a nail from Art's workbench
+    def test_nail_renail_page_contains_original_description_and_right_workbenches(self):
+        # Peter tries to renail a nail from Art's workbench
         self.login(self.peter)
 
         self.assertEqual(0, self.peter.workbenches.all()[0].nails.count())
 
         nail = self.art.workbenches.all()[0].nails.all()[0]
         response = self.get(
-            ('nail-repin', (), dict(pk=nail.pk)),
+            ('nail-renail', (), dict(pk=nail.pk)),
         )
         self.assertContains(response, 'test nail')
         self.assertContains(response, 'another workbench')
@@ -36,8 +36,8 @@ class PinningTest(TestCase):
         self.assertNotContains(response, 'first workbench')
         self.assertNotContains(response, 'second workbench')
 
-    def test_nail_repin(self):
-        # Peter tries to repin a nail from Art's workbench
+    def test_nail_renail(self):
+        # Peter tries to renail a nail from Art's workbench
         self.login(self.peter)
 
         self.assertEqual(0, self.peter.workbenches.all()[0].nails.count())
@@ -48,7 +48,7 @@ class PinningTest(TestCase):
         original_nail.save()
 
         response = self.post(
-            ('nail-repin', (), dict(pk=original_nail.pk)),
+            ('nail-renail', (), dict(pk=original_nail.pk)),
             dict(
                 workbench=self.peter.workbenches.all()[0].pk,
                 description='some description',
@@ -70,7 +70,7 @@ class PinningTest(TestCase):
         response = self.get(('nail', (), dict(pk=new_nail.pk)))
         self.assertEqual(200, response.status_code)
 
-    def test_user_cant_repin_into_others_workbench(self):
+    def test_user_cant_renail_into_others_workbench(self):
         first_workbench, second_workbench = list(self.art.workbenches.all())
 
         self.assertEqual(1, first_workbench.nails.count())
@@ -78,12 +78,12 @@ class PinningTest(TestCase):
 
         original_nail = first_workbench.nails.all()[0]
 
-        # Peter tries to repin a nail from Art's workbench into another
+        # Peter tries to renail a nail from Art's workbench into another
         # Art's workbench
         self.login(self.peter)
 
         response = self.post(
-            ('nail-repin', (), dict(pk=original_nail.pk)),
+            ('nail-renail', (), dict(pk=original_nail.pk)),
             dict(
                 workbench=second_workbench.pk,
                 description='some description',
@@ -99,10 +99,10 @@ class PinningTest(TestCase):
     def test_dont_delete_clone_when_original_deleted(self):
         original_nail = self.art.workbenches.all()[0].nails.all()[0]
 
-        # Peter repins a nail from Art's workbench
+        # Peter renails a nail from Art's workbench
         self.login(self.peter)
         self.post(
-            ('nail-repin', (), dict(pk=original_nail.pk)),
+            ('nail-renail', (), dict(pk=original_nail.pk)),
             dict(
                 workbench=self.peter.workbenches.all()[0].pk,
                 description='some description',

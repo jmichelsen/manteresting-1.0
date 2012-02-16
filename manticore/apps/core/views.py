@@ -173,17 +173,17 @@ class UpdateNailView(RestrictToOwner, UpdateByView):
         return form_class
 
 
-class RepinNailView(UpdateByView):
+class RenailView(UpdateByView):
     def get_form_class(self):
-        RepinForm = modelform_factory(Nail, exclude=['original'])
-        RepinForm.base_fields['description'].initial = self.object.description
-        RepinForm.base_fields['workbench'].queryset = self.request.user.workbenches.all()
-        return RepinForm
+        Form = modelform_factory(Nail, exclude=['original'])
+        Form.base_fields['description'].initial = self.object.description
+        Form.base_fields['workbench'].queryset = self.request.user.workbenches.all()
+        return Form
 
     def get_form_kwargs(self):
         """Set instance to null, because we want to create new object and update the old one.
         """
-        kwargs = super(RepinNailView, self).get_form_kwargs()
+        kwargs = super(RenailView, self).get_form_kwargs()
         kwargs.pop('instance', None)
         return kwargs
 
@@ -197,10 +197,10 @@ class RepinNailView(UpdateByView):
         self.object.cloned_from = cloned_from
         self.object.save()
         form.save_m2m()
-        return super(RepinNailView, self).form_valid(form)
+        return super(RenailView, self).form_valid(form)
 
     def get_context_data(self, **kwargs):
-        data = super(RepinNailView, self).get_context_data(**kwargs)
+        data = super(RenailView, self).get_context_data(**kwargs)
         data['cloned_from'] = self.object
         return data
 

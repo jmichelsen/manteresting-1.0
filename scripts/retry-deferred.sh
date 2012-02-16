@@ -1,11 +1,4 @@
 #!/bin/bash
 
-# get absolute path to the parent dir
-BASE=$(cd $(dirname $0)/..; pwd)
-
-# go to the /tmp to create lock files there
-cd /tmp
-
-# now run the command
-"$BASE/env/bin/python" "$BASE/manage.py" retry_deferred
-
+source $(dirname $0)/utils.sh
+run_management_command retry_deferred

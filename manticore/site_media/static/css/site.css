@@ -548,6 +548,7 @@ html body.notices div.container div.row div.span4 {
      background: none repeat scroll 0% 0% white;
      border: 1px solid #CCCCCC;
      box-shadow: 0pt 0pt 4px #CCCCCC;
+     margin-top: 25px;
      padding: 10px 23px 0pt 24px;
      text-align: left;
      width: auto;

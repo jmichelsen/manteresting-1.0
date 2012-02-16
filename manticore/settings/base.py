@@ -117,7 +117,6 @@ MIDDLEWARE_CLASSES = [
     'pagination.middleware.PaginationMiddleware',
     'pinax.middleware.security.HideSensistiveFieldsMiddleware',
     'manticore.apps.core.extlinks.ExtlinksBlankMiddleware',
-    'manticore.apps.core.firstlogin.FirstLoginMiddleware',
 ]
 
 ROOT_URLCONF = 'manticore.urls'
@@ -225,7 +224,7 @@ SOCIAL_AUTH_USERNAME_FIXER = lambda u: slugify(u)
 SOCIAL_AUTH_EXTRA_DATA = False
 
 LOGIN_URL = '/account/login/' # @@@ any way this can be a url name?
-#LOGIN_REDIRECT_URLNAME = 'what_next'
+LOGIN_REDIRECT_URLNAME = 'what_next'
 LOGOUT_REDIRECT_URLNAME = 'home'
 
 EMAIL_CONFIRMATION_DAYS = 2

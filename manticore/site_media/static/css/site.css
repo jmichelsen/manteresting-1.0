@@ -1,3 +1,8 @@
+html body.home div#header div#socialbox ul.social div#like-button {
+    display: inline;
+    margin-left: -40px;
+}
+
 html body div.container form fieldset div.clearfix div.input input#id_remember {
      margin-left: 10px;
      margin-top: 9px;

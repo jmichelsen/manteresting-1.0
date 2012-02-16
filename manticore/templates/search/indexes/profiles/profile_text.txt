@@ -1,1 +1,4 @@
+{{ object.user.username }}
 {{ object.name }}
+{{ object.about }}
+{{ object.location }}

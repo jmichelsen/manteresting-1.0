@@ -1,5 +1,10 @@
 from manticore.settings.base import *
 
+DEBUG = False
+TEMPLATE_DEBUG = DEBUG
+SERVE_MEDIA = DEBUG
+EMAIL_DEBUG = DEBUG
+
 #TWITTER_CONSUMER_KEY         = 'vq0kbj6Mig8I8xqaExLWVg'
 TWITTER_CONSUMER_KEY         = 'GN2FHF1wdlOPk9TXqBHOrQ'
 #TWITTER_CONSUMER_SECRET      = 'Z0UGeJFK1nOTC7cwbaVDMV1cfpoTpOYmryPPif90'

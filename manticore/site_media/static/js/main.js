@@ -29,4 +29,15 @@
            $('.container').ajaxComplete(function() {
                $('.nail').wookmark(wookmark_options);
            });
+
+           // Show back to top button after scrolling
+           $(window).scroll(function(){
+               if($(this).scrollTop() > 71) {
+                   $('.back_to_top').show();
+                   $('.topbar').css({'position': 'fixed', 'top': 0});
+               } else {
+                   $('.back_to_top').hide();
+                   $('.topbar').css({'position': 'absolute', 'top': '-50px'});
+               }
+           });
        });

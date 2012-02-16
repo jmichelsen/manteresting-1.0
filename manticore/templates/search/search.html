@@ -26,9 +26,20 @@
             <h3>Results</h3>
 
             {% for result in page.object_list %}
-                <p>
-                    <a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a>
-                </p>
+                <div class='search_result'>
+                    {% if result.content_type == 'core.nail' %}
+                        <p>Nail: <a href="{{ result.object.get_absolute_url }}">{{ result.object.description }}</a></p>
+                    {% endif %}
+                    {% if result.content_type == 'core.category' %}
+                        <p>Category: <a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a></p>
+                    {% endif %}
+                    {% if result.content_type == 'core.workbench' %}
+                        <p>Workbench: <a href="{{ result.object.get_absolute_url }}">{{ result.object.title }}</a></p>
+                    {% endif %}
+                    {% if result.content_type == 'profiles.profile' %}
+                        <p>User: <a href="{{ result.object.get_absolute_url }}">{{ result.object.user.username }}</a></p>
+                    {% endif %}
+                </div>
             {% empty %}
                 <p>No results found.</p>
             {% endfor %}

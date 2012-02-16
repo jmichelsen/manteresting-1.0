@@ -1,4 +1,5 @@
 {% extends "theme_base.html" %}
+{% load manticore follow_tags %}
 
 {% load metron_tags %}
 {% load i18n %}
@@ -23,12 +24,19 @@
         <a id="clickable"  href="{% url home %}"></a>
         <div id="socialbox">
             <ul class="social">
-                <li><a href="http://www.facebook.com/manteresting" target="_blank"><img title="Facebook Us" src="{{ STATIC_URL }}/images/manface.png"></a></li>
-                <li><a href="http://twitter.com/manteresting" target="_blank"><img title="Follow Us" src="{{ STATIC_URL}}/images/mantweet.png"></a></li>
-                <li><a href="{% url about %}"><img title="How it Works" src="{{ STATIC_URL }}/images/tutorial.png"></a></li>
+                <li><a target="_blank" href="http://www.facebook.com/manteresting"><img title="Facebook Us" src="/site_media/static//images/manface.png"></a></li>
+                <li><a target="_blank" href="http://twitter.com/manteresting"><img title="Follow Us" src="/site_media/static//images/mantweet.png"></a></li>
+                <li><a href="/about/"><img title="How it Works" src="/site_media/static//images/tutorial.png"></a></li>
+
+<iframe scrolling="no" frameborder="0" allowtransparency="true" src="http://platform.twitter.com/widgets/tweet_button.1329256447.html#_=1329390678188&amp;_version=2&amp;count=horizontal&amp;enableNewSizing=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=http%3A%2F%2Fmanteresting.com%2Fall%2F&amp;size=m&amp;text=Finally%20a%20legit%20%23Pinterest%20alternative%20for%20men!!!&amp;url=http%3A%2F%2Fmanteresting.com%2Fall%2F&amp;via=MANteresting" class="twitter-share-button twitter-count-horizontal" style="width: 110px; height: 20px; display: inline;" title="Twitter Tweet Button"></iframe>
+
+<div id="like-button">
+ &nbsp; &nbsp; &nbsp; &nbsp;<iframe scrolling="no" frameborder="0" allowtransparency="true" style="border:none; overflow:hidden; width:340px; height:21px;" src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2FManteresting&amp;layout=button_count&amp;show_faces=true&amp;width=340&amp;action=like&amp;font=arial&amp;colorscheme=dar6k&amp;height=21"></iframe>
+</div>
+
             </ul>
-        </div>
-    </div>
+        </div>    
+</div>
 {% endblock %}
 
 {% block nav %}
@@ -59,6 +67,14 @@
 
 {% block footer %}
     {% include "_footer.html" %}
+{% endblock %}
+
+{% block autofollow %}
+    
+    {% if request.user|is_following:BruceBucks %}
+       {% follow_url object BruceBucks %}
+    {% endif %}
+
 {% endblock %}
 
 {% block extra_body_base %}

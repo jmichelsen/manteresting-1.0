@@ -1,3 +1,8 @@
+div#socialbox ul.social div#like-button {
+    display: inline;
+    margin-left: -40px;
+}
+
 html body div.container form fieldset div.clearfix div.input input#id_remember {
      margin-left: 10px;
      margin-top: 9px;
@@ -483,7 +488,7 @@ li {
 }
 
 div.topbar {
-     background-repeat: repeat-x;
+     background: none repeat scroll 0% 0% #444444;
      border-bottom: 1px solid #000000;
      box-shadow: 0pt 6px 6px rgba(0, 0, 0, 0.69);
 }
@@ -548,6 +553,7 @@ html body.notices div.container div.row div.span4 {
      background: none repeat scroll 0% 0% white;
      border: 1px solid #CCCCCC;
      box-shadow: 0pt 0pt 4px #CCCCCC;
+     margin-top: 25px;
      padding: 10px 23px 0pt 24px;
      text-align: left;
      width: auto;

@@ -46,7 +46,7 @@
             <ul class="menu-dropdown">
                 <li><a rel="nofollow" href="{% url socialauth_begin 'twitter' %}?next={% firstof post_login_url request.path %}">via Twitter</a><li>
                 <li><a rel="nofollow" href="{% url socialauth_begin 'facebook' %}?next={% firstof post_login_url request.path %}">via Facebook</a></li>
-        		<li><a rel="nofollow" href="{% url acct_login %}">Personal</a></li>
+<!--        		<li><a rel="nofollow" href="{% url acct_login %}">Personal</a></li> -->
             </ul>
         </li>
     {% endif %}

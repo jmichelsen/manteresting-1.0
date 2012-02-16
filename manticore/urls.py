@@ -12,7 +12,7 @@ from manticore.apps.core.views import (
     CreateByView,
     UpdateWorkbenchView, DeleteWorkbenchView,
     CreateNailView, UpdateNailView, DeleteNailView,
-    RepinNailView, AjaxAllNailsView, AjaxHomepageView
+    RenailView, AjaxAllNailsView, AjaxHomepageView
 )
 
 
@@ -40,7 +40,7 @@ urlpatterns = patterns("",
     url(r'^nail/(?P<pk>\d+)/$', DetailView.as_view(model=Nail), name='nail'),
     url(r'^nail/(?P<pk>\d+)/edit/$', UpdateNailView.as_view(model=Nail), name='nail-edit'),
     url(r'^nail/(?P<pk>\d+)/delete/$', DeleteNailView.as_view(model=Nail), name='nail-delete'),
-    url(r'^nail/(?P<pk>\d+)/repin/$', RepinNailView.as_view(model=Nail), name='nail-repin'),
+    url(r'^nail/(?P<pk>\d+)/renail/$', RenailView.as_view(model=Nail), name='nail-renail'),
 
     url(r'^workbench/add/$', CreateByView.as_view(model=Workbench), name='workbench-add'),
     url(r'^workbench/(?P<pk>\d+)/$', DetailView.as_view(model=Workbench), name='workbench'),

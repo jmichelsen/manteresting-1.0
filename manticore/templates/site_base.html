@@ -4,16 +4,18 @@
 {% load i18n %}
 {% load phileo_tags %}
 
-{% block extra_head %}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/site.css">
-<link rel="icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon"> 
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.wookmark.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}js/jquery.imagesloaded.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}js/waypoints.min.js"></script>
-<script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+{% block extra_head_base %}
+    {{ block.super }}
 
-{% phileo_css %}
-{% phileo_js %}
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/site.css">
+    <link rel="icon" href="{{ STATIC_URL }}favicon.ico" type="image/x-icon"> 
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.wookmark.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/jquery.imagesloaded.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/waypoints.min.js"></script>
+    <script type="text/javascript" src="{{ STATIC_URL }}js/main.js"></script>
+
+    {% phileo_css %}
+    {% phileo_js %}
 {% endblock %}
 
 {% block header %}

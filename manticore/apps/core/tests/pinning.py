@@ -13,7 +13,7 @@ class PinningTest(TestCase):
         workbench = self.create_workbench(self.art, title='first workbench')
         self.create_workbench(self.art, title='second workbench')
         # and uploads a nail
-        self.create_nail(workbench)
+        self.art_nail = self.create_nail(workbench)
 
         # Peter creates workbench too
         self.create_workbench(self.peter, title='another workbench')
@@ -30,7 +30,7 @@ class PinningTest(TestCase):
         )
         self.assertContains(response, 'test nail')
         self.assertContains(response, 'another workbench')
-        self.assertContains(response, 'Repin')
+        self.assertContains(response, 'Nail')
 
         self.assertNotContains(response, 'Upload')
         self.assertNotContains(response, 'first workbench')
@@ -42,7 +42,10 @@ class PinningTest(TestCase):
 
         self.assertEqual(0, self.peter.workbenches.all()[0].nails.count())
 
-        original_nail = self.art.workbenches.all()[0].nails.all()[0]
+        original_nail = self.art_nail
+        original_nail.source_url = 'http://example.com'
+        original_nail.source_title = 'Example Com'
+        original_nail.save()
 
         response = self.post(
             ('nail-repin', (), dict(pk=original_nail.pk)),
@@ -56,6 +59,9 @@ class PinningTest(TestCase):
 
         new_nail = self.peter.workbenches.all()[0].nails.all()[0]
         self.assertEqual('some description', new_nail.description)
+        # this nail have to keep same source url and title, as original
+        self.assertEqual(new_nail.source_url, original_nail.source_url)
+        self.assertEqual(new_nail.source_title, original_nail.source_title)
 
         self.assertEqual([new_nail], list(original_nail.clones.all()))
         self.assertEqual(original_nail, new_nail.cloned_from)

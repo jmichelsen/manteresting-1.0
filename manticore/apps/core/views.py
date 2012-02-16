@@ -192,6 +192,8 @@ class RepinNailView(UpdateByView):
 
         self.object = form.save(commit=False)
         self.object.original = cloned_from.original
+        self.object.source_url = cloned_from.source_url
+        self.object.source_title = cloned_from.source_title
         self.object.cloned_from = cloned_from
         self.object.save()
         form.save_m2m()

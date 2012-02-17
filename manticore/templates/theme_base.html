@@ -1,1 +1,103 @@
-/home/themen/Manticore/env/lib/python2.6/site-packages/pinax_theme_bootstrap/templates/theme_base.html
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+    <head>
+        <meta charset="utf-8" />
+        <title>{% block head_title_base %}{% if SITE_NAME %}{{ SITE_NAME }} : {% endif %}{% block head_title %}{% endblock %}{% endblock %}</title>
+       <meta name="description" content="MANteresting is a social network that allows you to quickly and easily share all of your favorite man things with the world.  People use MANteresting to find the connect with friends, discover new websites, and to share all the images they find most interesting. You should probably sign up." />
+       <meta name="keywords" content="men, manly, social network for men, manly social sharing, social image site for men, men website, man, pinterest for men, pinterest for boys, gentleman, social gentlemen network" />
+
+       <meta name="google-site-verification" content="7hLqnmqWjOBcrndic5oL0rSUP9-vEI3OxrsJhWYBS90" />
+       <meta name="y_key" content="4ed89234c0c67468" />
+       <meta name="msvalidate.01" content="A1B7CB550A813BCA5125257784A6B5C3" />
+                
+        <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <link rel="shortcut icon" href="{{ STATIC_URL }}favicon.ico" />
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ STATIC_URL }}css/extra.css">
+        <script src="{{ STATIC_URL }}js/jquery-1.7.min.js"></script>
+        <script src="{{ STATIC_URL }}js/jquery.form.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-alerts.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-twipsy.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-popover.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-dropdown.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-tabs.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-scrollspy.js"></script>
+        <script src="{{ STATIC_URL }}js/bootstrap-buttons.js"></script>
+        <script src="{{ STATIC_URL }}js/theme.js"></script>
+        <script src="{{ STATIC_URL }}js/pinax.modal.js"></script>
+        {% block extra_head_base %}
+            {% block extra_head %}{% endblock %}
+        {% endblock %}
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-29205075-1']);
+              _gaq.push(['_trackPageview']);
+
+                (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                                  })();
+
+                                  </script>
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-29214986-1']);
+              _gaq.push(['_trackPageview']);
+
+                (function() {
+                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+                                  })();
+
+                                  </script>
+    
+    </head>
+    <body class="{% block body_class %}{% endblock %}" id="{% block body_id %}{% endblock %}">
+        
+        {% block header %}
+        {% endblock %}
+        
+        {% block topbar_base %}
+            <div class="topbar">
+                <div class="fill">
+                    <div class="container">
+                        {% block topbar %}
+                            <!-- <h3><a href="{% url home %}">{{ SITE_NAME }}</a></h3>-->
+                            {% block nav %}{% endblock %}
+                            {% block account_bar %}{% include "_account_bar.html" %}{% endblock %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        
+        {% block body_base %}
+            <div class="container">
+                {% include "_messages.html" %}
+                {% block body %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+        
+        {% block footer_base %}
+            <div id="footer">
+                <div class="inner">
+                    <div class="container">
+                        {% block footer %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+        
+        {% block extra_body_base %}
+            {% block extra_body %}{% endblock %}
+        {% endblock %}
+    </body>
+</html>

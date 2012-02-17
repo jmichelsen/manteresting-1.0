@@ -6,7 +6,11 @@
 {% block body_class %}workbench-detail{% endblock %}
 
 {% block body %}
-    <h1>{{ object.title }} {% follow_form object %}</h1>
+    <h1>{{ object.title }}
+    {% if workbench.user == user %}
+        <a href="{% url workbench-edit pk=object.pk %}" class="btn">Edit</a>
+    {% endif %}
+    {% follow_form object %}</h1>
     {% with user=object.user profile=object.user.get_profile %}
     <h2>by <a href="{% url user slug=user.username %}">{% if profile.avatar %}<img src="{{ MEDIA_URL }}{{ profile.avatar_small }}" width="{{ profile.avatar_small.width }}px" height="{{ profile.avatar_small.height }}px"/>{% endif %}{{ object.user }}</a></h2>
 

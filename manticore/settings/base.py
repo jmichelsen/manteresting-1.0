@@ -180,6 +180,7 @@ INSTALLED_APPS = [
     'follow',
     'haystack',
     'endless_pagination',
+    'flag',
 
     # Pinax
     'pinax.apps.account',

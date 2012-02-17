@@ -15,13 +15,13 @@ Pinax==0.9a2
 django-staticfiles==1.1.2
 django_compressor==1.0.1
 
+django-flag==0.1.1
 django-mailer==0.2a1
 django-email-confirmation==0.2
 django-timezones==0.2
 pytz==2011n
 django-openid==0.3a1
 python-openid==2.2.5
-django-flag==0.2
 
 django-announcements==0.1.2
 django-pagination==1.0.7

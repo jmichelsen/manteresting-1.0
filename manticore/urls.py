@@ -56,7 +56,6 @@ urlpatterns = patterns("",
 
     url(r'^', include('social_auth.urls')),
     url(r'^', include('follow.urls')),
-    url(r'^flag/', include('flag.urls')),
 )
 
 

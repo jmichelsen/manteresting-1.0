@@ -1,6 +1,6 @@
 div#socialbox ul.social div#like-button {
-    display: inline;
-    margin-left: -40px;
+     display: inline;
+     margin-left: -40px;
 }
 
 html body div.container form fieldset div.clearfix div.input input#id_remember {
@@ -19,7 +19,7 @@ a {
 }
 
 html body div.container form div.clearfix div.input img {
-     margin-left: 78px;
+     margin-left: 22px;
 }
 
 div.nail ul li.creds img, div.nail ul li.comment img {
@@ -272,7 +272,7 @@ html body.nail-detail div.container div.nail form.comment textarea#id_comment {
      height: 30px;
      margin-left: 10px;
      margin-right: -10px;
-     width: 359px;
+     width: 420px;
 }
 
 html body.nail-detail div.container div.nail form.comment {
@@ -736,7 +736,7 @@ div.search form input.btn {
 }
 
 html body.home div.topbar div.fill div.container div.search form {
-     width: 161px;
+     width: 140px;
 }
 
 .topbar input:-moz-placeholder {
@@ -755,7 +755,7 @@ html body.home div.topbar div.fill div.container div.search form {
      height: 10px;
      line-height: 1;
      margin-left: 0px;
-     margin-top: 4px;
+     margin-top: 7px;
      padding: 4px 9px;
      width: 117px;
 }
@@ -779,7 +779,8 @@ table tbody th {
 }
 
 input, textarea, select, .uneditable-input {
-     margin-left: 77px;
+     margin-left: 22px;
+     margin-top: 0px;
 }
 
 table tbody th {
@@ -857,4 +858,57 @@ html body.profile div.container div.profile_info p {
      display: none;
      position: fixed;
      right: 10px;
+}
+
+html body.nail-detail div.container div.nail ul.actions form#phileo_like_34_918.phileo input.phileo-toggle {
+     margin-left: 0px;
+}
+
+html body.account div.container div.row div.span12 form div.actions button.btn {
+     margin-left: 2px;
+}
+
+html body.account div.container div.row div.span12 form fieldset div.clearfix div.input input#id_email {
+     margin-left: 20px;
+     margin-top: 5px;
+}
+
+html body.account div.container div.row div.span12 form fieldset div.clearfix label.requiredField {
+     font-size: 19px;
+}
+
+html body.nail-detail div.container div.nail ul.actions input.phileo-toggle {
+     margin-left: 0px;
+}
+
+.btn.primary {
+     background-color: #E6E6E6;
+     background-image: -moz-linear-gradient(center top , #FFFFFF, #FFFFFF 25%, #E6E6E6);
+     background-repeat: repeat-x;
+     border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+     color: #FFFFFF;
+     text-shadow: 0pt -1px 0pt rgba(0, 0, 0, 0.25);
+}
+
+html body.workbench-detail div.container h1 a.btn {
+     float: left;
+     margin-left: 20px;
+}
+
+.topbar input:hover {
+     background: none repeat scroll 0% 0% #333333;
+}
+
+.topbar input:focus, .topbar input.focused {
+     background-color: #333333;
+     border: 0pt none;
+     box-shadow: 0pt 0pt 3px rgba(0, 0, 0, 0.15);
+     color: #FFFFFF;
+     outline: 0pt none;
+     padding: 5px 10px;
+     text-shadow: none;
+}
+
+html body.userpage div.container div.profizzle2 form input {
+     margin-left: 0px;
 }

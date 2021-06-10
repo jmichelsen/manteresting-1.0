@@ -9,7 +9,7 @@
 
 #-e `pwd`
 
-Django==1.3.1
+Django==2.2.24
 Pinax==0.9a2
 
 django-staticfiles==1.1.2
